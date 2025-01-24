@@ -103,28 +103,22 @@ aside:
   # --------------------------- start ---------------------------
   # Information card
   # 信息卡
-  card:
-    style: 0 # 0: default 1: style 1 2: style 2
+  my_card:
     author:
-      img: /img/avatar.avif # url
+      img: /img/logo.png # url
       sticker: # url, 24x24 size
     url: /about/ # link / 点击头像跳转链接
-    background: # https://s3.qjqq.cn/47/663af296b85f4.webp!color # Background image(Invalid if style is 0)
-    # Content(Invalid if style is 0)
-    # 内容(Style 0 无效)
+    # 介绍 / Introduction
+    description: 只有迎风，风筝才能飞得更高。
+    # 内容 / Content
     content: # 这是我的博客 / This is my Blog
-    content2: # 一个热爱生活的人 / A person who loves life
-    # Style 2 is invalid
-    # Style 2 无效
-    sayhello:
+    state:
       morning: ✨ 早上好，新的一天开始了
       noon: 🍲 午餐时间
       afternoon: 🌞 下午好
       night: 早点休息
       goodnight: 晚安 😴
-    # Style 2 is invalid, Triggered when sayhello is clicked.
-    # Style 2 无效, 点击 sayhello 时触发
-    sayhello2:
+    witty_words:
       # - 你可以的
       # - 你一定可以的
       # - 祝你好运，陌生人
@@ -229,9 +223,6 @@ page:
 # 文章默认设置
 post:
   default:
-    # The cover of the article is displayed
-    # 文章封面显示
-    top_cover: true
     # Default image when no cover is set
     # 未设置封面时的默认图片
     cover:
@@ -551,10 +542,7 @@ footer:
   #    icon: https://icp.gov.moe/images/ico64.png
   #    url: https://icp.gov.moe/?keyword=
   # 页脚信息文字
-  # 请不要删除主题信息，这是对作者的尊重
   links:
-    - name: Theme
-      url: https://github.com/everfu/hexo-theme-solitude
     # - name: RSS
     #   url: /atom.xml
     # - name: License
@@ -787,6 +775,9 @@ comment:
   # Whether to display the comment count
   # 显示评论数
   count: false
+  # Sidebar displays the total number of comments
+  # Sidebar 显示总评论数
+  sidebar: false
   # PV
   pv: false
   # Avatar
@@ -845,17 +836,27 @@ giscus:
 # Search
 search:
   enable: false
-  # type: 使用的搜索引擎 / search engine
-  type: # local / algolia
+  type: # local / algolia / docsearch
   tags:
     # - Solitude
     # - Hexo
+  # Algolia
   algolia:
     # hits:
     #   per_page: 6
+  
+  # Local search
   local:
     preload: false
     CDN: # url: search.xml
+  
+  # DocSearch
+  # https://docsearch.algolia.com/
+  docsearch: 
+    appId: 
+    apiKey: 
+    indexName: 
+    option: 
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------

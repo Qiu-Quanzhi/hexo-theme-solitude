@@ -37,23 +37,20 @@ hexo.extend.filter.register('before_generate', () => {
       post: { noSticky: 'about', Sticky: 'allInfo' },
       page: { noSticky: 'about', Sticky: 'allInfo' },
       card: {
-        style: 0,
         author: {
           img: '/img/logo.png',
           sticker: '/img/happy-sticker.avif',
         },
         url: '/about/',
-        background: null,
         content1: 'Solitude',
-        content2: 'A simple theme for Hexo',
-        sayhello: {
+        state: {
           morning: 'Good Morning',
           noon: 'Good Noon',
           afternoon: 'Good Afternoon',
           night: 'Good Night',
           goodnight: 'Good Night',
         },
-        sayhello2: ['Welcome to Solitude', 'A simple theme for Hexo', 'Enjoy your time', 'Have a nice day', 'Good luck'],
+        witty_words: [],
         information: null,
       },
       flip: {
@@ -94,7 +91,6 @@ hexo.extend.filter.register('before_generate', () => {
     },
     post: {
       default: {
-        top_cover: true,
         cover: ['/img/default.avif'],
         locate: 'China, Changsha',
         copyright: {
@@ -250,6 +246,12 @@ hexo.extend.filter.register('before_generate', () => {
       local: {
         preload: false,
         CDN: null,
+      },
+      docsearch: {
+        appId: null,
+        apiKey: null,
+        indexName: null,
+        option: null
       }
     },
     rightside: {

@@ -37,7 +37,7 @@ const setThemeColors = (value) => {
     const [r, g, b] = value.match(/\w\w/g).map(x => parseInt(x, 16));
     const themeColors = {
         main: value,
-        op: `${value}23`,
+        op: `${value}66`,
         opDeep: `${value}dd`,
         none: `${value}00`
     };

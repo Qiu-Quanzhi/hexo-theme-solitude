@@ -251,13 +251,14 @@
       display flex
       flex-direction row
       flex-wrap wrap
-      height 164px
+      justify-content flex-start
       gap .5rem
+      height 164px
 
       li.card-archive-list-item
-        flex 0 1 calc(35% - .625rem)
+        flex 1 1 calc(100% / 4 - 1.5rem)
 
-      .card-archive-list-link
+      a
         border-radius 8px
         display flex
         flex-direction column

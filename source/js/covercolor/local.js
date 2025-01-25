@@ -41,7 +41,7 @@ const setThemeColors = (value, r = null, g = null, b = null) => {
 
     const themeColors = {
         '--efu-main': value,
-        '--efu-main-op': value + '23',
+        '--efu-main-op': value + '66',
         '--efu-main-op-deep': value + 'dd',
         '--efu-main-none': value + '00'
     };

@@ -13,7 +13,7 @@
     margin 0
     margin-bottom 0.5rem
     position absolute
-    z-index 1
+    z-index 2
     width 100%
     padding 1rem 2rem
     left 0
@@ -23,6 +23,11 @@
     background var(--efu-card-bg)
     backdrop-filter saturate(180%) blur(20px)
     transition .1s ease-out
+
+    &:hover
+      max-height 1000px
+      transition .3s ease-out
+      background var(--efu-maskbgdeep)
 
     a
       padding .1rem .5rem
@@ -50,5 +55,3 @@
       &.select .tagsPageCount
         background var(--efu-card-bg)
         color var(--efu-lighttext)
-    +maxWidth628()
-      display none

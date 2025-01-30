@@ -4,10 +4,10 @@
 if(is_home())
     - noSticky = aside.home.noSticky ? aside.home.noSticky.split(',') : []
     - Sticky = aside.home.Sticky ? aside.home.Sticky.split(',') : []
-else if(is_post())
+else if(is_post() || is_archive() || is_tag() || is_category())
     - noSticky = aside.post.noSticky ? aside.post.noSticky.split(',') :  []
     - Sticky = aside.post.Sticky ? aside.post.Sticky.split(',') : []
-else if(is_page() || is_archive() || is_tag() || is_category())
+else if(is_page())
     - noSticky = aside.page.noSticky ? aside.page.noSticky.split(',') : []
     - Sticky = aside.page.Sticky ? aside.page.Sticky.split(',') : []
 if noSticky || Sticky

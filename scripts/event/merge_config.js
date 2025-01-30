@@ -96,7 +96,7 @@ hexo.extend.filter.register('before_generate', () => {
         copyright: {
           enable: true,
           license: 'CC BY-NC-SA 4.0',
-          licenurl: 'https://creativecommons.org/licenses/by-nc-sa/4.0/',
+          licenseUrl: 'https://creativecommons.org/licenses/by-nc-sa/4.0/',
         }
       },
       meta: {

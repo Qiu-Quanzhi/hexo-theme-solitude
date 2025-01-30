@@ -74,7 +74,7 @@
                     = _p('post.copyright.reprint')
                 else
                     = _p('post.copyright.original')
-                    a(href=url_for(theme.post.default.copyright.licenurl))
+                    a(href=url_for(theme.post.default.copyright.licenseUrl))
                         | #{theme.post.default.copyright.license}
                     = _p('post.copyright.original_end')
                     a(href=url_for("/")) #{config.title}

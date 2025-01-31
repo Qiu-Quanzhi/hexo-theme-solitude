@@ -159,6 +159,7 @@ footer:
   randomlink: Links
   rss: Subscribe
   theme: Theme
+  refresh: Refresh
 
 cookies:
   title: Agreement reminder assistant
@@ -191,7 +192,7 @@ comment:
 commentBarrage:
   title: Hot
 
-f12: Developer mode is turned on, please follow the GPL.
+f12: Developer mode is turned on, please follow the license.
 
 right_menu:
   copy: Copy

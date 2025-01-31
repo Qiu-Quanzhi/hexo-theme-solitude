@@ -159,6 +159,7 @@ footer:
   randomlink: 友链
   rss: 订阅
   theme: 主题
+  refresh: 随机刷新
 
 cookies:
   title: 协议提醒助手
@@ -191,7 +192,7 @@ comment:
 commentBarrage:
   title: 热评
 
-f12: 开发者模式已打开，请注意遵循 GPL 协议。
+f12: 开发者模式已打开，请注意遵循相关协议。
 
 right_menu:
   copy: 复制选中文本

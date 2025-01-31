@@ -159,6 +159,7 @@ footer:
   randomlink: 友鏈
   rss: 訂閱
   theme: 主題
+  refresh: 隨機刷新
 
 cookies:
   title: 協議提醒助手
@@ -189,7 +190,7 @@ comment:
 commentBarrage:
   title: 熱評
 
-f12: 開發者模式已打開，請遵循GPL協定。
+f12: 開發者模式已打開，請遵循相關協定。
 
 right_menu:
   copy: 複製選中文本

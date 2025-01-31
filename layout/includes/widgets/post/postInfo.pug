@@ -3,9 +3,9 @@
         .meta-firstline
             - var cc = page.reprint ? _p('post.reprint') : _p('post.original')
             if !page.reprint
-                a.post-meta-original(title=_p('post.cc').replace(/\$\{cc}/, cc))= cc
-            else
                 a.post-meta-original(href=page.cc.licenseUrl,title=_p('post.cc').replace(/\$\{cc}/, cc))= cc
+            else
+                a.post-meta-original(title=_p('post.cc').replace(/\$\{cc}/, cc))= cc
             each category in page.categories.data
                 span.post-meta-categories
                     a.post-meta-categories(href=url_for('/' + category.path))= category.name

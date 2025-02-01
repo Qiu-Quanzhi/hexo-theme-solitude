@@ -1,7 +1,7 @@
 extends includes/layout.pug
 
 block content
-    main.layout#content-inner
+    main.layout.hide-aside#content-inner
         #tag
             #tag-page-tags
                 each tag in site.tags.find({ parent: { $exists: false } }).data
@@ -16,4 +16,3 @@ block content
                 include includes/mixins/pagination
             if theme.comment.hot_tip.enable
                 include ./includes/widgets/third-party/hot/index.pug
-        include includes/widgets/aside/aside

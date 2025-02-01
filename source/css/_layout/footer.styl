@@ -157,7 +157,14 @@
       font-size .8rem
       margin-left 8px
 
-    .random-friends-btn,.more-friends-btn
+      &.friend-links-title
+        transition .3s
+        cursor pointer
+
+        &:hover
+          color var(--efu-theme)
+
+    .random-friends-btn
       display flex
       margin-left 8px
       *:hover

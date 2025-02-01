@@ -45,7 +45,7 @@ hexo.extend.helper.register('related_posts', function (currentPost, allPosts) {
                 <i class="solitude fas fa-star"></i>
                 <span>${headlineLang}</span>
                 <div class="relatedPosts-link">
-                    <a onclick="event.preventDefault(); toRandomPost();" href="javascript:void(0);" rel="external nofollow" data-pjax-state="">${this._p('random')}</a>
+                    <a onclick="event.preventDefault(); toRandomPost();" rel="external nofollow" data-pjax-state="">${this._p('random')}</a>
                 </div>
             </div>
             <div class="relatedPosts-list">`;

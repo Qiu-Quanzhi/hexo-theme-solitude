@@ -1,4 +1,24 @@
 #aside-content
+  display flex
+  flex-direction column
+  gap var(--gap)
+  animation slide-in .6s .3s backwards
+  transition: transform .3s
+
+  .hide-aside &
+    display none
+  
+  +maxWidth1200()
+    position: fixed
+    right: 3rem
+    bottom: 10px
+    z-index: 100
+    max-width: 380px
+    max-height: calc(100% - 60px)
+    width: calc(100% - 80px)
+    transform: scale(0)
+    transform-origin: right bottom
+  
   +minWidth1200()
     width 300px
   if hexo-config('aside.position') == 0
@@ -208,95 +228,83 @@
         background #0079ff
         color #fff
 
-  #card-toc
-    &:hover
-      .toc-content
-        .toc-link:not(.active) span
-          if hexo-config('aside.toc.vague')
-            filter: blur(0)
-          opacity: 1
-    +minWidth901()
-      right 0
-      padding .5rem
-
-    +maxWidth1200()
-      position: fixed
-      right: 3rem
-      bottom: 10px
-      z-index: 100
-      max-width: 380px
-      max-height: calc(100% - 60px)
-      width: calc(100% - 80px)
-      transition: transform .3s
-      transform: scale(0)
-      transform-origin: right bottom
-
-      &.open
-        transform: scale(1)
-
+#card-toc
+  &:hover
     .toc-content
-      overflow-y: auto
-      max-height: calc(100vh - 300px)
+      .toc-link:not(.active) span
+        if hexo-config('aside.toc.vague')
+          filter: blur(0)
+        opacity: 1
+  +minWidth901()
+    right 0
+    padding .5rem
 
-      * > .toc-item > .toc-child
-        margin-left 10px
-        transition display .3s ease-in-out 0s
-        padding-left 10px
+    &.open
+      transform: scale(1)
 
-      ol
-        margin 0
-        padding-left .4rem
+  .toc-content
+    overflow-y: auto
+    max-height: calc(100vh - 300px)
 
-        &ul
-          list-style: none
+    * > .toc-item > .toc-child
+      margin-left 10px
+      transition display .3s ease-in-out 0s
+      padding-left 10px
 
-      > ol
-        padding-left 0
+    ol
+      margin 0
+      padding-left .4rem
 
-      .toc-child
-        display none
+      &ul
+        list-style: none
 
-      .toc-child .toc-child
-        display none
+    > ol
+      padding-left 0
 
-        &.active
-          display block
+    .toc-child
+      display none
 
-      .toc-item.active > .toc-child
+    .toc-child .toc-child
+      display none
+
+      &.active
         display block
 
-      .toc-item.active .toc-link
-        opacity 1
-        border-radius 8px
+    .toc-item.active > .toc-child
+      display block
 
-      .toc-link
-        transition all .2s ease-in-out 0s
-        line-height 24px
-        padding 8px
+    .toc-item.active .toc-link
+      opacity 1
+      border-radius 8px
+
+    .toc-link
+      transition all .2s ease-in-out 0s
+      line-height 24px
+      padding 8px
+      border-radius 12px
+      color var(--efu-secondtext)
+      min-height 40px
+      display flex
+      align-items center
+      cursor pointer
+
+      &.active
         border-radius 12px
-        color var(--efu-secondtext)
-        min-height 40px
-        display flex
-        align-items center
+        border-left-color var(--efu-hovertext)
+        background-color var(--efu-card-bg)
+        color var(--efu-lighttext)
+        font-weight 700
+        font-size 20px
+
+      &:hover
+        background-color var(--efu-main-op-light)
+
+      &:not(.active) span
+        opacity .6
         cursor pointer
-
-        &.active
-          border-radius 12px
-          border-left-color var(--efu-hovertext)
-          background-color var(--efu-card-bg)
-          color var(--efu-lighttext)
-          font-weight 700
-          font-size 20px
-
-        &:hover
-          background-color var(--efu-main-op-light)
-
-        &:not(.active) span
-          opacity .6
-          cursor pointer
-          if hexo-config('aside.toc.vague')
-            filter blur(1px)
-          transition .3s
+        if hexo-config('aside.toc.vague')
+          filter blur(1px)
+        transition .3s
 
 [data-theme=dark]
   .toc

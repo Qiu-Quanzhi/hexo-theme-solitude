@@ -229,82 +229,90 @@
         color #fff
 
 #card-toc
-  &:hover
+    &:hover
+      .toc-content
+        .toc-link:not(.active) span
+          if hexo-config('aside.toc.vague')
+            filter: blur(0)
+          opacity: 1
+    +minWidth901()
+      right 0
+      padding .5rem
+
+    +maxWidth1200()
+      position: fixed
+      right: 3rem
+      bottom: 1rem
+      z-index: 100
+      max-width: 380px
+      max-height: calc(100% - 60px)
+      width: calc(100% - 80px)
+      transition: transform .3s
+      transform: scale(0)
+      transform-origin: right bottom
+      padding .5rem
+
+      &.open
+        transform: scale(1)
+
     .toc-content
-      .toc-link:not(.active) span
-        if hexo-config('aside.toc.vague')
-          filter: blur(0)
-        opacity: 1
-  +minWidth901()
-    right 0
-    padding .5rem
+      overflow-y: auto
+      max-height: calc(100vh - 300px)
 
-    &.open
-      transform: scale(1)
+      * > .toc-item > .toc-child
+        margin-left 10px
+        transition display .3s ease-in-out 0s
+        padding-left 10px
 
-  .toc-content
-    overflow-y: auto
-    max-height: calc(100vh - 300px)
+      ol
+        margin 0
+        padding-left .4rem
 
-    * > .toc-item > .toc-child
-      margin-left 10px
-      transition display .3s ease-in-out 0s
-      padding-left 10px
+        &ul
+          list-style: none
 
-    ol
-      margin 0
-      padding-left .4rem
+      > ol
+        padding-left 0
 
-      &ul
-        list-style: none
+      .toc-child
+        display none
 
-    > ol
-      padding-left 0
+      .toc-child .toc-child
+        display none
 
-    .toc-child
-      display none
+        &.active
+          display block
 
-    .toc-child .toc-child
-      display none
-
-      &.active
+      .toc-item.active > .toc-child
         display block
 
-    .toc-item.active > .toc-child
-      display block
+      .toc-item.active .toc-link
+        opacity 1
 
-    .toc-item.active .toc-link
-      opacity 1
-      border-radius 8px
+      .toc-link
+        transition all .2s
+        line-height 24px
+        padding 8px
+        color var(--efu-secondtext)
+        min-height 40px
+        display flex
+        align-items center
 
-    .toc-link
-      transition all .2s ease-in-out 0s
-      line-height 24px
-      padding 8px
-      border-radius 12px
-      color var(--efu-secondtext)
-      min-height 40px
-      display flex
-      align-items center
-      cursor pointer
+        &.active
+          background-color var(--efu-card-bg)
+          color var(--efu-lighttext)
+          font-weight 700
+          font-size 20px
 
-      &.active
-        border-radius 12px
-        border-left-color var(--efu-hovertext)
-        background-color var(--efu-card-bg)
-        color var(--efu-lighttext)
-        font-weight 700
-        font-size 20px
+        &:hover
+          background-color var(--efu-main-op-light)
 
-      &:hover
-        background-color var(--efu-main-op-light)
-
-      &:not(.active) span
-        opacity .6
-        cursor pointer
-        if hexo-config('aside.toc.vague')
-          filter blur(1px)
-        transition .3s
+        &:not(.active) span
+          opacity .6
+          cursor pointer
+          if hexo-config('aside.toc.vague')
+            filter blur(1px)
+          transition .3s
 
 [data-theme=dark]
   .toc
@@ -343,7 +351,7 @@
       transition cubic-bezier(.69, .39, 0, 1.21) .3s
       transform-origin bottom
       z-index 1
-      border 4px solid var(--efu-fontcolor)
+      border 4px solid var(--efu-secondtext)
 
       .avatar-img
         overflow hidden
@@ -411,7 +419,7 @@
 
       .author-info__desc
         font-size 14px
-        color var(--efu-font-color)
+        color var(--efu-fontcolor)
         line-height 2
 
       .card-info__data
@@ -450,7 +458,7 @@
             line-height: 1.5
 
           .headline
-            color: var(--efu-font-color)
+            color: var(--efu-fontcolor)
             font-size: 1em
             line-height: 1.5
 

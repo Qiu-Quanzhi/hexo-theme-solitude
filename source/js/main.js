@@ -2,6 +2,7 @@ const sidebarFn = () => {
   const $toggleMenu = document.getElementById('toggle-menu');
   const $mobileSidebarMenus = document.getElementById('sidebar-menus');
   const $menuMask = document.getElementById('menu-mask');
+  const $links = document.querySelectorAll('#sidebar-menus a');
   const $body = document.body;
 
   const toggleMobileSidebar = (isOpen) => {
@@ -19,6 +20,7 @@ const sidebarFn = () => {
 
   $toggleMenu.addEventListener('click', () => toggleMobileSidebar(true));
   $menuMask.addEventListener('click', closeMobileSidebar);
+  $links.forEach(link => link.addEventListener('click', closeMobileSidebar));
 
   window.addEventListener('resize', () => {
     if (utils.isHidden($toggleMenu) && $mobileSidebarMenus.classList.contains('open')) {

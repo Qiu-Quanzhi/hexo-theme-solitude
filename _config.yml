@@ -398,34 +398,6 @@ related_post:
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
-# Custom right menu
-# 自定义右键菜单
-right_menu:
-  enable: false
-  # Whether to display the browser's context menu when hold Ctrl key.
-  # 是否在按住 Ctrl 键时显示浏览器右键菜单
-  ctrlOriginalMenu: false
-  # Custom list
-  # 自定义列表
-  custom_list:
-    # - name: 随机文章
-    #   click: toRandomPost()
-    #   id: menu-randomPost
-    #   class:
-    #   icon: fas fa-tower-broadcast
-    # - name: 全部分类
-    #   click: pjax.loadUrl('/categories/') # External links with window.open, pjax can not request cross-domain content.
-    #   id:
-    #   class:
-    #   icon: fas fa-clone
-    # - name: 全部标签
-    #   click: pjax.loadUrl('/tags/')
-    #   id:
-    #   class:
-    #   icon: fas fa-tags
-# --------------------------- end -----------------------
-
-# --------------------------- start ---------------------------
 # Copy
 #  information
 # 复制信息

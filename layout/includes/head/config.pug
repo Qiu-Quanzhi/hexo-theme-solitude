@@ -69,25 +69,6 @@
         }
     }
 
-    let rightMenu = false
-    if (theme.right_menu.enable) {
-        rightMenu = {
-            mode: {
-                dark: _p('right_menu.light'),
-                light: _p('right_menu.dark'),
-            },
-            img_error: _p('right_menu.img_error')
-        }
-        if (theme.capsule.enable) {
-            rightMenu.music = {
-                start: _p('right_menu.music.start'),
-                stop: _p('right_menu.music.stop'),
-            }
-        }
-        if (theme.right_menu.ctrlOriginalMenu)
-            rightMenu.ctrlOriginalMenu = _p('right_menu.ctrl_original_menu')
-    }
-
     let highlight = false
     if (theme.highlight.enable) {
         highlight = {
@@ -144,7 +125,6 @@ script.
             enable: !{theme.post.covercolor.enable}
         },
         lightbox: '!{ theme.mediumZoom ? "mediumZoom" : (theme.fancybox ? "fancybox" : "null")}',
-        right_menu: !{rightMenu ? JSON.stringify(rightMenu) : false},
         lure: !{lure ? JSON.stringify(lure) : false},
         expire: !{expire ? JSON.stringify(expire) : false},
     };

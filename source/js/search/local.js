@@ -27,8 +27,7 @@ class LocalSearch {
             searchPagination: document.getElementById("search-pagination"),
             searchTips: document.getElementById("search-tips"),
             searchButton: document.querySelector("#search-button > .search"),
-            closeButton: document.querySelector("#local-search .search-close-button"),
-            menuSearch: document.getElementById("menu-search")
+            closeButton: document.querySelector("#local-search .search-close-button")
         };
     }
 
@@ -111,18 +110,6 @@ class LocalSearch {
 
         // 标签列表点击事件
         this.bindTagListEvents();
-
-        // 右键菜单搜索
-        if (GLOBAL_CONFIG.right_menu && this.elements.menuSearch) {
-            this.elements.menuSearch.addEventListener('click', () => {
-                rm.hideRightMenu();
-                this.openSearch();
-                if (window.selectTextNow) {
-                    this.elements.searchInput.value = window.selectTextNow;
-                    this.handleSearchInput(window.selectTextNow);
-                }
-            });
-        }
 
         // PJAX 兼容性
         window.addEventListener('pjax:complete', () => {

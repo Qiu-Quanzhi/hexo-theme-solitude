@@ -51,11 +51,6 @@ html(lang=config.language, data-theme="light")
                 .error#body-wrap
                     block content
 
-        //- 右键菜单
-        if theme.right_menu.enable
-            +conditionalWrapper(theme.right_menu.enable)
-                include ./rightmenu.pug
-
         //- 注入的body内容
         include ./inject/body.pug
 

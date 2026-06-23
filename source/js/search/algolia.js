@@ -22,7 +22,6 @@ class AlgoliaSearch {
             searchDialog: document.querySelector("#algolia-search .search-dialog"),
             searchButton: document.querySelector("#search-button > .search"),
             closeButton: document.querySelector("#algolia-search .search-close-button"),
-            menuSearch: document.getElementById("menu-search"),
             hitsContainer: document.getElementById("algolia-hits"),
             inputContainer: "#algolia-search-input",
             paginationContainer: "#algolia-pagination",
@@ -281,9 +280,6 @@ class AlgoliaSearch {
         // 基础搜索事件
         this.bindSearchEvents();
         
-        // 右键菜单搜索
-        this.bindRightMenuSearch();
-        
         // PJAX 兼容性
         this.bindPjaxEvents();
     }
@@ -304,28 +300,6 @@ class AlgoliaSearch {
         
         if (this.elements.searchMask) {
             this.elements.searchMask.addEventListener("click", () => this.closeSearch());
-        }
-    }
-
-    /**
-     * 绑定右键菜单搜索
-     */
-    bindRightMenuSearch() {
-        if (GLOBAL_CONFIG.right_menu && this.elements.menuSearch) {
-            this.elements.menuSearch.addEventListener("click", () => {
-                rm.hideRightMenu();
-                this.openSearch();
-                
-                // 设置选中文本
-                if (window.selectTextNow) {
-                    const searchInput = document.querySelector('.ais-SearchBox-input');
-                    if (searchInput) {
-                        searchInput.value = window.selectTextNow;
-                        const event = new Event('input', { bubbles: true });
-                        searchInput.dispatchEvent(event);
-                    }
-                }
-            });
         }
     }
 

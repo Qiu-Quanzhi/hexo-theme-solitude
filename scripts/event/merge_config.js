@@ -287,11 +287,6 @@ hexo.extend.filter.register(
         client: "",
         slot: "",
       },
-      right_menu: {
-        enable: false,
-        ctrlOriginalMenu: false,
-        custom_list: [],
-      },
       lure: {
         enable: false,
         jump: "404 Not Found",

@@ -201,15 +201,6 @@ const sco = {
     $music.classList.toggle("playing", this.musicPlaying);
     $music.classList.toggle("stretch", this.musicPlaying);
     $console?.classList.toggle("on", this.musicPlaying);
-    
-    if (typeof rm !== "undefined" && rm?.menuItems.music[0]) {
-      const $rmText = document.querySelector("#menu-music-toggle span");
-      const $rmIcon = document.querySelector("#menu-music-toggle i");
-      $rmText.textContent = this.musicPlaying 
-        ? GLOBAL_CONFIG.right_menu.music.stop
-        : GLOBAL_CONFIG.right_menu.music.start;
-      $rmIcon.className = `solitude fas ${this.musicPlaying ? 'fa-pause' : 'fa-play'}`;
-    }
 
     if (isMeting && $meting) {
       this.musicPlaying ? $meting.aplayer.play() : $meting.aplayer.pause();
@@ -272,7 +263,6 @@ const sco = {
     document.documentElement.setAttribute("data-theme", newMode);
     utils.saveToLocal.set("theme", newMode, 0.02);
     utils.snackbarShow(GLOBAL_CONFIG.lang.theme[newMode], false, 2000);
-    if (typeof rm === "object") rm.mode(!isDarkMode) && rm.hideRightMenu();
     handleThemeChange(newMode);
   },
   hideTodayCard: () =>

@@ -271,37 +271,6 @@ post:
     readtime: false
     # pv
     pv: false
-  # Reward
-  # 打赏
-  award:
-    enable: false
-    appreciators: /about/ # Reward page
-    # Reward Title
-    # 打赏标题
-    title: # Thanks for your appreciation. / 感谢您的赞赏
-    desc: # Because of your support, I realize the value of writing articles. / 由于您的支持，我才能够实现写作的价值。
-    # Reward list
-    # 打赏列表
-    list:
-      # - name: Github Sponsor
-      #   qcode: https://s3.qjqq.cn/47/661ba900c4bc1.webp!color
-      #   url: https://github.com/sponsors/everfu
-      #   color: var(--efu-black)
-
-  # Share icon
-  # 分享图标
-  share:
-    enable: false
-    list:
-      # - qq
-      # - weibo
-      # - twitter
-      # - facebook
-      # - telegram
-      # - whatsapp
-      # - linkedin
-      # - link
-      # - qrcode
   rss: # /atom.xml
   # Article reading progress
   # 文章封面取色

@@ -102,13 +102,6 @@ hexo.extend.filter.register(
           pv: false,
           uv: false,
         },
-        award: {
-          enable: false,
-          appreciators: "/",
-          title: "感谢您的赞赏。",
-          desc: "因为有你们的支持，我才体会到写文章的价值。",
-          list: [],
-        },
         rss: null,
         covercolor: {
           enable: false,
@@ -116,7 +109,6 @@ hexo.extend.filter.register(
           api: "https://api.qjqq.cn/api/Imgcolor?img=",
           time: 43200000,
         },
-        share: { enable: false, list: [] },
         footer: {
           enable: true,
           desc: "The article from Solitude",

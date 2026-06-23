@@ -129,16 +129,3 @@ mixin responsiveImage(src, alt, options)
     loading=lazy ? 'lazy' : 'eager'
     sizes=sizes
   )
-
-//- 社交分享按钮
-mixin shareButton(platform, url, title)
-  - var shareUrl = ''
-  - var encodedUrl = encodeURIComponent(url)
-  - var encodedTitle = encodeURIComponent(title)
-  - if (platform === 'twitter') shareUrl = 'https://twitter.com/intent/tweet?url=' + encodedUrl + '&text=' + encodedTitle
-  - else if (platform === 'facebook') shareUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + encodedUrl
-  - else if (platform === 'weibo') shareUrl = 'https://service.weibo.com/share/share.php?url=' + encodedUrl + '&title=' + encodedTitle
-  
-  - var linkOptions = { class: 'share-' + platform, target: '_blank', title: '分享到' + platform }
-  +link(shareUrl, '', linkOptions)
-    +icon('fab fa-' + platform)

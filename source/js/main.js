@@ -674,36 +674,6 @@ class tabs {
       });
   }
 
-  static expireAddListener() {
-    const { expire } = GLOBAL_CONFIG;
-    if (!expire) return;
-    const list = document.querySelectorAll(".post-meta-date time");
-    const post_date = list.length
-      ? list[list.length - 1]
-      : document.querySelector(".datetime");
-    if (!post_date) return;
-    const ex = Math.ceil(
-      (new Date().getTime() -
-        new Date(post_date.getAttribute("datetime")).getTime()) /
-        1000 /
-        60 /
-        60 /
-        24
-    );
-    if (expire.time > ex) return;
-    const ele = document.createElement("div");
-    ele.className = "expire";
-    ele.innerHTML = `<i class="solitude fas fa-circle-exclamation"></i>${
-      expire.text_prev
-    }${-(expire.time - ex)}${expire.text_next}`;
-    const articleContainer = document.querySelector(".article-container");
-    articleContainer.insertAdjacentElement(
-      expire.position === "top" ? "afterbegin" : "beforeend",
-      ele
-    );
-  }
-}
-
 const scrollFnToDo = () => {
   const { toc } = PAGE_CONFIG;
 
@@ -737,7 +707,7 @@ const forPostFn = () => {
 
 window.refreshFn = () => {
   const { is_home, is_page, page, is_post, ai_text } = PAGE_CONFIG;
-  const { runtime, lazyload, lightbox, randomlink, covercolor, expire } =
+  const { runtime, lazyload, lightbox, randomlink, covercolor } =
     GLOBAL_CONFIG;
   const timeSelector = ".datetime, .webinfo-item time, .post-meta-date time";
   document.body.setAttribute("data-type", page);
@@ -774,9 +744,6 @@ window.refreshFn = () => {
   if (is_post || is_page) {
     addHighlight();
     tabs.init();
-  }
-  if (is_post && expire) {
-    tabs.expireAddListener();
   }
   if (covercolor.enable) coverColor();
   if (PAGE_CONFIG.toc) toc.init();

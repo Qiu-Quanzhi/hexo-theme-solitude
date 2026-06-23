@@ -241,13 +241,6 @@ hexo.extend.filter.register(
         client: "",
         slot: "",
       },
-      expire: {
-        enable: false,
-        time: 30,
-        position: "top",
-        text_prev: "本文已于",
-        text_next: "天前过期，如果内容不符，请联系站长更新。",
-      },
       background: {
         enable: false,
         dark: "https://bu.dusays.com/2023/09/29/651685ce667d1.jpg",

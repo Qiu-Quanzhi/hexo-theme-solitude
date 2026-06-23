@@ -46,16 +46,6 @@
         }
     }
 
-    let expire = false
-    if (theme.expire.enable) {
-        expire = {
-            time: theme.expire.time,
-            position: theme.expire.position,
-            text_prev: theme.expire.text_prev,
-            text_next: theme.expire.text_next,
-        }
-    }
-
 script.
     const GLOBAL_CONFIG = {
         root: '!{config.root}',
@@ -82,5 +72,4 @@ script.
             enable: !{theme.post.covercolor.enable}
         },
         lightbox: '!{ theme.mediumZoom ? "mediumZoom" : (theme.fancybox ? "fancybox" : "null")}',
-        expire: !{expire ? JSON.stringify(expire) : false},
     };

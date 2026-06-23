@@ -325,17 +325,6 @@ font:
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
-# Article expiration
-# 文章过期
-expire:
-  enable: false
-  time: 30 # days
-  position: top # top / bottom
-  text_prev: "This article expired "
-  text_next: " day ago, if the content does not match, please contact the webmaster to update it."
-# --------------------------- end ---------------------------
-
-# --------------------------- start ---------------------------
 # Home page article configuration information
 # 首页文章配置信息
 index_post_list:

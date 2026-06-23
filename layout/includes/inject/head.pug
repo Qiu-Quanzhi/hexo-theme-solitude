@@ -29,16 +29,8 @@ script.
         'background:#ff9a9a ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff',
         'background:unset ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff')
 
-if theme.memorial.enable
-    script.
-        let mdate = "!{theme.memorial.date}";
-        mdate = (mdate.split(","));
-        let ndate = new Date();
-        for (let i of mdate) {
-            if (i === (ndate.getMonth()+1) + "-" + (ndate.getDate())) {
-                document.documentElement.classList.add('memorial');
-            }
-        }
+
+
 
 if theme.extends.head
     each item in theme.extends.head

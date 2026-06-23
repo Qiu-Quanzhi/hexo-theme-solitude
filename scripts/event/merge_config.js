@@ -230,17 +230,6 @@ hexo.extend.filter.register(
         favicon_32_32: "/img/pwa/favicon_32.ico",
         favicon_16_16: "/img/pwa/favicon_16.ico",
       },
-      google_adsense: {
-        enable: false,
-        auto_ads: false,
-        aside_card: false,
-        post_card: false,
-        post_content: false,
-        enable_page_level_ads: false,
-        js: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
-        client: "",
-        slot: "",
-      },
       background: {
         enable: false,
         dark: "https://bu.dusays.com/2023/09/29/651685ce667d1.jpg",

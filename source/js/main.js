@@ -673,6 +673,7 @@ class tabs {
         });
       });
   }
+}
 
 const scrollFnToDo = () => {
   const { toc } = PAGE_CONFIG;

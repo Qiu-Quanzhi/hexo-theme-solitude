@@ -48,13 +48,6 @@ if hexo-config('index_post_list.direction') == "column"
         .recent-post-info-top .article-title
           color var(--efu-theme)
 
-      if hexo-config('google_adsense.enable')
-        + .google-ads-warp
-          iframe
-            width: 100% !important
-            height: 100% !important
-            border: none !important
-
       .post_cover
         position relative
         transition 1s
@@ -278,8 +271,6 @@ else if hexo-config('index_post_list.direction') == "row"
         .recent-post-info-top .article-title
           color var(--efu-theme)
 
-      if hexo-config('google_adsense.enable')
-        + .google-ads-warp
           iframe
             width: 100% !important
             height: 100% !important

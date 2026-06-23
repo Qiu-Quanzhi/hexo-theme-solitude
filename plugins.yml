@@ -72,11 +72,6 @@ typeit_js:
   file: dist/index.umd.js
   version: 8.8.7
   other_name: typeit
-qrcode:
-  name: qrcodejs
-  file: qrcode.min.js
-  version: 1.0.0
-  other_name: qrcodejs
 color_thief:
   name: colorthief
   file: dist/color-thief.min.js

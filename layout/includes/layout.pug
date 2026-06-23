@@ -54,7 +54,4 @@ html(lang=config.language, data-theme="light")
         //- 注入的body内容
         include ./inject/body.pug
 
-        //- 音乐播放器
-        if theme.capsule.enable
-            +conditionalWrapper(theme.capsule.enable)
-                include ./widgets/third-party/music.pug
+

@@ -22,10 +22,6 @@ if theme.brevity.enable
                                         else
                                             img(src=img.url, alt=(img.alt || item.content || "图片暂无描述"))
 
-                        if item.aplayer
-                            .bber-music
-                                meting-js(server=item.aplayer.server type="song" id=item.aplayer.id mutex="true" preload="none" theme="var(--efu-main)" data-lrctype="0")
-
                         if item.video
                             .bber-video
                                 if item.video.player

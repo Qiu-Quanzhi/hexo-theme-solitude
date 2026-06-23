@@ -121,7 +121,6 @@ console:
   switch_darkmode: 昼夜切换
   switch_hideAside: 边栏显示控制
   switch_keyboard: 键盘快捷键
-  switch_music: 音乐开关
   archive_unit: 篇
   archive_all: 全部文章
 
@@ -142,8 +141,7 @@ cookies:
   tip: 查看本站为你的个人隐私做出的努力
   privacy: 本站如何保护你的隐私
 
-music:
-  hit: 音乐已暂停
+
 
 404:
   button: 返回首页

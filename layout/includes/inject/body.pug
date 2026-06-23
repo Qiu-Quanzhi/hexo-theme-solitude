@@ -60,13 +60,6 @@ div
   if theme.post.ai.enable
     script(defer src=url_for(theme.cdn.post_ai))
 
-  // Music player scripts
-  if theme.capsule.enable || theme.music.enable || theme.brevity.enable && theme.brevity.music
-    script.
-      var meting_api = '!{theme.meting_api}';
-    script(defer src=url_for(theme.cdn.aplayer_js))
-    script(defer src=url_for(theme.cdn.meting_js))
-
   // Cover color processing scripts
   if theme.post.covercolor.enable
     case theme.post.covercolor.mode

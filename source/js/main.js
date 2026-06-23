@@ -170,7 +170,6 @@ const handleThemeChange = (mode) => {
 const sco = {
   lastWittyWord: "",
   wasPageHidden: false,
-  musicPlaying: false,
   scrollTo(elementId) {
     const targetElement = document.getElementById(elementId);
     if (targetElement) {
@@ -178,39 +177,6 @@ const sco = {
         targetElement.getBoundingClientRect().top + window.pageYOffset - 80;
       window.scroll({ top: targetPosition, behavior: "smooth" });
     }
-  },
-  musicBind() {
-    const $music = document.querySelector("#nav-music meting-js");
-    if ($music && $music.aplayer) { 
-      this.isMusicBind = true;
-      $music.onclick = () => this.musicPlaying && this.musicToggle(true);
-      $music.aplayer.on('loadeddata', () =>{
-        coverColor(true);
-      })
-    }
-  },
-  musicToggle(isMeting = true) {
-    if (!this.isMusicBind) this.musicBind();
-    
-    const $music = document.querySelector("#nav-music");
-    const $meting = document.querySelector("#nav-music meting-js");
-    const $console = document.getElementById("consoleMusic");
-    
-    this.musicPlaying = !this.musicPlaying;
-    
-    $music.classList.toggle("playing", this.musicPlaying);
-    $music.classList.toggle("stretch", this.musicPlaying);
-    $console?.classList.toggle("on", this.musicPlaying);
-
-    if (isMeting && $meting) {
-      this.musicPlaying ? $meting.aplayer.play() : $meting.aplayer.pause();
-    }
-  },
-  musicSkipBack() {
-    document.querySelector("meting-js")?.aplayer?.skipBack();
-  },
-  musicSkipForward() {
-    document.querySelector("meting-js")?.aplayer?.skipForward();
   },
   switchHideAside() {
     const htmlClassList = document.documentElement.classList;
@@ -809,7 +775,6 @@ window.refreshFn = () => {
     sco.tagPageActive,
     sco.categoriesBarActive,
     sco.listenToPageInputPress,
-    sco.musicBind,
     sco.addNavBackgroundInit,
     sco.refreshWaterFall,
   ].forEach((fn) => fn());
@@ -840,7 +805,6 @@ window.refreshFn = () => {
   if (covercolor.enable) coverColor();
   if (PAGE_CONFIG.toc) toc.init();
   if (lure) tabs.lureAddListener();
-  page === "music" && initializeMusicPlayer();
   forPostFn();
 };
 

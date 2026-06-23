@@ -49,7 +49,6 @@ nav:
     # 我的:
     #   关于: /about/ || fas fa-user
     #   装备: /kit/ || fas fa-laptop
-    #   音乐馆: /music/ || fas fa-music
 
   # Right button
   # 右侧按钮
@@ -517,27 +516,6 @@ errorpage:
 
 # --------------------------- start ---------------------------
 # Meting API
-# This part of the content uses metingjs,
-# can only use NetEase Cloud Music, QQ Music and other music platforms supported by the mainland China region,
-# the subsequent consideration of the use of JSON files to store music information and customize the implementation of the third-party API does not depend on the page.
-# Music Page
-meting_api: "https://meting.qjqq.cn/?server=:server&type=:type&id=:id&auth=:auth&r=:r" # Custom API
-# --------------------------- end ---------------------------
-
-# --------------------------- start ---------------------------
-# Capsule music
-# 音乐胶囊
-capsule:
-  enable: false
-  # 歌单 ID / 单曲 ID
-  id: 5144842535
-  # 服务商：netease / qq / xiami / kugou / baidu
-  server: netease
-  # 类型：playlist / song
-  type: playlist
-  volume: 0.8
-# --------------------------- end ---------------------------
-
 # --------------------------- start ---------------------------
 # Quick Menu
 # Open with shift + ?
@@ -552,9 +530,6 @@ keyboard:
     # - name: 打开控制台
     #   key: A
     #   sco: showConsole
-    # - name: 播放/暂停音乐
-    #   key: M
-    #   sco: musicToggle
     # - name: 打开友链
     #   key: L
     #   url: /links/
@@ -709,35 +684,12 @@ pwa:
   favicon_16_16: /img/pwa/favicon_16.png # 16x16 icon
 # --------------------------- end ---------------------------
 
-# --------------------------- end ---------------------------
-
-
-# --------------------------- start ---------------------------
-# Music Page
-# 音乐馆
-music:
-  enable: false
-  # 歌单 ID / 单曲 ID
-  id: 5144842535
-  # 服务商：netease / qq / xiami / kugou / baidu
-  server: netease
-  # 类型：playlist / song
-  type: playlist
-  # 默认音量
-  volume: 0.8
-  # 是否自动播放
-  mutex: true
-  # 播放方式：list / random
-  order: list
-# --------------------------- end ---------------------------
-
 # --------------------------- start ---------------------------
 # Brevity Page
 # 即刻短文
 brevity:
   enable: false
   home_mini: false
-  music: false
   page: /essay/
   style: 1
   strip: 30
@@ -794,8 +746,6 @@ CDN:
   
   # 直接覆盖默认 CDN 链接（优先级最高）
   options:
-    # aplayer_css:
-    # aplayer_js:
     # busuanzi_js:
     # chart_js:
     # color_thief:
@@ -807,7 +757,6 @@ CDN:
     # lazyload:
     # medium_zoom:
     # mermaid_js:
-    # meting_js:
     # pace_js:
     # pjax:
     # qrcode:

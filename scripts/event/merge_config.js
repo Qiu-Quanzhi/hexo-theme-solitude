@@ -159,27 +159,9 @@ hexo.extend.filter.register(
       },
       brevity: {
         enable: false,
-        music: false,
         home_mini: false,
         style: 1,
         strip: 30,
-      },
-      meting_api:
-        "https://meting.qjqq.cn/?server=:server&type=:type&id=:id&auth=:auth&r=:r",
-      music: {
-        enable: false,
-        id: "8407304077",
-        server: "netease",
-        type: "playlist",
-        volume: 0.8,
-        mutex: true,
-      },
-      capsule: {
-        enable: false,
-        id: "8407304077",
-        server: "netease",
-        type: "playlist",
-        volume: 0.8,
       },
       keyboard: {
         enable: false,

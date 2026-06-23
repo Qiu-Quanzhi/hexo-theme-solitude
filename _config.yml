@@ -325,16 +325,6 @@ font:
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
-# Lure
-# When the user exits the page, modify the title
-# 当用户退出页面时，修改标题
-lure:
-  enable: false
-  jump: 404 Not Found
-  back: ヾ(≧∇≦*)ゝHey, hey, you fell for it.
-# --------------------------- end ---------------------------
-
-# --------------------------- start ---------------------------
 # Article expiration
 # 文章过期
 expire:

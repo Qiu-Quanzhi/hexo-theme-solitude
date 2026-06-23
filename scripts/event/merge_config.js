@@ -241,11 +241,6 @@ hexo.extend.filter.register(
         client: "",
         slot: "",
       },
-      lure: {
-        enable: false,
-        jump: "404 Not Found",
-        back: "ヾ(≧∇≦*)ゝ嘿嘿，上当了吧",
-      },
       expire: {
         enable: false,
         time: 30,

@@ -46,14 +46,6 @@
         }
     }
 
-    let lure = false
-    if (theme.lure.enable) {
-        lure = {
-            jump: theme.lure.jump,
-            back: theme.lure.back,
-        }
-    }
-
     let expire = false
     if (theme.expire.enable) {
         expire = {
@@ -90,6 +82,5 @@ script.
             enable: !{theme.post.covercolor.enable}
         },
         lightbox: '!{ theme.mediumZoom ? "mediumZoom" : (theme.fancybox ? "fancybox" : "null")}',
-        lure: !{lure ? JSON.stringify(lure) : false},
         expire: !{expire ? JSON.stringify(expire) : false},
     };

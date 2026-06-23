@@ -674,21 +674,6 @@ class tabs {
       });
   }
 
-  static lureAddListener() {
-    if (!GLOBAL_CONFIG.lure) return;
-    const title = document.title;
-    document.addEventListener("visibilitychange", () => {
-      const { lure } = GLOBAL_CONFIG;
-      document.title =
-        document.visibilityState === "hidden" ? lure.jump : lure.back;
-      if (document.visibilityState === "visible") {
-        setTimeout(() => {
-          document.title = title;
-        }, 2000);
-      }
-    });
-  }
-
   static expireAddListener() {
     const { expire } = GLOBAL_CONFIG;
     if (!expire) return;
@@ -752,7 +737,7 @@ const forPostFn = () => {
 
 window.refreshFn = () => {
   const { is_home, is_page, page, is_post, ai_text } = PAGE_CONFIG;
-  const { runtime, lazyload, lightbox, randomlink, covercolor, lure, expire } =
+  const { runtime, lazyload, lightbox, randomlink, covercolor, expire } =
     GLOBAL_CONFIG;
   const timeSelector = ".datetime, .webinfo-item time, .post-meta-date time";
   document.body.setAttribute("data-type", page);
@@ -795,7 +780,6 @@ window.refreshFn = () => {
   }
   if (covercolor.enable) coverColor();
   if (PAGE_CONFIG.toc) toc.init();
-  if (lure) tabs.lureAddListener();
   forPostFn();
 };
 

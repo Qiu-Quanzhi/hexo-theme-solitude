@@ -12,10 +12,6 @@ include includes/mixins/common.pug
 mixin pageContent()
   #page
     case page.type
-      when 'message'
-        != partial('includes/page/message', {}, {cache: true})
-      when 'recentcomment'
-        != partial('includes/page/recentcomment', {}, {cache: true})
       when 'banner'
         include includes/widgets/page/banner
         if page.container
@@ -40,10 +36,6 @@ mixin pageContent()
             include includes/page/music
           default
             include includes/page/default
-    
-    //- 评论区域
-    if page.comment
-      include includes/widgets/third-party/comments/comment
 
 block content
   main.layout#content-inner(class=page.aside ? '' : 'hide-aside')

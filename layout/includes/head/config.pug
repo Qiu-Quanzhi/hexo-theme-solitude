@@ -25,15 +25,6 @@
     const witty_words = theme.aside?.my_card?.witty_words?.map(item => `"${item}"`) || [];
     const [hello_prefix, hello_back] = [_p('aside.hello'), _p('aside.back')];
 
-    let comment = false
-
-    if (theme.comment.use && theme.comment.commentBarrage) {
-        comment = {
-            avatar: theme.comment.avatar,
-            commentBarrage: theme.comment.commentBarrage,
-        }
-    }
-
     let copyright = false;
     if (theme.copy.enable && theme.copy.copyright.enable) {
         copyright = JSON.stringify({
@@ -78,12 +69,6 @@
         }
     }
 
-    if (theme.comment.use && theme.comment.commentBarrage) {
-        lang.barrage = {
-            title: _p('commentBarrage.title'),
-        }
-    }
-
     let rightMenu = false
     if (theme.right_menu.enable) {
         rightMenu = {
@@ -97,12 +82,6 @@
             rightMenu.music = {
                 start: _p('right_menu.music.start'),
                 stop: _p('right_menu.music.stop'),
-            }
-        }
-        if (theme.comment.use && theme.comment.commentBarrage) {
-            rightMenu.barrage = {
-                open: _p('right_menu.barrage.open'),
-                close: _p('right_menu.barrage.close')
             }
         }
         if (theme.right_menu.ctrlOriginalMenu)
@@ -160,15 +139,10 @@ script.
                 goodnight: "!{theme.aside.my_card.state.goodnight}",
             },
             witty_words: [!{witty_words}],
-            witty_comment: {
-                prefix: '!{hello_prefix}',
-                back: '!{hello_back}',
-            },
         },
         covercolor: {
             enable: !{theme.post.covercolor.enable}
         },
-        comment: !{comment ? JSON.stringify(comment) : false},
         lightbox: '!{ theme.mediumZoom ? "mediumZoom" : (theme.fancybox ? "fancybox" : "null")}',
         right_menu: !{rightMenu ? JSON.stringify(rightMenu) : false},
         lure: !{lure ? JSON.stringify(lure) : false},

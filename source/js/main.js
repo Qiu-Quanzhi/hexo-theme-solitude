@@ -91,7 +91,6 @@ const percent = () => {
   const isNearEnd =
     window.scrollY + docEl.clientHeight >=
     (
-      document.getElementById("post-comment") ||
       document.getElementById("footer")
     ).offsetTop;
 
@@ -117,25 +116,6 @@ const showTodayCard = () => {
   topGroup?.addEventListener("mouseleave", () => el?.classList.remove("hide"));
 };
 
-const initObserver = () => {
-  const commentElement = document.getElementById("post-comment");
-  const paginationElement = document.getElementById("pagination");
-  const commentBarrageElement = document.querySelector(".comment-barrage");
-
-  if (commentElement && paginationElement) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        paginationElement.classList.toggle("show-window", entry.isIntersecting);
-        if (GLOBAL_CONFIG.comment.commentBarrage) {
-          commentBarrageElement.style.bottom = entry.isIntersecting
-            ? "-200px"
-            : "0px";
-        }
-      });
-    });
-    observer.observe(commentElement);
-  }
-};
 
 const addCopyright = () => {
   if (!GLOBAL_CONFIG.copyright) return;
@@ -241,20 +221,6 @@ const sco = {
   musicSkipForward() {
     document.querySelector("meting-js")?.aplayer?.skipForward();
   },
-  switchCommentBarrage() {
-    const commentBarrageElement = document.querySelector(".comment-barrage");
-    const consoleCommentBarrage = document.querySelector(
-      "#consoleCommentBarrage"
-    );
-    if (!commentBarrageElement) return;
-
-    const isDisplayed =
-      window.getComputedStyle(commentBarrageElement).display === "flex";
-    commentBarrageElement.style.display = isDisplayed ? "none" : "flex";
-    consoleCommentBarrage?.classList.toggle("on", !isDisplayed);
-    utils.saveToLocal.set("commentBarrageSwitch", !isDisplayed, 0.2);
-    rm?.menuItems.barrage && rm.barrage(isDisplayed);
-  },
   switchHideAside() {
     const htmlClassList = document.documentElement.classList;
     const consoleHideAside = document.querySelector("#consoleHideAside");
@@ -340,30 +306,6 @@ const sco = {
         GLOBAL_CONFIG.lang.day;
     }
   },
-  toTalk(txt) {
-    const inputs = [
-      "#wl-edit",
-      ".el-textarea__inner",
-      "#veditor",
-      ".atk-textarea",
-    ];
-    inputs.forEach((selector) => {
-      const el = document.querySelector(selector);
-      if (el) {
-        el.dispatchEvent(
-          new Event("input", { bubble: true, cancelable: true })
-        );
-        el.value = "> " + txt.replace(/\n/g, "\n> ") + "\n\n";
-        utils.scrollToDest(
-          utils.getEleTop(document.getElementById("post-comment")),
-          300
-        );
-        el.focus();
-        el.setSelectionRange(-1, -1);
-      }
-    });
-    utils.snackbarShow(GLOBAL_CONFIG.lang.totalk, false, 2000);
-  },
   initbbtalk() {
     const bberTalkElement = document.querySelector("#bber-talk");
     if (bberTalkElement) {
@@ -392,46 +334,18 @@ const sco = {
         }
       });
   },
-  scrollToComment: () =>
-    utils.scrollToDest(
-      utils.getEleTop(document.getElementById("post-comment")),
-      300
-    ),
   setTimeState() {
     const el = document.getElementById("sayhi");
     if (el) {
       const hours = new Date().getHours();
       const lang = GLOBAL_CONFIG.aside.state;
 
-      const localData = getLocalData([
-        "twikoo",
-        "WALINE_USER_META",
-        "WALINE_USER",
-        "_v_Cache_Meta",
-        "ArtalkUser",
-      ]);
-
-      function getLocalData(keys) {
-        for (let key of keys) {
-          const data = localStorage.getItem(key);
-          if (data) {
-            return JSON.parse(data);
-          }
-        }
-        return null;
-      }
-      const nick = localData ? localData.nick || localData.display_name : null;
-
-      const prefix = this.wasPageHidden
-        ? GLOBAL_CONFIG.aside.witty_comment.back + nick
-        : GLOBAL_CONFIG.aside.witty_comment.prefix + nick;
-
       const greetings = [
-        { start: 0, end: 5, text: nick ? prefix : lang.goodnight },
-        { start: 6, end: 10, text: nick ? prefix : lang.morning },
-        { start: 11, end: 14, text: nick ? prefix : lang.noon },
-        { start: 15, end: 18, text: nick ? prefix : lang.afternoon },
-        { start: 19, end: 24, text: nick ? prefix : lang.night },
+        { start: 0, end: 5, text: lang.goodnight },
+        { start: 6, end: 10, text: lang.morning },
+        { start: 11, end: 14, text: lang.noon },
+        { start: 15, end: 18, text: lang.afternoon },
+        { start: 19, end: 24, text: lang.night },
       ];
       const greeting = greetings.find(
         (g) => hours >= g.start && hours <= g.end
@@ -592,20 +506,6 @@ const sco = {
       item.textContent = utils.diffDate(timeVal, true);
       item.style.display = "inline";
     });
-  },
-  switchComments() {
-    const switchBtn = document.getElementById("switch-btn");
-    if (!switchBtn) return;
-    let switchDone = false;
-    const commentContainer = document.getElementById("post-comment");
-    const handleSwitchBtn = () => {
-      commentContainer.classList.toggle("move");
-      if (!switchDone && typeof loadTwoComment === "function") {
-        switchDone = true;
-        loadTwoComment();
-      }
-    };
-    utils.addEventListenerPjax(switchBtn, "click", handleSwitchBtn);
   },
   homeTypeit() {
     if (typeof home_subtitle === "undefined") return;
@@ -936,14 +836,10 @@ window.refreshFn = () => {
       ai.init();
     }
   }
-  sco.switchComments();
-  initObserver();
   if (is_home) {
     showTodayCard();
     sco.homeTypeit();
   }
-  typeof updatePostsBasedOnComments === "function" &&
-    updatePostsBasedOnComments();
   if (is_post || is_page) {
     addHighlight();
     tabs.init();

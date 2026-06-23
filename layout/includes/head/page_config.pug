@@ -7,7 +7,6 @@ script#config-diff.
         is_home: !{is_home()},
         page: '!{page.type}',
         toc: !{showToc},
-        comment: !{!!page.comment},
         ai_text: !{is_post && theme.post.ai.enable && page.ai_text ? "'"+ page.ai_text+"'" : false},
         color: !{page.color ? "'"+ page.color+"'" : false},
     }

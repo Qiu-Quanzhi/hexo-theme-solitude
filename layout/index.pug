@@ -23,9 +23,6 @@ mixin categoryBar()
 //- 文章列表组件
 mixin postsList()
   .recent-posts#recent-posts
-    if theme.comment.hot_tip.enable
-      include ./includes/widgets/third-party/hot/index.pug
-    
     each post, index in page.posts.sort("-sticky" || "-date").data
       include ./includes/widgets/home/postList
 

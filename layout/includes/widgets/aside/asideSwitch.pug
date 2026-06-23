@@ -14,8 +14,6 @@ case item
     include ./asideAllInfo.pug
   when 'ads'
     include ./asideAdsense.pug
-  when 'newest_comment'
-    include ./asideNewstComments.pug
   default
     //- 处理自定义组件
     - const custom = site.data && site.data.aside && site.data.aside.find((i) => i.name === item)

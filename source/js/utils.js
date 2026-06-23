@@ -186,22 +186,6 @@
       if (minuteCount >= 1) return `${minuteCount} ${time.min}`;
       return time.just;
     },
-    loadComment: (dom, callback) => {
-      const observerItem =
-        "IntersectionObserver" in window
-          ? new IntersectionObserver(
-              (entries) => {
-                if (entries[0].isIntersecting) {
-                  callback();
-                  observerItem.disconnect();
-                }
-              },
-              { threshold: [0] }
-            )
-          : null;
-
-      observerItem ? observerItem.observe(dom) : callback();
-    },
     escapeHtml: (unsafe) =>
       unsafe.replace(
         /[&<"']/g,

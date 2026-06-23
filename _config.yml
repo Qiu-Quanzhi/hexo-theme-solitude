@@ -109,8 +109,8 @@ hometop:
 # Aside
 # 侧边栏
 aside:
-  # Values: about (info card), newestPost (latest article), allInfo (website information), newest_comment (latest comment)
-  # 值: about(信息卡), newestPost(最新文章), allInfo(网站信息), newest_comment(最新评论)
+  # Values: about (info card), newestPost (latest article), allInfo (website information)
+  # 值: about(信息卡), newestPost(最新文章), allInfo(网站信息)
 
   # Sticky: Fixed position / noSticky: Not fixed position
   # Sticky: 固定位置 / noSticky: 不固定位置
@@ -272,9 +272,6 @@ post:
     readtime: false
     # pv
     pv: false
-    # Comment count
-    # 评论数
-    comment: false
   # Reward
   # 打赏
   award:
@@ -405,9 +402,6 @@ related_post:
 # 自定义右键菜单
 right_menu:
   enable: false
-  # Whether to display the hot comment switch.
-  # 是否显示热门评论开关
-  commentBarrage: false
   # Whether to display the browser's context menu when hold Ctrl key.
   # 是否在按住 Ctrl 键时显示浏览器右键菜单
   ctrlOriginalMenu: false
@@ -468,13 +462,6 @@ typeit: false
 # 控制台
 console:
   enable: false
-  # Recent comments
-  # 最新评论
-  recentComment:
-    enable: false
-    # Cache time 1: 1 day / .5 : half a day
-    # 缓存时间 1: 1天 / .5 : 半天
-    storage: .2
   card:
     # Tags
     # 标签
@@ -750,76 +737,6 @@ pwa:
   favicon_16_16: /img/pwa/favicon_16.png # 16x16 icon
 # --------------------------- end ---------------------------
 
-# --------------------------- start ---------------------------
-# Comment
-# 评论
-comment:
-  # Which commenting system to use(e.g. waline or waline,twikoo)
-  # 使用哪个评论系统（例如： waline or waline,twikoo）
-  use: # waline, twikoo, valine, artalk, giscus # Up to two comment systems can be turned on at the same time
-  # Whether to display the hot comment switch.
-  # 是否显示热门评论开关
-  commentBarrage: false
-  # Lazy load
-  # 懒加载评论区
-  lazyload: false
-  # Whether to display the comment count
-  # 显示评论数
-  count: false
-  # Sidebar displays the total number of comments
-  # Sidebar 显示总评论数
-  sidebar: false
-  # PV
-  pv: false
-  # Avatar
-  avatar: https://gravatar.com/avatar
-  # Hot comment tips
-  # 热评提示
-  hot_tip:
-    enable: false
-    # Number of hot comments
-    count: 3
-  # recent comments(⚠️ Comments need to be configured first.)
-  # 最新评论(⚠️ 需要先配置评论)
-  newest_comment:
-    enable: true
-    storage: .5 # 缓存时间 1: 1天 / .5 : 半天 / Cache time 1: 1 day .5 : half a day
-    limit: 5 # 评论数 / Number of comments
-# Twikoo: https://solitude.js.org/configuration/comment/twikoo
-twikoo: # https://twikoo.js.org/
-  envId: # url: https://twikoo.sondy.top/
-  region: # Environment locale, default is ap-shanghai, Tencent cloud environment fill ap-shanghai or ap-guangzhou; Vercel environment do not fill the.
-  style: true # Use custom styles when turned on
-  accessToken: # AccessToken
-  option: # twikoo option
-# Waline: https://solitude.js.org/configuration/comment/waline
-waline: # https://waline.js.org/
-  envId: # url: https://waline.wzsco.top
-  pageview: false # Whether to enable page access statistics
-  option: # waline configuration item
-# Valine: https://solitude.js.org/configuration/comment/valine
-valine:
-  appId: # leancloud application app id
-  appKey: # leancloud application app key
-  serverURLs: # This configuration is suitable for domestic custom domain name users, overseas version will be automatically detected (no need to manually fill in)
-  avatar: # https://valine.js.org/avatar.html
-  visitor: false
-  style: true # Use custom styles when turned on
-  option: # options list
-# Artalk: https://solitude.js.org/configuration/comment/artalk
-artalk:
-  server: # server url
-  site: # site name
-  option: # options
-# Giscus: https://solitude.js.org/configuration/comment/giscus
-giscus:
-  repo: # GitHub repository name
-  repo_id: # GitHub repository ID
-  category_id: # GitHub repository category ID
-  theme:
-    light: light
-    dark: dark
-  option:
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
@@ -869,18 +786,6 @@ music:
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
-# Danmaku Page
-# 弹幕留言页面
-envelope:
-  enable: false
-  line: 10 # 显示行数
-  speed: 20 # 播放速度
-  hover: true # 鼠标悬停暂停
-  loop: true # 循环播放
-  page: /message/ # 留言板页面 / message board page
-# --------------------------- end ---------------------------
-
-# --------------------------- start ---------------------------
 # Brevity Page
 # 即刻短文
 brevity:
@@ -890,16 +795,6 @@ brevity:
   page: /essay/
   style: 1
   strip: 30
-# --------------------------- end ---------------------------
-
-# --------------------------- start ---------------------------
-# Recent comments Page
-# 最近评论页面
-recent_comments:
-  enable: false
-  limit: 50 # ⚠️waline 仅支持最大50条评论 / ⚠️waline only supports a maximum of 50 comments
-  cache: 0.2 # 1 = 1天 / 1 = 1 day
-  page: /recentcomments/ # 最近评论页面 / recent comments page
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------

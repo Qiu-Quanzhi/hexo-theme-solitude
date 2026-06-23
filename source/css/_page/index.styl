@@ -6,9 +6,6 @@
 
 @import "error.styl"
 
-if hexo-config('recent_comments.enable') || (hexo-config('console.enable') && hexo-config('console.recentComment.enable'))
-  @import "recentcomment.styl"
-
 if hexo-config('brevity.enable')
   @import "brevity.styl"
 
@@ -25,8 +22,6 @@ if hexo-config('google_adsense.enable')
 @import "_about/about"
 
 @import "other"
-
-@import "message"
 
 #page h1.page-title
   margin .4rem 1rem 1rem

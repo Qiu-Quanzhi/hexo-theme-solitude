@@ -48,41 +48,6 @@ mixin card(options)
       if block
         block
 
-//- 评论系统选择器
-mixin commentSystem(systemName, containerId)
-  case systemName
-    when 'Valine'
-      div(id=containerId || 'vcomment', class='vcomment')
-    when 'Twikoo'
-      div(id=containerId || 'twikoo-wrap')
-    when 'Waline'  
-      div(id=containerId || 'waline-wrap')
-    when 'Artalk'
-      div(id=containerId || 'artalk-wrap')
-    when 'Giscus'
-      div(id=containerId || 'giscus-wrap')
-
-//- 评论计数器
-mixin commentCount(systemName, options)
-  - options = options || {}
-  case systemName
-    when 'Twikoo'
-      span.twikoo-count
-        +icon('fas fa-spinner fa-spin')
-    when 'Waline'
-      span.waline-comment-count
-        +icon('fas fa-spinner fa-spin')
-    when 'Valine'
-      span.valine-comment-count(
-        data-xid=url_for(page.path)
-        itemprop="commentCount"
-      )
-        +icon('fas fa-spinner fa-spin')
-    when 'Artalk'
-      span.artalk-comment-count
-    when 'Giscus'
-      span.giscus-count
-
 //- 文章元信息
 mixin postMeta(post, options)
   - options = options || {}

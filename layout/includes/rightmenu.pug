@@ -17,10 +17,6 @@ div#rightMenu
         div.rightMenu-item#menu-pastetext
             i.solitude.fas.fa-clipboard
             span= _p('right_menu.paste')
-        if theme.comment.use
-            div.rightMenu-item#menu-commenttext
-                i.solitude.fas.fa-comment-medical
-                span= _p('right_menu.comment')
         div.rightMenu-item#menu-newwindow
             i.solitude.far.fa-window-maximize
             span= _p('right_menu.new')
@@ -57,10 +53,6 @@ div#rightMenu
                     i.solitude(class=item.icon)
                     span= item.name
     div.rightMenu-group.rightMenu-line.rightMenuOther
-        if theme.right_menu.commentBarrage && theme.comment.use && theme.comment.commentBarrage
-            div.rightMenu-item#menu-commentBarrage(onclick="sco.switchCommentBarrage()")
-                i.solitude.fas.fa-comment
-                span.menu-commentBarrage-text= _p('right_menu.barrage.close')
         div.rightMenu-item#menu-darkmode(onclick="sco.switchDarkMode()")
             i.solitude.fas.fa-circle-half-stroke
             case theme.display_mode.type

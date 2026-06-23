@@ -55,11 +55,6 @@ hexo.extend.filter.register(
           witty_words: [],
           information: null,
         },
-        newest_comment: {
-          enable: false,
-          storage: 0.5,
-          limit: 5,
-        },
         toc: { post: true, page: false, vague: true },
         tags: { enable: true, limit: 20, highlight: false, list: [] },
         siteinfo: {
@@ -106,7 +101,6 @@ hexo.extend.filter.register(
           readtime: false,
           pv: false,
           uv: false,
-          comment: false,
         },
         award: {
           enable: false,
@@ -169,20 +163,6 @@ hexo.extend.filter.register(
         home_mini: false,
         style: 1,
         strip: 30,
-      },
-      recent_comments: {
-        enable: false,
-        limit: 50,
-        console: false,
-        page: "/recentcomments/",
-      },
-      envelope: {
-        enable: false,
-        line: 10,
-        speed: 20,
-        hover: true,
-        loop: true,
-        page: "/message/",
       },
       meting_api:
         "https://meting.qjqq.cn/?server=:server&type=:type&id=:id&auth=:auth&r=:r",
@@ -266,49 +246,8 @@ hexo.extend.filter.register(
         per_page: false,
         copytex: false,
       },
-      comment: {
-        use: null,
-        commentBarrage: false,
-        lazyload: false,
-        count: false,
-        avatar: "https://gravatar.com/avatar",
-        hot_tip: {
-          enable: true,
-          count: 3,
-        },
-      },
-      twikoo: {
-        envId: "your envId",
-        region: null,
-        style: true,
-        accessToken: null,
-        option: null,
-      },
-      waline: {
-        envId: "your envId",
-        pageview: true,
-        option: null,
-      },
-      valine: {
-        appId: "your appId",
-        appKey: "your appKey",
-        serverURLs: "your serverURLs",
-        avatar: "monsterid",
-        visitor: false,
-        style: true,
-        option: null,
-      },
-      artalk: {
-        server: "your server",
-        site: "your site-name",
-        option: null,
-      },
       console: {
         enable: false,
-        recentComment: {
-          enable: false,
-          storage: 0.2,
-        },
         card: {
           tags: true,
           archive: true,
@@ -350,7 +289,6 @@ hexo.extend.filter.register(
       },
       right_menu: {
         enable: false,
-        commentBarrage: false,
         ctrlOriginalMenu: false,
         custom_list: [],
       },

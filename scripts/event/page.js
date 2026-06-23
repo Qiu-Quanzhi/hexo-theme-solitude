@@ -5,7 +5,6 @@ hexo.extend.generator.register('404', function (locals) {
     layout: ['404'],
     data: {
       type: '404',
-      comment: false,
     }
   }
 })
@@ -16,7 +15,6 @@ hexo.extend.generator.register('tags', function(locals) {
     layout: ['page'],
     data: {
       type: 'tags',
-      comment: false,
     }
   };
 });
@@ -27,7 +25,6 @@ hexo.extend.generator.register('categories', function(locals) {
     layout: ['page'],
     data: {
       type: 'categories',
-      comment: false,
     }
   };
 });

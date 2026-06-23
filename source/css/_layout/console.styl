@@ -17,15 +17,6 @@
   &.show .close-btn i
     transform rotate(0)
 
-  if hexo-config('recent_comments.enable') && hexo-config('recent_comments.console')
-    .recent-comment-more
-      margin-left auto
-      display flex
-      align-items center
-
-      &:hover
-        color var(--efu-main)
-
   .console-card-group
     display flex
     justify-content center
@@ -299,17 +290,7 @@
             font-size 14px
             font-weight 700
 
-  #card-newest-comments
-    height 100%
-
   #consoleMusic
-    +maxWidth1300()
-      display none
-
-    +maxHeight800()
-      display none
-
-  #consoleCommentBarrage
     +maxWidth1300()
       display none
 

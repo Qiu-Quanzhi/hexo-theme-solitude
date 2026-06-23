@@ -24,13 +24,11 @@ const rm = {
         top: document.getElementById("menu-top"),
         copy: document.getElementById("menu-copytext"),
         paste: document.getElementById("menu-pastetext"),
-        comment: document.getElementById("menu-commenttext"),
         new: document.getElementById("menu-newwindow"),
         copyLink: document.getElementById("menu-copylink"),
         copyImg: document.getElementById("menu-copyimg"),
         downloadImg: document.getElementById("menu-downloadimg"),
         search: document.getElementById("menu-search"),
-        barrage: document.getElementById("menu-commentBarrage"),
         mode: document.getElementById("menu-darkmode"),
         music: [
             document.getElementById("menu-music-toggle"),
@@ -85,10 +83,6 @@ const rm = {
         document.querySelector(".menu-darkmode-text").textContent = darkmode ? GLOBAL_CONFIG.right_menu.mode.light : GLOBAL_CONFIG.right_menu.mode.dark;
         this.hideRightMenu();
     },
-    barrage(enable) {
-        document.querySelector(".menu-commentBarrage-text").textContent = enable ? GLOBAL_CONFIG.right_menu.barrage.open : GLOBAL_CONFIG.right_menu.barrage.close;
-        this.hideRightMenu();
-    },
 };
 
 function stopMaskScroll() {
@@ -121,7 +115,6 @@ window.oncontextmenu = (ele) => {
     const display = !!(selectTextNow && window.getSelection()) || !!link || !!src || (tagName === "input" || tagName === "textarea") || cls.match(/aplayer/);
 
     rm.menuItems.copy.style.display = selectTextNow && window.getSelection() ? "flex" : "none";
-    GLOBAL_CONFIG.comment && (rm.menuItems.comment.style.display = selectTextNow && window.getSelection() ? "flex" : "none");
     rm.menuItems.search && (rm.menuItems.search.style.display = selectTextNow && window.getSelection() ? "flex" : "none");
 
     rm.menuItems.new.style.display = link ? "flex" : "none";
@@ -187,12 +180,7 @@ window.oncontextmenu = (ele) => {
         rm.copyText(selectTextNow);
     });
 
-    if (utils.saveToLocal.get("commentBarrageSwitch") !== null) {
-        rm.menuItems.barrage && rm.barrage(!utils.saveToLocal.get("commentBarrageSwitch"));
-    }
-
     addEventListener(rm.menuItems.paste, "click", () => rm.pasteText() && rm.hideRightMenu());
-    GLOBAL_CONFIG.comment && addEventListener(rm.menuItems.comment, "click", () => rm.hideRightMenu() || sco.toTalk(selectTextNow));
     addEventListener(rm.menuItems.new, "click", () => window.open(rm.domhref) && rm.hideRightMenu());
     addEventListener(rm.menuItems.downloadImg, "click", () => rm.downloadImage() && rm.hideRightMenu());
     addEventListener(rm.menuItems.copyImg, "click", () => rm.copyImage() && rm.hideRightMenu());

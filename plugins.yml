@@ -20,32 +20,6 @@ pjax:
   name: pjax
   file: pjax.min.js
   version: 0.2.8
-twikoo:
-  name: twikoo
-  file: dist/twikoo.all.min.js
-  version: 1.6.41
-waline_js:
-  name: "@waline/client"
-  file: dist/waline.js
-  other_name: waline
-  version: 3.4.3
-waline_css:
-  name: "@waline/client"
-  file: dist/waline.css
-  version: 3.4.3
-  other_name: waline
-valine:
-  name: valine
-  file: dist/Valine.min.js
-  version: 1.5.3
-artalk_css:
-  name: artalk
-  file: dist/Artalk.css
-  version: 2.9.1
-artalk_js:
-  name: artalk
-  file: dist/Artalk.js
-  version: 2.9.1
 katex:
   name: katex
   file: dist/katex.min.css
@@ -128,10 +102,6 @@ typeit_js:
   file: dist/index.umd.js
   version: 8.8.7
   other_name: typeit
-blueimp_md5:
-  name: blueimp-md5
-  file: js/md5.min.js
-  version: 2.19.0
 qrcode:
   name: qrcodejs
   file: qrcode.min.js

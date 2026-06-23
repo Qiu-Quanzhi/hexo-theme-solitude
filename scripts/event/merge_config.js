@@ -163,10 +163,6 @@ hexo.extend.filter.register(
         style: 1,
         strip: 30,
       },
-      keyboard: {
-        enable: false,
-        list: [],
-      },
       lazyload: {
         enable: false,
         field: "site",

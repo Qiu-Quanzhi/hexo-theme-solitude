@@ -186,15 +186,6 @@ const sco = {
     htmlClassList.toggle("hide-aside");
     consoleHideAside.classList.toggle("on", !isHideAside);
   },
-  switchKeyboard() {
-    this.sco_keyboards = !this.sco_keyboards;
-    const consoleKeyboard = document.querySelector("#consoleKeyboard");
-    const keyboardFunction = this.sco_keyboards ? openKeyboard : closeKeyboard;
-    consoleKeyboard?.classList.toggle("on", this.sco_keyboards);
-    keyboardFunction();
-    localStorage.setItem("keyboard", this.sco_keyboards);
-    document.getElementById("keyboard-tips")?.classList.remove("show");
-  },
   initConsoleState() {
     const consoleHideAside = document.querySelector("#consoleHideAside");
     if (!consoleHideAside) return;

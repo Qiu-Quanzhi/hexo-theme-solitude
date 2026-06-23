@@ -120,7 +120,6 @@ console:
   tag_title: 寻找感兴趣的领域
   switch_darkmode: 昼夜切换
   switch_hideAside: 边栏显示控制
-  switch_keyboard: 键盘快捷键
   archive_unit: 篇
   archive_all: 全部文章
 
@@ -152,8 +151,7 @@ link:
   random: 点击前往按钮进入随机一个友链，不保证跳转网站的安全性和可用性。本次随机到的是本站友链：⌈ ${name} ⌋
   to: 前往
 
-keyboard:
-  title: 博客快捷键
+
 
 f12: 开发者模式已打开，请遵循GPL协议。
 

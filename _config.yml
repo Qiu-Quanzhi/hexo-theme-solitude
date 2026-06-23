@@ -515,27 +515,6 @@ errorpage:
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
-# Meting API
-# --------------------------- start ---------------------------
-# Quick Menu
-# Open with shift + ?
-# 快捷菜单
-# 使用 shift + ? 打开
-keyboard:
-  enable: false
-  list:
-    # - name: 关闭快捷菜单
-    #   key: K
-    #   func: keyboard
-    # - name: 打开控制台
-    #   key: A
-    #   sco: showConsole
-    # - name: 打开友链
-    #   key: L
-    #   url: /links/
-# --------------------------- end ---------------------------
-
-# --------------------------- start ---------------------------
 # Lazyload
 # 懒加载
 lazyload:

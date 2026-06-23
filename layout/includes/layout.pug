@@ -29,11 +29,8 @@ html(lang=config.language, data-theme="light")
         //- 侧边栏
         include ./sidebar.pug
 
-        //- 键盘快捷键
-        if theme.keyboard.enable
-            +conditionalWrapper(theme.keyboard.enable)
-                include ./keyboard.pug
-        
+
+
         //- 右侧工具栏
         if theme.rightside.enable
             +conditionalWrapper(theme.rightside.enable)

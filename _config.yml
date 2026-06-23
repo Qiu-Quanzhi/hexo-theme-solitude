@@ -585,20 +585,6 @@ extends:
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
-# PWA
-# Progressive Web App
-pwa:
-  enable: false
-  manifest: /manifest.json # manifest.json
-  theme_color: "#006a73" # Theme color
-  mask_icon: /img/pwa/favicon.png # Mask icon
-  apple_touch_icon: /img/pwa/favicon.png # Apple touch icon
-  bookmark_icon: /img/pwa/favicon.png # Bookmark icon
-  favicon_32_32: /img/pwa/favicon_32.png # 32x32 icon
-  favicon_16_16: /img/pwa/favicon_16.png # 16x16 icon
-# --------------------------- end ---------------------------
-
-# --------------------------- start ---------------------------
 # Brevity Page
 # 即刻短文
 brevity:

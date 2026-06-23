@@ -220,16 +220,6 @@ hexo.extend.filter.register(
         head: [],
         body: [],
       },
-      pwa: {
-        enable: false,
-        manifest: "/manifest.json",
-        theme_color: "#006a73",
-        mask_icon: "/img/pwa/favicon.ico",
-        apple_touch_icon: "/img/pwa/favicon.ico",
-        bookmark_icon: "/img/pwa/favicon.ico",
-        favicon_32_32: "/img/pwa/favicon_32.ico",
-        favicon_16_16: "/img/pwa/favicon_16.ico",
-      },
       background: {
         enable: false,
         dark: "https://bu.dusays.com/2023/09/29/651685ce667d1.jpg",

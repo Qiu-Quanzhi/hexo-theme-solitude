@@ -90,11 +90,6 @@ div
   if theme.loading.pace
     include ../mixins/pace.pug
 
-  // Search functionality
-  if theme.search.enable && theme.search.type === "algolia"
-    script(defer src=url_for(theme.cdn.instantsearch))
-    script(defer src=url_for(theme.cdn.algolia_search))
-
   if theme.extends.body
     each item in theme.extends.body
       != item

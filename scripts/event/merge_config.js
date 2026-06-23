@@ -215,22 +215,6 @@ hexo.extend.filter.register(
       },
       wordcount: false,
       busuanzi: false,
-      search: {
-        enable: false,
-        type: "local",
-        tags: [],
-        algolia: null,
-        local: {
-          preload: false,
-          CDN: null,
-        },
-        docsearch: {
-          appId: null,
-          apiKey: null,
-          indexName: null,
-          option: null,
-        },
-      },
       rightside: {
         enable: false,
       },

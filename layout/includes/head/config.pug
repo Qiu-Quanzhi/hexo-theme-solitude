@@ -1,27 +1,4 @@
 -
-    if (theme.search.enable) {
-        var localSearch = 'undefined';
-        var algolia = 'undefined';
-        switch (theme.search.type) {
-            case 'local':
-                localSearch = JSON.stringify({
-                    preload: theme.search.local.preload,
-                    path: theme?.search?.local?.CDN || '/search.xml'
-                });
-                break;
-            case 'algolia':
-                algolia = JSON.stringify({
-                    appId: config.algolia.appId || config.algolia.applicationID,
-                    apiKey: config.algolia.apiKey,
-                    indexName: config.algolia.indexName,
-                    hits: {
-                        per_page: theme?.search?.algolia?.hits?.per_page || 10
-                    }
-                });
-                break;
-        }
-    }
-
     const witty_words = theme.aside?.my_card?.witty_words?.map(item => `"${item}"`) || [];
     const [hello_prefix, hello_back] = [_p('aside.hello'), _p('aside.back')];
 
@@ -59,16 +36,6 @@
         totalk: _p('totalk')
     }
 
-    if (theme.search.enable) {
-        lang.search = {
-            empty: _p('search.empty'),
-            hit: _p('search.hit'),
-            placeholder: _p('search.placeholder'),
-            count: _p('search.count'),
-            loading: _p('search.load'),
-        }
-    }
-
     let highlight = false
     if (theme.highlight.enable) {
         highlight = {
@@ -100,8 +67,6 @@
 script.
     const GLOBAL_CONFIG = {
         root: '!{config.root}',
-        algolia: !{algolia ? algolia : 'undefined'},
-        localsearch: !{localSearch ? localSearch : 'undefined'},
         runtime: '!{theme.aside.siteinfo.runtimeenable ? theme.aside.siteinfo.runtime : false}',
         lazyload: {
             enable: !{theme.lazyload.enable},

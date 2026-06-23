@@ -711,32 +711,6 @@ pwa:
 
 # --------------------------- end ---------------------------
 
-# --------------------------- start ---------------------------
-# Search
-search:
-  enable: false
-  type: # local / algolia / docsearch
-  tags:
-    # - Solitude
-    # - Hexo
-  # Algolia
-  algolia:
-    # hits:
-    #   per_page: 6
-
-  # Local search
-  local:
-    preload: false
-    CDN: # url: search.xml
-
-  # DocSearch
-  # https://docsearch.algolia.com/
-  docsearch:
-    appId:
-    apiKey:
-    indexName:
-    option:
-# --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
 # Music Page
@@ -820,19 +794,14 @@ CDN:
   
   # 直接覆盖默认 CDN 链接（优先级最高）
   options:
-    # algolia_search:
     # aplayer_css:
     # aplayer_js:
-    # artalk_css:
-    # artalk_js:
-    # blueimp_md5:
     # busuanzi_js:
     # chart_js:
     # color_thief:
     # fancyapps_css:
     # fancyapps_ui:
     # fontawesome:
-    # instantsearch:
     # katex:
     # katex_copytex:
     # lazyload:

@@ -16,13 +16,6 @@ if hexo-config('css_prefix')
 // highlight
 @import '_highlight/index'
 
-// search
-if hexo-config('search.enable')
-  if hexo-config('search.type') == 'algolia'
-    @import '_search/algolia-search'
-  else if hexo-config('search.type') == 'local'
-    @import '_search/local-search'
-
 // tags plugin
 @import "_tags/*"
 

@@ -45,7 +45,6 @@ nav:
   site_name_title: 返回博客主页
   backtop: 返回顶部
   travellings: 开往-友链接力
-  search: 搜索
   randompost: 随机一篇文章
   console: 中控台
 
@@ -93,13 +92,6 @@ award:
   thanks: 致谢
   tipping: 赞赏作者
   title: 赞赏名单
-
-search:
-  empty: 找不到你查询的内容：${query}
-  hit: 找到 ${hits} 条结果，用时 ${time} 毫秒
-  placeholder: 输入关键词快速查找
-  count: 共 <b>${count}</b> 条结果。
-  load: 搜索中...
 
 head:
   noscript: 开启JavaScript才能访问本站哦~

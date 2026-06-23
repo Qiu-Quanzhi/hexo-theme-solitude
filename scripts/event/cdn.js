@@ -20,8 +20,6 @@ hexo.extend.filter.register("before_generate", () => {
   const internalSrc = {
     main: { name, file: "js/main.js", version },
     utils: { name, file: "js/utils.js", version },
-    local_search: { name, file: "js/search/local.js", version },
-    algolia_js: { name, file: "js/search/algolia.js", version },
     cover_local: { name, file: "js/covercolor/local.js", version },
     cover_api: { name, file: "js/covercolor/api.js", version },
     cover_ave: { name, file: "js/covercolor/ave.js", version },

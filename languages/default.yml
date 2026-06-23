@@ -201,8 +201,6 @@ right_menu:
   search: 站内搜索
   dark: 浅色模式
   light: 深色模式
-  chs_to_cht: 轉為繁體
-  cht_to_chs: 转为简体
   img_error: 此图片无法复制与下载
   ctrl_original_menu: 按住Ctrl+右键可打开浏览器右键菜单
   barrage:
@@ -250,6 +248,5 @@ rightside:
     top: 返回顶部
     barrage: 弹
   hide:
-    translate: 简繁转换
     mode: 显示模式切换
     aside: 侧边栏

@@ -352,7 +352,6 @@ hexo.extend.filter.register(
         enable: false,
         commentBarrage: false,
         ctrlOriginalMenu: false,
-        translate: false,
         custom_list: [],
       },
       lure: {
@@ -373,17 +372,11 @@ hexo.extend.filter.register(
         light: "https://bu.dusays.com/2023/09/29/651685cc18d39.jpg",
         opacity: 0.2,
       },
-      translate: {
-        enable: false,
-        defaultEncoding: 2,
-        translateDelay: 0,
-      },
       rightside: {
         enable: false,
         percent: false,
         hide: {
           enable: false,
-          translate: false,
           mode: false,
         },
       },

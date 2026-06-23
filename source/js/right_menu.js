@@ -32,7 +32,6 @@ const rm = {
         search: document.getElementById("menu-search"),
         barrage: document.getElementById("menu-commentBarrage"),
         mode: document.getElementById("menu-darkmode"),
-        translate: document.getElementById("menu-translate"),
         music: [
             document.getElementById("menu-music-toggle"),
             document.getElementById("menu-music-back"),

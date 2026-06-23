@@ -69,12 +69,4 @@ div#rightMenu
                     span.menu-darkmode-text= _p('right_menu.light')
                 when 'dark'
                     span.menu-darkmode-text= _p('right_menu.dark')
-        if theme.right_menu.translate
-            div.rightMenu-item#menu-translate
-                i.solitude.fas.fa-language
-                case theme.translate.defaultEncoding
-                    when 2
-                        span= _p('right_menu.chs_to_cht')
-                    when 1
-                        span= _p('right_menu.cht_to_chs')
 div#rightmenu-mask

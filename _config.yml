@@ -411,9 +411,6 @@ right_menu:
   # Whether to display the browser's context menu when hold Ctrl key.
   # 是否在按住 Ctrl 键时显示浏览器右键菜单
   ctrlOriginalMenu: false
-  # Simplified and Traditional Chinese translation.
-  # 简繁体转换
-  translate: false
   # Custom list
   # 自定义列表
   custom_list:
@@ -488,13 +485,6 @@ console:
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
-translate:
-  enable: true
-  defaultEncoding: 2 # 1: 默认繁体 2: 默认简体
-  translateDelay: 0 # 首次加载翻译迟疑时间
-# --------------------------- end ---------------------------
-
-# --------------------------- start ---------------------------
 # Right-Sidebar
 # 右下角悬停导航栏
 rightside:
@@ -502,7 +492,6 @@ rightside:
   percent: false
   hide:
     enable: false
-    translate: false
     mode: false
     aside: false
 # --------------------------- start ---------------------------

@@ -6,7 +6,6 @@ theme_by: 主题：
 more: 更多
 random: 随便逛逛
 upload: 发布时间：
-totalk: 无需删除空行，直接输入评论即可
 loading: 加载中...
 day: " 天"
 
@@ -111,16 +110,6 @@ footer:
 
 404:
   button: 返回首页
-
-link:
-  banner:
-    random: 随机访问
-  random: 点击前往按钮进入随机一个友链，不保证跳转网站的安全性和可用性。本次随机到的是本站友链：⌈ ${name} ⌋
-  to: 前往
-
-
-
-f12: 开发者模式已打开，请遵循GPL协议。
 
 pagination:
   prev: 上一页

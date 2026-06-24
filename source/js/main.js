@@ -720,14 +720,7 @@ document.addEventListener("visibilitychange", () => {
 });
 
 window.onkeydown = (e) => {
-  const { code, ctrlKey, shiftKey } = e;
-  if (
-    code === "F12" ||
-    (ctrlKey && shiftKey && (code === "KeyI" || code === "KeyC"))
-  ) {
-    utils.snackbarShow(GLOBAL_CONFIG.lang.f12, false, 3000);
-  }
-  if (code === "Escape") {
+  if (e.code === "Escape") {
     sco.hideConsole();
   }
 };

@@ -18,22 +18,6 @@ hexo.extend.filter.register(
           custom: [],
         },
       },
-      hometop: {
-        enable: false,
-        banner: {
-          title: "Solitude",
-          url: "A simple theme for Hexo",
-          icon: null,
-        },
-        group: null,
-        recommendList: {
-          sup: "Recommend",
-          title: "Solitude Docs",
-          url: "https://solitude.js.org/",
-          img: "/img/default.avif",
-          color: "none",
-        },
-      },
       aside: {
         home: { noSticky: "about", Sticky: "allInfo" },
         post: { noSticky: "about", Sticky: "allInfo" },
@@ -120,12 +104,6 @@ hexo.extend.filter.register(
       },
       display_mode: {
         type: "auto",
-        universe: false,
-      },
-      related_post: {
-        enable: false,
-        limit: 2,
-        date_type: "created",
       },
       footer: {
         information: {
@@ -168,9 +146,6 @@ hexo.extend.filter.register(
         theme: "default",
         color: "default",
       },
-      lightbox: false,
-      fancybox: false,
-      mediumZoom: false,
       mermaid: false,
       chart: false,
       typeit: false,
@@ -179,16 +154,6 @@ hexo.extend.filter.register(
         options: null,
       },
       wordcount: false,
-      rightside: {
-        enable: false,
-      },
-      copy: {
-        enable: true,
-        copyright: {
-          enable: false,
-          limit: 50,
-        },
-      },
       katex: {
         enable: false,
         per_page: false,
@@ -219,14 +184,6 @@ hexo.extend.filter.register(
         dark: "https://bu.dusays.com/2023/09/29/651685ce667d1.jpg",
         light: "https://bu.dusays.com/2023/09/29/651685cc18d39.jpg",
         opacity: 0.2,
-      },
-      rightside: {
-        enable: false,
-        percent: false,
-        hide: {
-          enable: false,
-          mode: false,
-        },
       },
       CDN: {
         internal: "local",

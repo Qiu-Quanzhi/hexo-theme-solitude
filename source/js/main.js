@@ -720,7 +720,6 @@ window.refreshFn = () => {
 
 document.addEventListener("DOMContentLoaded", () => {
   [
-    addCopyright,
     window.refreshFn,
     asideStatus,
     () => (window.onscroll = percent),

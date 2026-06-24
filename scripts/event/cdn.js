@@ -11,7 +11,7 @@ const path = require("path");
 hexo.extend.filter.register("before_generate", () => {
   const themeConfig = hexo.theme.config;
   const { CDN } = themeConfig;
-  const name = "hexo-theme-solitude";
+  const name = "hexo-theme-solitude-kai";
 
   const thirdPartySrc = hexo.render.renderSync({
     path: path.join(hexo.theme_dir, "/plugins.yml"),

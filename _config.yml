@@ -1,15 +1,10 @@
 # ---------------------------
-# Hexo Theme Solitude
+# Hexo Theme Solitude-Kai
 # Author: 伍十七(@everfu)
-# Github: https://github.com/everfu/hexo-theme-solitude
+# Maintainer: Ryoine(@Qiu-Quanzhi)
+# Github: https://github.com/Qiu-Quanzhi/hexo-theme-solitude-kai
 #
-# Guide: https://solitude.js.org
-# You can get more detailed help from the guide
-# 指南：https://solitude.js.org/cn
-# 你可以从指南中获取更详细的帮助
-#
-# sponsor: https://ko-fi.com/everfu
-# 赞助：https://afdian.com/a/everfu
+# Forked from: https://github.com/everfu/hexo-theme-solitude
 # ---------------------------
 
 ### Basic configuration
@@ -20,7 +15,7 @@
 site:
   name:
     class: text # text / i_class / img
-    custom: Solitude # Solitude / fas fa-ghost / /img/pwa/favicon.ico
+    custom: Solitude-Kai # Solitude-Kai / fas fa-ghost / /img/pwa/favicon.ico
   icon: /img/pwa/favicon.png # Site icon / 网站图标
 # --------------------------- end ---------------------------
 
@@ -32,7 +27,7 @@ nav:
   # 左侧盒子
   group:
   #  project: # name
-  #    Solitude: https://github.com/everfu/hexo-theme-solitude || /img/pwa/favicon.ico # name: url || icon
+  #    Solitude-Kai: https://github.com/Qiu-Quanzhi/hexo-theme-solitude-kai || /img/pwa/favicon.ico # name: url || icon
 
   # Menu
   # 菜单
@@ -106,7 +101,7 @@ aside:
     # social
     # 社交信息图标
     information:
-    #  Github: https://github.com/everfu || fab fa-github # Name: link || icon
+    #  Github: https://github.com/Qiu-Quanzhi || fab fa-github # Name: link || icon
     #  Bilibili: https://space.bilibili.com/1329819902 || fab fa-bilibili
   # --------------------------- end ---------------------------
 
@@ -314,8 +309,8 @@ footer:
   information:
     author: false # img url / false
     left:
-      # Github: https://github.com/everfu || fab fa-github # 名称: 链接 || 图标
-      # Mail: mailto:o@everfu.org || far fa-envelope
+      # Github: https://github.com/Qiu-Quanzhi || fab fa-github # 名称: 链接 || 图标
+      # Mail: mailto:i@qqzhi.cc || far fa-envelope
     right:
       # Bilibili: https://space.bilibili.com/1329819902 || fab fa-bilibili
       # Douyin: https://v.douyin.com/iJsLc8jt/ || fab fa-tiktok
@@ -346,7 +341,7 @@ footer:
     # - name: RSS
     #   url: /atom.xml
     # - name: License
-    #   url: https://github.com/everfu/hexo-theme-solitude/blob/main/LICENSE
+    #   url: https://github.com/Qiu-Quanzhi/hexo-theme-solitude-kai/blob/main/LICENSE
     #   icon:
     #     - fas fa-copyright
     #     - fab fa-creative-commons-by

@@ -14,7 +14,7 @@ const coverColor = () => {
 }
 
 function handleApiColor(path) {
-    const cacheGroup = JSON.parse(localStorage.getItem('Solitude')) || {};
+    const cacheGroup = JSON.parse(localStorage.getItem('Solitude-Kai')) || {};
     if (cacheGroup.postcolor?.[path]) {
         setThemeColors(cacheGroup.postcolor[path].value);
     } else {
@@ -59,10 +59,10 @@ function setDefaultThemeColors() {
 }
 
 function cacheColor(src, color) {
-    const cacheGroup = JSON.parse(localStorage.getItem('Solitude')) || {};
+    const cacheGroup = JSON.parse(localStorage.getItem('Solitude-Kai')) || {};
     cacheGroup.postcolor = cacheGroup.postcolor || {};
     cacheGroup.postcolor[src] = { value: color, expiration: Date.now() + coverColorConfig.time };
-    localStorage.setItem('Solitude', JSON.stringify(cacheGroup));
+    localStorage.setItem('Solitude-Kai', JSON.stringify(cacheGroup));
 }
 
 function adjustBrightness(r, g, b) {

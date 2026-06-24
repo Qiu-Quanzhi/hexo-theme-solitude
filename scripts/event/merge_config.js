@@ -60,8 +60,6 @@ hexo.extend.filter.register(
         siteinfo: {
           postcount: true,
           wordcount: false,
-          pv: true,
-          uv: true,
           updatetime: true,
           runtimeenable: true,
           runtime: "2023-04-20 00:00:00",
@@ -98,9 +96,6 @@ hexo.extend.filter.register(
           updated: false,
           locate: false,
           wordcount: false,
-          readtime: false,
-          pv: false,
-          uv: false,
         },
         rss: null,
         covercolor: {
@@ -184,7 +179,6 @@ hexo.extend.filter.register(
         options: null,
       },
       wordcount: false,
-      busuanzi: false,
       rightside: {
         enable: false,
       },

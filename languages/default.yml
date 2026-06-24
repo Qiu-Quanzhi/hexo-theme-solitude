@@ -66,7 +66,6 @@ post:
   wordcount: 文章字数
   minread: 阅读耗时
   ip: 作者IP归属地为
-  pv: 文章热度
   min: 分钟
   copyright:
     reprint: 本文是转载或翻译文章，版权归原作者所有。转载本文请联系原作者。
@@ -84,8 +83,6 @@ head:
 
 aside:
   postcount: "文章总数 :"
-  pv: "总访问数 :"
-  uv: "总访客数 :"
   runtime: "建站天数 :"
   updatetime: "最后更新 :"
   wordcount: "全站字数 :"

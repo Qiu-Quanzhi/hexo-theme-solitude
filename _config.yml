@@ -183,10 +183,6 @@ aside:
     # Total number of words
     # 总字数
     wordcount: false
-    # PV
-    pv: true
-    # UV
-    uv: true
     # Last update date
     # 最后更新日期
     updatetime: true
@@ -269,8 +265,6 @@ post:
     wordcount: false
     # uv
     readtime: false
-    # pv
-    pv: false
   rss: # /atom.xml
   # Article reading progress
   # 文章封面取色
@@ -595,13 +589,6 @@ brevity:
   strip: 30
 # --------------------------- end ---------------------------
 
-# --------------------------- start ---------------------------
-# Busuanzi
-busuanzi: false
-# 0: Original / 1: Custom
-# 0: 原版 / 1: 自定义版
-busuanzi_use: 0
-# --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
 # CDN Configuration
@@ -619,7 +606,6 @@ CDN:
   
   # 直接覆盖默认 CDN 链接（优先级最高）
   options:
-    # busuanzi_js:
     # chart_js:
     # color_thief:
     # fancyapps_css:

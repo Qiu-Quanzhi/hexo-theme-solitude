@@ -97,10 +97,6 @@ div
       script.
         mermaid.run();
 
-    if theme.busuanzi && (theme.aside.siteinfo.uv || theme.aside.siteinfo.pv || is_post() && theme.post.meta.pv)
-      script(defer pjax src=url_for(theme.cdn.busuanzi_js))
-
-
 if theme.footer.randomlink
   include ../widgets/randomlink.pug
 

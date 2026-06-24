@@ -31,10 +31,6 @@ swiper_js:
   file: swiper-bundle.min.js
   version: 11.0.5
   other_name: Swiper
-busuanzi_js:
-  name: busuanzi
-  file: bsz.pure.mini.js
-  version: 2.3.0
 snackbar:
   name: node-snackbar
   file: dist/snackbar.min.js

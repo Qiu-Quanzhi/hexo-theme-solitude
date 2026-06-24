@@ -31,24 +31,15 @@ const sidebarFn = () => {
 };
 
 const scrollFn = () => {
-  const $rightside = document.getElementById("rightside");
   const $header = document.getElementById("page-header");
   let initTop = 0;
 
-  const updateHeaderAndRightside = (isDown, currentTop) => {
+  const updateHeader = (isDown, currentTop) => {
     if (currentTop > 0) {
       $header.classList.toggle("nav-visible", !isDown);
       $header.classList.add("nav-fixed");
-      if ($rightside) {
-        $rightside.style.opacity = "0.8";
-        $rightside.style.transform = "translateX(-58px)";
-      }
     } else {
       $header.classList.remove("nav-fixed", "nav-visible");
-      if ($rightside) {
-        $rightside.style.opacity = "";
-        $rightside.style.transform = "";
-      }
     }
   };
 
@@ -57,16 +48,13 @@ const scrollFn = () => {
     const currentTop = window.scrollY || document.documentElement.scrollTop;
     const isDown = currentTop > initTop;
     initTop = currentTop;
-    updateHeaderAndRightside(isDown, currentTop);
+    updateHeader(isDown, currentTop);
   }, 200);
 
   window.addEventListener("scroll", (e) => {
     throttledScroll(e);
     if (window.scrollY === 0) {
       $header.classList.remove("nav-fixed", "nav-visible");
-      if ($rightside) {
-        $rightside.style.cssText = "opacity: ''; transform: ''";
-      }
     }
   });
 };
@@ -116,21 +104,6 @@ const showTodayCard = () => {
   topGroup?.addEventListener("mouseleave", () => el?.classList.remove("hide"));
 };
 
-
-const addCopyright = () => {
-  if (!GLOBAL_CONFIG.copyright) return;
-  const { limit, author, link, source, info } = GLOBAL_CONFIG.copyright;
-
-  document.body.addEventListener("copy", (e) => {
-    e.preventDefault();
-    const copyText = window.getSelection().toString();
-    const text =
-      copyText.length > limit
-        ? `${copyText}\n\n${author}\n${link}${window.location.href}\n${source}\n${info}`
-        : copyText;
-    e.clipboardData.setData("text", text);
-  });
-};
 
 const asideStatus = () => {
   const status = utils.saveToLocal.get("aside-status");
@@ -708,7 +681,7 @@ const forPostFn = () => {
 
 window.refreshFn = () => {
   const { is_home, is_page, page, is_post, ai_text } = PAGE_CONFIG;
-  const { runtime, lazyload, lightbox, randomlink, covercolor } =
+  const { runtime, lazyload, randomlink, covercolor } =
     GLOBAL_CONFIG;
   const timeSelector = ".datetime, .webinfo-item time, .post-meta-date time";
   document.body.setAttribute("data-type", page);
@@ -726,12 +699,6 @@ window.refreshFn = () => {
     sco.refreshWaterFall,
   ].forEach((fn) => fn());
   lazyload.enable && utils.lazyloadImg();
-  lightbox &&
-    utils.lightbox(
-      document.querySelectorAll(
-        ".article-container img:not(.flink-avatar,.gallery-group img, .no-lightbox)"
-      )
-    );
   randomlink && randomLinksList();
   if (is_post) {
     if (ai_text) {

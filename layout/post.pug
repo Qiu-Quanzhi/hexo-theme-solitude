@@ -21,7 +21,5 @@ block content
                                     span.tagsPageCount=data.length
             if site.posts.length > 1
                 include includes/widgets/post/postNav
-            if theme.related_post.enable
-                != related_posts(page, site.posts)
         if page.aside
             include includes/widgets/aside/aside

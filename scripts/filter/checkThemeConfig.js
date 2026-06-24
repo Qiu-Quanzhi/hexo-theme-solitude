@@ -14,10 +14,5 @@ hexo.extend.filter.register('before_post_render', () => {
             logger.error('\n If randomlink is enabled, links data must be supplied! \n Please create links.yaml.');
             process.exit(-1);
         }
-        if (theme.lightbox && !theme.fancybox && !theme.mediumZoom){
-            logger.error('\n 启用 lightbox 的情况下，必须提供 fancybox 或 mediumZoom 选项！\n 请在主题配置文件中设置 fancybox 或 mediumZoom 选项。');
-            logger.error('\n If lightbox is enabled, fancybox or mediumZoom option must be supplied! \n Please set the fancybox or mediumZoom option in the theme configuration file.');
-            process.exit(-1);
-        }
     }
 );

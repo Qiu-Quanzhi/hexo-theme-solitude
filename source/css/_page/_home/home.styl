@@ -1,4 +1,4 @@
-if hexo-config('hometop.enable') || hexo-config('brevity.enable')
+if hexo-config('brevity.enable')
   #home_top
     max-width 1400px
     width 100%
@@ -8,12 +8,6 @@ if hexo-config('hometop.enable') || hexo-config('brevity.enable')
     +maxWidth768()
       padding 0 1rem
       margin-top 0
-
-if hexo-config('hometop.enable')
-  @import "home-top.styl"
-
-if hexo-config('carousel')
-  @import "carousel.styl"
 
 @import "category-bar.styl"
 

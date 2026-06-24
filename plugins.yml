@@ -40,20 +40,6 @@ fontawesome:
   file: css/all.min.css
   version: 6.7.2
   other_name: font-awesome
-medium_zoom:
-  name: medium-zoom
-  file: dist/medium-zoom.min.js
-  version: 1.1.0
-fancyapps_ui:
-  name: "@fancyapps/ui"
-  file: dist/fancybox/fancybox.umd.min.js
-  version: 5.0.36
-  other_name: fancyapps-ui
-fancyapps_css:
-  name: "@fancyapps/ui"
-  file: dist/fancybox/fancybox.min.css
-  version: 5.0.36
-  other_name: fancyapps-ui
 mermaid_js:
   name: mermaid
   file: dist/mermaid.js

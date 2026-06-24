@@ -63,48 +63,6 @@ nav:
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
-# Home Top Banner
-# 首页顶部
-hometop:
-  enable: false
-  banner:
-    title: 分享技术<br >与科技生活 # 大字
-    desc:
-      一个热爱生活的人 # 小字
-      # - 我只是一个普通的程序员
-      # - 但我有一个不平凡的梦想
-      # - 我希望能够改变世界
-    icon:
-      # HTML: # name
-      #   img: https://i.postimg.cc/vBWVnY8q/html.png # url
-      #   color: "#e9572b" # color
-      # JS:
-      #   img: https://i.postimg.cc/3N10Ltv2/js.png
-      #   color: "#f7cb4f"
-      # Docker:
-      #   img: https://i.postimg.cc/8Pk6Fg24/docker.png
-      #   color: "#57b6e6"
-      # Flutter:
-      #   img: https://i.postimg.cc/hPC7T3gB/flutter.png
-      #   color: "#ffffff"
-      # WebPack:
-      #   img: https://i.postimg.cc/dVLZBmtT/webpack.png
-      #   color: "#2e3a41"
-      # Git:
-      #   img: https://i.postimg.cc/nhgjwjCS/git.png
-      #   color: "#df5b40"
-  group:
-    # 热门: /tags/Fire/ || fas fa-fire || linear-gradient(to right,#f65,#ffbf37)
-  recommendList:
-    enable: true
-    sup: 置顶
-    title: Solitude 官方文档
-    url: https://solitude.js.org/
-    img: /img/default.avif
-    color: "none"
-# --------------------------- end ---------------------------
-
-# --------------------------- start ---------------------------
 # Aside
 # 侧边栏
 aside:
@@ -263,8 +221,6 @@ post:
     # Number of words
     # 字数
     wordcount: false
-    # uv
-    readtime: false
   rss: # /atom.xml
   # Article reading progress
   # 文章封面取色
@@ -299,9 +255,6 @@ display_mode:
   # auto: automatic switching(Recognize the current theme mode of the device) / dark: dark mode / light: light mode
   # auto: 自动切换（识别设备当前主题模式） / dark: 深色模式 / light: 浅色模式
   type: auto
-  # After opening, the dark mode will display the starry sky background
-  # 开启后深色模式会显示星空背景
-  universe: false
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
@@ -327,31 +280,6 @@ index_post_list:
   cover: both
 # --------------------------- end ---------------------------
 
-# --------------------------- start ---------------------------
-# Related articles
-# 相关文章
-related_post:
-  enable: false
-  limit: 2
-  # created: release date / updated: update date
-  # created: 发布日期 / updated: 更新日期
-  date_type: created
-# --------------------------- end ---------------------------
-
-# --------------------------- start ---------------------------
-# Copy
-#  information
-# 复制信息
-copy:
-  enable: false
-  # Turn on Link copyright information after copying.
-  # 复制后链接版权信息
-  copyright:
-    enable: false
-    # Display when the number of words copied exceeds
-    # 复制文字时超过多少字数显示
-    limit: 50
-# --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
 # Mermaid
@@ -383,18 +311,6 @@ console:
     # 归档
     archive: "month" # month: by month / year: by year
 # --------------------------- end ---------------------------
-
-# --------------------------- start ---------------------------
-# Right-Sidebar
-# 右下角悬停导航栏
-rightside:
-  enable: false
-  percent: false
-  hide:
-    enable: false
-    mode: false
-    aside: false
-# --------------------------- start ---------------------------
 
 # --------------------------- start ---------------------------
 # Footer
@@ -500,16 +416,6 @@ highlight:
   theme: mac
   # default / solidity / dracula
   color: default
-# --------------------------- end ---------------------------
-
-# --------------------------- start ---------------------------
-# Lightbox
-# 图片灯箱
-lightbox: false
-# warning: Please select any one, but cannot be turned on at the same time.
-# 警告: 请任选其一，但不能同时开启。
-fancybox: false # fancybox
-mediumZoom: false # mediumZoom
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------

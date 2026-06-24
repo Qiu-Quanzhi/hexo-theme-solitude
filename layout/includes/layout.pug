@@ -12,11 +12,6 @@ html(lang=config.language, data-theme="light")
         include ./head.pug
     
     body#body(data-type=page.type)
-        //- 背景特效
-        if theme.display_mode.universe
-            +conditionalWrapper(theme.display_mode.universe)
-                canvas#universe
-
         //- 全屏加载动画
         if theme.loading.fullpage
             +conditionalWrapper(theme.loading.fullpage)
@@ -28,13 +23,6 @@ html(lang=config.language, data-theme="light")
 
         //- 侧边栏
         include ./sidebar.pug
-
-
-
-        //- 右侧工具栏
-        if theme.rightside.enable
-            +conditionalWrapper(theme.rightside.enable)
-                include ./rightside.pug
 
         //- 主体内容区域
         #body-wrap(class=is_post() ? 'post' : 'page')

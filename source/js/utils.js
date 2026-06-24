@@ -116,52 +116,6 @@
         callback_error: (img) => (img.src = GLOBAL_CONFIG.lazyload.error),
       });
     },
-    lightbox: function (selector) {
-      const lightboxType = GLOBAL_CONFIG.lightbox;
-      const options = {
-        class: "fancybox",
-        "data-fancybox": "gallery",
-      };
-
-      if (lightboxType === "mediumZoom") {
-        mediumZoom &&
-          mediumZoom(selector, { background: "var(--efu-card-bg)" });
-      } else if (lightboxType === "fancybox") {
-        selector.forEach((i) => {
-          if (i.parentNode.tagName !== "A") {
-            options.href = options["data-thumb"] = i.dataset.lazySrc || i.src;
-            options["data-caption"] = i.title || i.alt || "";
-            utils.wrap(i, "a", options);
-          }
-        });
-
-        if (!window.fancyboxRun) {
-          Fancybox.bind("[data-fancybox]", {
-            Hash: false,
-            animated: true,
-            Thumbs: { showOnStart: false },
-            Images: { Panzoom: { maxScale: 4 } },
-            Carousel: { transition: "slide" },
-            Toolbar: {
-              display: {
-                left: ["infobar"],
-                middle: [
-                  "zoomIn",
-                  "zoomOut",
-                  "toggle1to1",
-                  "rotateCCW",
-                  "rotateCW",
-                  "flipX",
-                  "flipY",
-                ],
-                right: ["slideshow", "thumbs", "close"],
-              },
-            },
-          });
-          window.fancyboxRun = true;
-        }
-      }
-    },
     diffDate: (d, more = false) => {
       const dateNow = new Date();
       const datePost = new Date(d);

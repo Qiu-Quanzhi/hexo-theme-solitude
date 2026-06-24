@@ -4,7 +4,6 @@ framework_by: 框架：
 theme_by: 主题：
 
 more: 更多
-star: 喜欢这篇的人也看了
 random: 随便逛逛
 upload: 发布时间：
 totalk: 无需删除空行，直接输入评论即可
@@ -19,12 +18,6 @@ theme:
 copy:
   success: 复制成功
   error: 复制失败
-
-copy_copyright:
-  author: 作者
-  link: 链接
-  source: 来源
-  info: 著作权归作者所有。 商业转载请联系作者获得授权，非商业转载请注明出处。
 
 time:
   day: "天前"
@@ -157,12 +150,3 @@ essay:
   tip0: "- 已展开所有短文 -"
   tip1: "- 只展示最近 #{count} 条短文 -"
   link: "链接"
-
-rightside:
-  show:
-    gear: 扩展
-    toc: 目录
-    top: 返回顶部
-  hide:
-    mode: 显示模式切换
-    aside: 侧边栏

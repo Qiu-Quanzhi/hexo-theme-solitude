@@ -2,12 +2,6 @@
     .banners-title-small= page.desc
     .banners-title-big= page.title
 
-.banner-button-group
-    if theme.footer.randomlink
-        a.banner-button.secondary(onclick="travelling()")
-            i.solitude.fas.fa-tower-broadcast
-            span.banner-button-text=_p('link.banner.random')
-
 - if (site.data.links.swiper !== false)
     .tags-group-all.nowrapMove
         - const data = site.data.links.links.filter(x => x.type !== 'discn')

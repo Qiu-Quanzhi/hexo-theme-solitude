@@ -53,7 +53,6 @@ nav:
   # Right button
   # 右侧按钮
   right:
-    random: false # Random article / 随机文章按钮
     custom:
     #  - name: 开往 # 名字
     #    url: https://www.travellings.cn/go.html # 跳转链接
@@ -291,11 +290,6 @@ mermaid: false
 chart: false
 # --------------------------- end ---------------------------
 
-# --------------------------- start ---------------------------
-# typeit
-typeit: false
-# --------------------------- end ---------------------------
-
 ### Extended configuration
 
 # --------------------------- start ---------------------------
@@ -514,18 +508,14 @@ CDN:
   options:
     # chart_js:
     # color_thief:
-    # fancyapps_css:
-    # fancyapps_ui:
     # fontawesome:
     # katex:
     # katex_copytex:
     # lazyload:
-    # medium_zoom:
     # mermaid_js:
     # pace_js:
     # pjax:
     # snackbar:
     # swiper_css:
     # swiper_js:
-    # typeit_js:
 # --------------------------- end ---------------------------

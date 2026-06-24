@@ -37,8 +37,6 @@ page:
 nav:
   site_name_title: 返回博客主页
   backtop: 返回顶部
-  travellings: 开往-友链接力
-  randompost: 随机一篇文章
   console: 中控台
 
 home:
@@ -110,13 +108,6 @@ footer:
   randomlink: 友链
   rss: 订阅
   theme: 主题
-
-cookies:
-  title: 协议提醒助手
-  tip: 查看本站为你的个人隐私做出的努力
-  privacy: 本站如何保护你的隐私
-
-
 
 404:
   button: 返回首页

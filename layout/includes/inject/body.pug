@@ -27,9 +27,6 @@ div
   if theme.chart
     script(defer src=url_for(theme.cdn.chart_js))
 
-  if theme.typeit
-    script(defer src=url_for(theme.cdn.typeit_js))
-
   if theme.katex && theme.katex.enable
     if theme.katex.per_page && (is_post() || is_page())
       +katex

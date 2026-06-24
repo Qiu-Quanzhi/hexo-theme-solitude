@@ -49,11 +49,6 @@ chart_js:
   file: dist/chart.umd.js
   version: 4.4.1
   other_name: Chart.js
-typeit_js:
-  name: typeit
-  file: dist/index.umd.js
-  version: 8.8.7
-  other_name: typeit
 color_thief:
   name: colorthief
   file: dist/color-thief.min.js

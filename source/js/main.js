@@ -427,19 +427,6 @@ const sco = {
       item.style.display = "inline";
     });
   },
-  homeTypeit() {
-    if (typeof home_subtitle === "undefined") return;
-    const ty = new TypeIt(".banners-title-small", {
-      speed: 200,
-      waitUntilVisible: true,
-      loop: true,
-      lifeLike: true,
-    });
-    home_subtitle.forEach((item) => {
-      ty.type(item).pause(500).delete(item);
-    });
-    ty.go();
-  },
 };
 
 const addHighlight = () => {
@@ -707,7 +694,6 @@ window.refreshFn = () => {
   }
   if (is_home) {
     showTodayCard();
-    sco.homeTypeit();
   }
   if (is_post || is_page) {
     addHighlight();

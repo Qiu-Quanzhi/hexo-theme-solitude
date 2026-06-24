@@ -14,7 +14,6 @@ hexo.extend.filter.register(
         group: null,
         menu: null,
         right: {
-          random: false,
           custom: [],
         },
       },
@@ -148,7 +147,6 @@ hexo.extend.filter.register(
       },
       mermaid: false,
       chart: false,
-      typeit: false,
       OpenGraph: {
         enable: false,
         options: null,

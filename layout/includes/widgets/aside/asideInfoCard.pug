@@ -5,9 +5,6 @@
                 .sayhi#sayhi(onclick="sco.changeWittyWord()")
         .avatar
             img(alt=_p('aside.avatar'), src=theme.aside.my_card.author.img)
-            if theme.aside.my_card.author.sticker
-                .sticker
-                    img.sticker-img(src=theme.aside.my_card.author.sticker, alt=_p('aside.sticker'))
         .description!= theme.aside.my_card.content
         .bottom-group
             span.left

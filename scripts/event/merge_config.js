@@ -24,7 +24,6 @@ hexo.extend.filter.register(
         my_card: {
           author: {
             img: "/img/logo.png",
-            sticker: null,
             url: "/about/",
           },
           state: {

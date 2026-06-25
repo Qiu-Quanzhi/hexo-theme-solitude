@@ -24,7 +24,6 @@ hexo.extend.filter.register("before_generate", () => {
     cover_api: { name, file: "js/covercolor/api.js", version },
     cover_ave: { name, file: "js/covercolor/ave.js", version },
     waterfall: { name, file: "js/third_party/waterfall.min.js", version },
-    post_ai: { name, file: "js/post_ai.js", version },
   };
 
   const minFile = (file) =>

@@ -69,10 +69,6 @@ hexo.extend.filter.register(
             licenseUrl: "https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh-hans",
           },
         },
-        ai: {
-          enable: false,
-          modelName: "小七 GPT",
-        },
         meta: {
           date: true,
           updated: true,

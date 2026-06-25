@@ -40,9 +40,6 @@ div
   if (theme.logs.home_mini && theme.logs.enable)
     script(src=url_for(theme.cdn.swiper_js))
 
-  if theme.post.ai.enable
-    script(defer src=url_for(theme.cdn.post_ai))
-
   // Cover color processing scripts
   if theme.post.covercolor.enable
     case theme.post.covercolor.mode

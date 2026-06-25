@@ -667,7 +667,7 @@ const forPostFn = () => {
 };
 
 window.refreshFn = () => {
-  const { is_home, is_page, page, is_post, ai_text } = PAGE_CONFIG;
+  const { is_home, is_page, page, is_post } = PAGE_CONFIG;
   const { runtime, lazyload, randomlink, covercolor } =
     GLOBAL_CONFIG;
   const timeSelector = ".datetime, .webinfo-item time, .post-meta-date time";
@@ -687,11 +687,6 @@ window.refreshFn = () => {
   ].forEach((fn) => fn());
   lazyload.enable && utils.lazyloadImg();
   randomlink && randomLinksList();
-  if (is_post) {
-    if (ai_text) {
-      ai.init();
-    }
-  }
   if (is_home) {
     showTodayCard();
   }

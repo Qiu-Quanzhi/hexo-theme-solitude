@@ -11,7 +11,7 @@ mixin siteName()
     title: _p('nav.site_name_title') 
   })
     case theme.site.name.class
-      when 'i_class'
+      when 'iconClass'
         +icon(theme.site.name.custom, '', { style: 'font-size: 16px;' })
       when 'img'
         img(src=theme.site.name.custom, alt=config.title)

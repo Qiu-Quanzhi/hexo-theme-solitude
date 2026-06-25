@@ -1,11 +1,11 @@
 include ../widgets/page/banner
-if theme.brevity.enable
+if theme.logs.enable
     #bber
         section.timeline.page-1
             ul.list.waterfall
-                each item in site.data.brevity.slice(0, theme.brevity.strip)
+                each item in site.data.logs.slice(0, theme.logs.strip)
                     li.item
-                        if theme.brevity.style === 2
+                        if theme.logs.style === 2
                             .meta
                                 img.avatar(src=theme.aside.my_card.author.img)
                                 .info
@@ -29,7 +29,7 @@ if theme.brevity.enable
                                 if item.video.bilibili
                                     iframe(src='//player.bilibili.com/player.html?autoplay=0&bvid=' + item.video.bilibili scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true")
 
-                        if theme.brevity.style === 1
+                        if theme.logs.style === 1
                             hr
                             .bber-bottom
                                 .bber-info
@@ -43,9 +43,9 @@ if theme.brevity.enable
                                     if item.link
                                         a.bber-content-link(href=url_for(item.link) target="_blank")
                                             i.solitude.fas.fa-link
-                                            = _p('essay.link')
+                                            = _p('logs.link')
             #bber-tips
-                if theme.brevity.strip === -1
-                    = _p('essay.tip0')
+                if theme.logs.strip === -1
+                    = _p('logs.tip0')
                 else
-                    = _p('essay.tip1').replace('#{count}', theme.brevity.strip)
+                    = _p('logs.tip1').replace('#{count}', theme.logs.strip)

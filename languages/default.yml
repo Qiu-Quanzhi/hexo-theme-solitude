@@ -123,7 +123,7 @@ about:
       info_title1: 生于
       info_title2: 现在职业
 
-essay:
+logs:
   tip0: "- 已展开所有短文 -"
   tip1: "- 只展示最近 #{count} 条短文 -"
   link: "链接"

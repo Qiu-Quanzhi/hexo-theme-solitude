@@ -12,7 +12,7 @@ mixin postFooterBar()
     #st-footer-bar
       .footer-logo
         case theme.site.name.class
-          when 'i_class'
+          when 'iconClass'
             +icon(theme.site.name.custom)
           when 'img'
             img.solitude.nolazyload(src=url_for(theme.site.name.custom))

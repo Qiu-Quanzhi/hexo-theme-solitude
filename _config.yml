@@ -1,294 +1,263 @@
 # ---------------------------
-# Hexo Theme Solitude-Kai
-# Author: 伍十七(@everfu)
-# Maintainer: Ryoine(@Qiu-Quanzhi)
-# Github: https://github.com/Qiu-Quanzhi/hexo-theme-solitude-kai
-#
-# Forked from: https://github.com/everfu/hexo-theme-solitude
+# Hexo Theme Solitude·改
+# 原作者: 伍十七(@everfu)
+# 原项目: https://github.com/everfu/hexo-theme-solitude
+# 维护者: Ryoine(@Qiu-Quanzhi)
+# 项目地址: https://github.com/Qiu-Quanzhi/hexo-theme-solitude-kai
 # ---------------------------
 
-### Basic configuration
-
-# --------------------------- start ---------------------------
-# Site information
+# --------------------------- 开始 ---------------------------
 # 网站信息
 site:
   name:
-    class: text # text / i_class / img
-    custom: Solitude-Kai # Solitude-Kai / fas fa-ghost / /img/pwa/favicon.ico
-  icon: /img/pwa/favicon.png # Site icon / 网站图标
-# --------------------------- end ---------------------------
+    class: text # text / iconClass / img
+    custom: Solitude-Kai # 文本 / 图标类名 / 图片路径
+  icon: /img/logo.png # 网站图标
+# --------------------------- 结束 ---------------------------
 
-# --------------------------- start ---------------------------
-# Navigation bar
+# --------------------------- 开始 ---------------------------
 # 导航栏
 nav:
-  # Left Box
-  # 左侧盒子
+  # 左侧按钮
   group:
-  #  project: # name
-  #    Solitude-Kai: https://github.com/Qiu-Quanzhi/hexo-theme-solitude-kai || /img/pwa/favicon.ico # name: url || icon
+  #  project: # 组名
+  #    Solitude-Kai: https://github.com/Qiu-Quanzhi/hexo-theme-solitude-kai || /img/logo.png # 子项名: 路径 || 图标类名
 
-  # Menu
   # 菜单
   menu:
-    # 首页: / # name: link
-    # 文章: # name
-    #   归档: /archives/ || fas fa-folder-closed # item name: link || icon
-    #   分类: /categories/ || fas fa-clone
-    #   标签: /tags/ || fas fa-tags
-    # 友链:
-    #   朋友圈: /moments/ || fas fa-wifi
-    #   友情链接: /links/ || fas fa-user-group
-    #   宝藏博主: javascript:travelling() || fas fa-gift
-    # 我的:
-    #   关于: /about/ || fas fa-user
-    #   装备: /kit/ || fas fa-laptop
+    # 首页: / || fas fa-house-chimney # 项名: 路径 || 图标类名
+    # 文库: # 项名
+    #   文章合集: /archives/ || fas fa-folder-closed # 子项名: 路径 || 图标类名
+    #   分类合集: /categories/ || fas fa-clone
+    #   标签合集: /tags/ || fas fa-tags
+    # 友链: /links/ || fas fa-user-group
+    # 关于: /about/ || fas fa-image-portrait
+    # 装备: /kit/ || fas fa-laptop
 
-  # Right button
   # 右侧按钮
   right:
     custom:
-    #  - name: 开往 # 名字
-    #    url: https://www.travellings.cn/go.html # 跳转链接
-    #    icon: fas fa-train # 图标
+    #  - name: Time.is # 名字
+    #    url: https://time.is/ # 路径
+    #    icon: fas fa-clock # 图标
     #    onclick: # 点击事件
-    #    id: travellings_button # id
-# --------------------------- end ---------------------------
+    #    id: timeis_button # id
+# --------------------------- 结束 ---------------------------
 
-# --------------------------- start ---------------------------
-# Aside
+# --------------------------- 开始 ---------------------------
 # 侧边栏
 aside:
-  # Values: about (info card), newestPost (latest article), allInfo (website information)
-  # 值: about(信息卡), newestPost(最新文章), allInfo(网站信息)
+  # 侧边栏配置
 
-  # Sticky: Fixed position / noSticky: Not fixed position
+  # 值: about(信息卡), newestPost(最新文章), allInfo(网站信息)
   # Sticky: 固定位置 / noSticky: 不固定位置
-  home: # on the homepage
+  
+  home: # 首页
     noSticky: "about"
     Sticky: "allInfo"
-  post: # on the article page
+  post: # 文章页
     noSticky: "about"
     Sticky: "newestPost"
-  page: # on the page
+  page: # 普通页
     noSticky: "about"
     Sticky: "newestPost,allInfo"
-  # 菜单栏位置(0: 左 1: 右)
-  position: 1 # Sidebar positioning(0: left 1: right)
-
-  # --------------------------- start ---------------------------
-  # Information card
-  # 信息卡
+  # 菜单栏位置 (0: 左 1: 右)
+  position: 1
+  
+  
+  # 个人信息卡
   my_card:
+    # 头像
     author:
-      img: /img/logo.png # url
-      sticker: # url, 24x24 size
-    # 介绍 / Introduction
-    description: 只有迎风，风筝才能飞得更高。
-    # 内容 / Content
-    content: # 这是我的博客 / This is my Blog
+      img: /img/logo.png # 图片路径
+      sticker: # url, 24x24 size ############################################################
+      url: /about/ # 点击头像跳转路径 ????????????????????????????????????????
+    # 时段状态
     state:
       morning: ✨ 早上好，新的一天开始了
-      noon: 🍲 午餐时间
+      noon: 🍃 午休时间
       afternoon: 🌞 下午好
-      night: 早点休息
-      goodnight: 晚安 😴
-    witty_words:
+      night: 🌙 晚上好，早点休息
+      goodnight: 🔮 晚安
+    # 交互语录
+    witty_words: ????????????????????????????????????????????????????????????????????????
       # - 你可以的
       # - 你一定可以的
       # - 祝你好运，陌生人
-    # social
-    # 社交信息图标
+    # 更多链接
     information:
-    #  Github: https://github.com/Qiu-Quanzhi || fab fa-github # Name: link || icon
-    #  Bilibili: https://space.bilibili.com/1329819902 || fab fa-bilibili
-  # --------------------------- end ---------------------------
+    #  Github: https://github.com/Qiu-Quanzhi || fab fa-github # 项名: 路径 || 图标类名
+    #  Bilibili: https://space.bilibili.com/1036651852 || fab fa-bilibili
+  
 
-  # --------------------------- start ---------------------------
-  # article table of contents
+
   # 文章目录
   toc:
     post: true
     page: false
     vague: true
-  # --------------------------- end ---------------------------
+  
 
-  # --------------------------- start ---------------------------
-  # Tags
+
   # 标签
   tags:
     enable: false
-    limit: 20 # Number of tags displayed
-    # Highlighted tags
+    limit: 20 # 标签展示数量
+    # 推荐标签
     highlight_list:
-      # - Hexo
-  # --------------------------- end ---------------------------
+      # - 示例标签
+  
 
-  # --------------------------- start ---------------------------
-  # Site Info
+
+  # 归档
+  archive:
+    enable: true
+    type: "year" # month / year
+  
+
+
   # 网站信息
   siteinfo:
-    # Number of articles
     # 文章数量
-    postcount: true
-    # Total number of words
+    postcount: false
     # 总字数
-    wordcount: false
-    # Last update date
+    wordcount: true
     # 最后更新日期
     updatetime: true
-    # Website creation time
     # 网站创建时间
     runtimeenable: true
-    # Format: yyyy-MM-dd hh-mm-ss
-    # 格式: yyyy-MM-dd hh-mm-ss
-    runtime: "2023-04-20 00:00:00"
-  # --------------------------- end ---------------------------
-# --------------------------- end ---------------------------
+    # 建站时间
+    runtime: "2023-06-30 00:00:00" # yyyy-MM-dd hh-mm-ss
+# --------------------------- 结束 ---------------------------
 
-# --------------------------- start ---------------------------
-# Page default settings
+# --------------------------- 开始 ---------------------------
 # 页面默认设置
 page:
-  # 404 page
   # 404 页面
   error: true
-  # Tags page
   # 标签页面
   tags: true
-  # Categories page
   # 分类页面
   categories: true
-  # list: Sort List / 1: Follow HomeList
-  # list: 排序列表 / 1: 跟随首页列表
+  # 0: 排序列表 / 1: 跟随首页列表
   archives: 0
-  # Default value
   # 默认值
   default:
-    # Default image when no cover is set
     # 未设置封面时的默认图片
     cover:
-      # - /img/default.png # 默认图片 / default cover
-# --------------------------- end ---------------------------
+      # - /img/default.png # 图片路径
+# --------------------------- 结束 ---------------------------
 
-# --------------------------- start ---------------------------
-# Post default settings
-# 文章默认设置
+# --------------------------- 开始 ---------------------------
+# 文章设置
 post:
+  # 文章默认设置
   default:
-    # Default image when no cover is set
-    # 未设置封面时的默认图片
+    # 默认封面图片
     cover:
-      # - /img/default.avif # 默认图片 / default cover
-    # Location
-    # 位置
-    locate: China
-    # Copyright
-    # 版权
+      # - /img/default.avif # 图片路径
+    # 默认位置
+    locate: 地球
+    # 默认版权
     copyright:
       enable: true
-      author: /img/logo.png # url
-      # License
+      author:
+        url: /about/
+        # 默认使用 site.icon
+        img:
       # 许可证
-      license: CC BY-NC-SA 4.0
-      # License link
+      license: CC BY-NC-ND 4.0
       # 许可证链接
-      licenurl: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans
-  # Article Local AI
+      licenseUrl: https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh-hans
+
   # 文章本地AI
   ai:
     enable: false
     modelName: 小七 GPT
-  # Article meta information
+
   # 文章元信息
   meta:
-    # Release date
     # 发布日期
-    date: false
-    # Update date
+    date: true
     # 更新日期
-    updated: false
-    # Location
+    updated: true
     # 位置
-    locate: false
-    # Number of words
+    locate: true
     # 字数
-    wordcount: false
+    wordcount: true
+  
+
+  
+  # 订阅源
   rss: # /atom.xml
-  # Article reading progress
   # 文章封面取色
   covercolor:
     enable: false
-    # local: local color / api: api color / ave: oss average color
+    # local: 本地取色 / api: API 取色 / ave: OSS 服务取色
     mode: local
-    # api address / api 地址
-    api: https://api.qjqq.cn/api/Imgcolor?img=
-    # Storage / 缓存时间
+    # API 地址
+    api: 
+    # 缓存时间
     time: 43200000
+  
+
+
+  #页脚
   footer:
     enable: false
-    desc: # Articles from Ever Fu. / 文章来自 Ever Fu # description
-    button: # Button
+    desc: # 文章来自 Ryoine
+    button:
       enable: true
-      name: # Learn more / 了解更多
+      name: # 了解更多
       url: /about/
-# --------------------------- end ---------------------------
+# --------------------------- 结束 ---------------------------
 
-# --------------------------- start ---------------------------
-# Custom Theme Color
+# --------------------------- 开始 ---------------------------
+# 主题色
 theme_color:
-  dark: "#ffc848" # dark
-  light: "#425AEF" # light
-# --------------------------- end ---------------------------
+  dark: "#66ccff" # 深色模式
+  light: "#66ccff" # 浅色模式
+# --------------------------- 结束 ---------------------------
 
-# --------------------------- start ---------------------------
-# display mode
+# --------------------------- 开始 ---------------------------
 # 显示模式
 display_mode:
-  # auto: automatic switching(Recognize the current theme mode of the device) / dark: dark mode / light: light mode
   # auto: 自动切换（识别设备当前主题模式） / dark: 深色模式 / light: 浅色模式
   type: auto
-# --------------------------- end ---------------------------
+# --------------------------- 结束 ---------------------------
 
-# --------------------------- start ---------------------------
-# Font
-# 字体
+# --------------------------- 开始 ---------------------------
+# 字体设定
 font:
-  font-size: 16px
-  code-font-size: 16px
-  # Global font
   # 全局字体
+  font-size: 16px
   font-family: "PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif"
-  # Code font
   # 代码字体
-  code-font-family: '"monospace", monospace'
-# --------------------------- end ---------------------------
+  code-font-size: 16px
+  code-font-family: 'ui-monospace,SFMono-Regular,"SF Mono",Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace'
+# --------------------------- 结束 ---------------------------
 
-# --------------------------- start ---------------------------
+# --------------------------- 开始 ---------------------------
 # Home page article configuration information
 # 首页文章配置信息
 index_post_list:
-  direction: column # row / column
-  column: 2 # 2: 2 columns 3: 3 columns
+  direction: row # row / column ############################################################################
   cover: both
-# --------------------------- end ---------------------------
+  content: 2
+  length: 200
+# --------------------------- 结束 ---------------------------
 
-
-# --------------------------- start ---------------------------
+# --------------------------- 开始 ---------------------------
 # Mermaid
 mermaid: false
-# --------------------------- end ---------------------------
+# --------------------------- 结束 ---------------------------
 
-# --------------------------- start ---------------------------
+# --------------------------- 开始 ---------------------------
 # Chart.js
 chart: false
-# --------------------------- end ---------------------------
+# --------------------------- 结束 ---------------------------
 
-### Extended configuration
-
-# --------------------------- start ---------------------------
-# Console
+# --------------------------- 开始 ---------------------------
 # 控制台
 console:
   enable: false
@@ -298,35 +267,39 @@ console:
     tags: true
     # Archives
     # 归档
-    archive: "month" # month: by month / year: by year
-# --------------------------- end ---------------------------
+    archive: "year"
+# --------------------------- 结束 ---------------------------
 
-# --------------------------- start ---------------------------
-# Footer
+# --------------------------- 开始 ---------------------------
 # 页脚
 footer:
-  # 社交图标
+  # 社交图标栏
   information:
-    author: false # img url / false
+    author: false # 图片路径 / false
     left:
-      # Github: https://github.com/Qiu-Quanzhi || fab fa-github # 名称: 链接 || 图标
+      # Github: https://github.com/Qiu-Quanzhi || fab fa-github # 项名: 路径 || 图标类名
       # Mail: mailto:i@qqzhi.cc || far fa-envelope
     right:
-      # Bilibili: https://space.bilibili.com/1329819902 || fab fa-bilibili
-      # Douyin: https://v.douyin.com/iJsLc8jt/ || fab fa-tiktok
-  # 友情链接
+      # Bilibili: https://space.bilibili.com/ || fab fa-bilibili
+      # Douyin: https://v.douyin.com/ || fab fa-tiktok
+  
+
+
+  # 页脚链接栏
   group:
-    # 导航:
-    #   Archives: /archives/
-    #   Categories: /categories/
-    #   Tags: /tags/
-    # 排列:
-    #   Cookies: /cookies/
-    #   Privacy: /privacy/
-    #   Copyright: /copyright/
+    # 本站:
+    #   版权声明: /copyright/
+    #   个人主页: https://www.qqzhi.cc/
+    #   本站概览: javascript:sco.showConsole()
+    # 文库:
+    #   文章合集: /archives/
+    #   分类合集: /categories/
+    #   标签合集: /tags/
+
+
 
   # 随机友链
-  randomlink: false # 随机友链
+  randomlink: false
 
   # 备案
   beian:
@@ -338,79 +311,70 @@ footer:
 
   # 页脚信息文字
   links:
-    # - name: RSS
+    # - name: 友链与鸣谢
+    #   url: /links/
+    # - name: 订阅
     #   url: /atom.xml
-    # - name: License
-    #   url: https://github.com/Qiu-Quanzhi/hexo-theme-solitude-kai/blob/main/LICENSE
+    # - name: 版权声明
+    #   url: /copyright/
     #   icon:
-    #     - fas fa-copyright
+    #     - fab fa-creative-commons
     #     - fab fa-creative-commons-by
     #     - fab fa-creative-commons-nc
     #     - fab fa-creative-commons-nd
-    # - name: boringbay
-    #   url: https://boringbay.com/
-    #   img: https://boringbay.com/api/badge/www.efu.me
-# --------------------------- end ---------------------------
+# --------------------------- 结束 ---------------------------
 
-# --------------------------- start ---------------------------
-# 404 page
+# --------------------------- 开始 ---------------------------
 # 404 页面
 errorpage:
   img: /img/404.avif
-  text: =awa= Page Not Found # Text
-  recommendList: true
-# --------------------------- end ---------------------------
+  text: =awa= 页面走丢啦
+  recommendList: false
+# --------------------------- 结束 ---------------------------
 
-# --------------------------- start ---------------------------
-# Lazyload
+# --------------------------- 开始 ---------------------------
 # 懒加载
 lazyload:
-  enable: false
+  enable: true
+  # 启用范围: post / site
   field: site
+  # 加载时占位图
   placeholder: ""
+  # 加载失败占位图
   errorimg: /img/error_load.avif
-# --------------------------- end ---------------------------
+# --------------------------- 结束 ---------------------------
 
-# --------------------------- start ---------------------------
-# Loading
+# --------------------------- 开始 ---------------------------
 # 加载
 loading:
-  # Full screen loading
   # 全屏加载
   fullpage: false
-  # Loading icon, default is siteicon
   # 加载图标，不写默认siteicon
   favicon: /img/favicon.png
-  # Pace loading
   # Pace 加载
   pace: true
-# --------------------------- end ---------------------------
+# --------------------------- 结束 ---------------------------
 
-# --------------------------- start ---------------------------
-# Highlight
+# --------------------------- 开始 ---------------------------
 # 代码块高亮
 highlight:
   enable: true
-  # Display the fold button when the number of words exceeds
   # 当超过多少字时显示折叠按钮
   limit: 200
-  # Whether to enable the copy button
   # 是否启用复制按钮
   copy: true
-  # Whether to expand by default
   # 是否默认展开
   expand: true
-  # default: default / mac : apple terminal
-  # default: 默认 / mac : 苹果终端
-  theme: mac
-  # default / solidity / dracula
+  # 主题: default: 默认 / mac : 苹果终端
+  theme: default
+  # 颜色方案: default / solidity / dracula
   color: default
-# --------------------------- end ---------------------------
+# --------------------------- 结束 ---------------------------
 
-# --------------------------- start ---------------------------
+# --------------------------- 开始 ---------------------------
 # OpenGraph
 OpenGraph:
-  enable: false
+  enable: true
   options:
     # twitter_card:
     # twitter_image:
@@ -418,87 +382,73 @@ OpenGraph:
     # twitter_site:
     # fb_admins:
     # fb_app_id:
-# --------------------------- end ---------------------------
+# --------------------------- 结束 ---------------------------
 
-# --------------------------- start ---------------------------
-# Word count
+# --------------------------- 开始 ---------------------------
 # 字数统计
-# warning: Please install the hexo-wordcount plugin first.
 # 警告: 请先安装 hexo-wordcount 插件。
 wordcount: false
-# --------------------------- end ---------------------------
+# --------------------------- 结束 ---------------------------
 
-# --------------------------- start ---------------------------
+# --------------------------- 开始 ---------------------------
 # Katex
-# Latex formula support
 # Latex 公式支持
 katex:
-  enable: false
-  # Whether to load on each page
+  enable: true
   # 是否在每个页面加载
   per_page: false
-  # Whether to enable copy formula
   # 是否启用复制公式
-  copytex: false
-# --------------------------- end ---------------------------
+  copytex: true
+# --------------------------- 结束 ---------------------------
 
-# --------------------------- start ---------------------------
-# verification
+# --------------------------- 开始 ---------------------------
 # 验证
 verify_site:
   # - name: google-site-verification
   #   content: xxxxxx
   # - name: baidu-site-verification
   #   content: xxxxxxx
-# --------------------------- end ---------------------------
+# --------------------------- 结束 ---------------------------
 
-# --------------------------- start ---------------------------
-# Legacy CSS Prefix 
-# CSS前缀配置
-css_prefix: true
-# --------------------------- end ---------------------------
+# --------------------------- 开始 ---------------------------
+# CSS前缀配置 ###########################################################################################
+# 开启后会自动给 CSS 加前缀（以获得更好的浏览器支持），但这会增加 CSS 文件的大小。
+css_prefix: false
+# --------------------------- 结束 ---------------------------
 
-# --------------------------- start ---------------------------
-# Extend
+# --------------------------- 开始 ---------------------------
 # 扩展
 extends:
-  # Insert in head
   # 插入到 head
   head:
   #  - <script src="https://cdn.bootcdn.net/ajax/libs/pace/1.2.4/pace.min.js"></script>
 
-  # Insert in body
   # 插入到 body
   body:
   #  - <script src="https://cdn.bootcdn.net/ajax/libs/pace/1.2.4/pace.min.js"></script>
-# --------------------------- end ---------------------------
+# --------------------------- 结束 ---------------------------
 
-# --------------------------- start ---------------------------
-# Brevity Page
+# --------------------------- 开始 ---------------------------
 # 即刻短文
-brevity:
+logs:
   enable: false
   home_mini: false
-  page: /essay/
+  page: /logs/
   style: 1
   strip: 30
-# --------------------------- end ---------------------------
+# --------------------------- 结束 ---------------------------
 
 
-# --------------------------- start ---------------------------
-# CDN Configuration
+# --------------------------- 开始 ---------------------------
 # CDN配置
 CDN:
-  # CDN providers configuration
   # CDN提供商配置
   internal: local # local / cdnjs / jsdelivr / unpkg / custom
   third_party: custom # cdnjs / jsdelivr / unpkg / custom
-  version: true # 是否使用版本号
-  
-  # Custom format for CDN URLs
-  # CDN URL 自定义格式
+  # 是否使用版本号
+  version: true
+  # CDN 自定义链接格式
   custom_format: https://cdn.jsdelivr.net/npm/${name}@${version}/${min_file}
-  
   # 直接覆盖默认 CDN 链接（优先级最高）
   options:
     # chart_js:
@@ -513,4 +463,4 @@ CDN:
     # snackbar:
     # swiper_css:
     # swiper_js:
-# --------------------------- end ---------------------------
+# --------------------------- 结束 ---------------------------

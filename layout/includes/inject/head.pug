@@ -1,7 +1,12 @@
-each item in theme.verify_site || []
-    meta(name=item.name, content=item.content)
-
 link(rel="canonical" href=urlNoIndex())
+
+if theme.extends.head
+    each item in theme.extends.head
+        != item
+
+// Open Graph
+include ../head/opengraph.pug
+
 link(rel="stylesheet", href=url_for(theme.cdn.fontawesome))
 
 // Feature-specific CSS
@@ -12,13 +17,6 @@ if (theme.logs.home_mini && theme.logs.enable)
 // katex
 if theme.katex && theme.katex.enable
     link(rel="stylesheet", href=url_for(theme.cdn.katex))
-
-// Open Graph
-include ../head/opengraph.pug
-
-if theme.extends.head
-    each item in theme.extends.head
-        != item
 
 !=fragment_cache('injectHeadJs', function(){return inject_head_js()})
 

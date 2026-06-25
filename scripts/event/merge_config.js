@@ -172,8 +172,7 @@ hexo.extend.filter.register(
         per_page: false,
         copytex: true,
       },
-      verify_site: [],
-      css_prefix: false,
+
       extends: {
         head: [],
         body: [],

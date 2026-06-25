@@ -1,11 +1,8 @@
 {
   "name": "hexo-theme-solitude-kai",
   "version": "3.0.21",
-  "description": "A beautiful, powerful, and efficient Hexo theme — Solitude-Kai.",
+  "description": "专注于阅读体验的 Hexo 主题 — Solitude Kai",
   "main": "package.json",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "keywords": [
     "hexo",
     "theme",
@@ -18,7 +15,7 @@
   },
   "dependencies": {
     "hexo-renderer-pug": "^3.0.0",
-    "hexo-renderer-stylus": "^3.0.0"
+    "hexo-renderer-stylus": "^3.0.1"
   },
   "homepage": "https://github.com/Qiu-Quanzhi/hexo-theme-solitude-kai",
   "author": "Ryoine <i@qqzhi.cc>",

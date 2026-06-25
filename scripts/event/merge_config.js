@@ -74,7 +74,6 @@ hexo.extend.filter.register(
           locate: true,
           wordcount: true,
         },
-        rss: null,
         covercolor: {
           enable: false,
           mode: "local",

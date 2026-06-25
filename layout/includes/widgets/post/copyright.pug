@@ -5,13 +5,6 @@
             img.post-copyright__author_img_front(src=url_for(page.avatar || copyright.author || theme.site.icon))
         .post-copyright__author_name= page.author || config.author
         .post-copyright__author_desc= page.desc || config.subtitle
-    .post-tools#post-tools
-        .post-tools-left
-            if theme.post.rss
-                .reward-link.mode
-                    a.reward-link-button(href=url_for(theme.post.rss))
-                        i.solitude.fas.fa-seedling
-                        = _p('footer.rss')
     if copyright.enable || page.copyright
         .post-copyright__notice
             span.post-copyright-info

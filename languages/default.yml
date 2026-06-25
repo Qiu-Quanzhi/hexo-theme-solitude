@@ -103,7 +103,6 @@ footer:
   description: 来自${title}的文章
   learnmore: 了解更多
   randomlink: 友链
-  rss: 订阅
   theme: 主题
 
 404:

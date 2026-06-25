@@ -89,14 +89,12 @@ aside:
     #  Bilibili: https://space.bilibili.com/1036651852 || fab fa-bilibili
   
 
-
   # 文章目录
   toc:
     post: true
     page: false
     vague: true
   
-
 
   # 标签
   tags:
@@ -107,13 +105,11 @@ aside:
       # - 示例标签
   
 
-
   # 归档
   archive:
     enable: true
     type: "year" # month / year
   
-
 
   # 网站信息
   siteinfo:
@@ -180,10 +176,7 @@ post:
     # 字数
     wordcount: true
   
-
   
-  # 订阅源
-  rss: # /atom.xml
   # 文章封面取色
   covercolor:
     enable: false
@@ -194,7 +187,6 @@ post:
     # 缓存时间
     time: 43200000
   
-
 
   #页脚
   footer:
@@ -278,7 +270,6 @@ footer:
       # Douyin: https://v.douyin.com/ || fab fa-tiktok
   
 
-
   # 页脚链接栏
   group:
     # 本站:
@@ -289,7 +280,6 @@ footer:
     #   文章合集: /archives/
     #   分类合集: /categories/
     #   标签合集: /tags/
-
 
 
   # 随机友链

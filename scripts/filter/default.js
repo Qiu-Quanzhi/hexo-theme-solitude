@@ -5,9 +5,9 @@ hexo.extend.filter.register("after_post_render", function (data) {
   const { config } = hexo.theme;
 
   const setCoverAndExcerpt = (layout) => {
-    const { copyright, locate, cover } = hexo.theme.config[layout].default;
-    data.locate = data.locate || locate;
-    data.cc = data.cc || copyright;
+    const { copyright, loc, cover } = hexo.theme.config[layout].default;
+    data.loc = data.loc || loc;
+    data.type = data.type || copyright;
     data.cover =
       data.cover || (cover?.length && cover[getRandomInt(0, cover.length)]);
     data.not_cover = data.cover ? false : true;

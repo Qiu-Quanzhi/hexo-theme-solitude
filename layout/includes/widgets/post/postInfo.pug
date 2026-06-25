@@ -1,8 +1,8 @@
 #post-info
     #post-firstinfo
         .meta-firstline
-            - var cc = page.reprint ? _p('post.reprint') : _p('post.original')
-            a.post-meta-original(title=_p('post.cc').replace(/\$\{cc}/, cc))= cc
+            - var type = page.reprint ? _p('post.reprint') : _p('post.original')
+            a.post-meta-original(title=_p('post.type').replace(/\$\{type}/, type))= type
             if page.categories.data.length > 0
                 span.post-meta-categories
                     a.post-meta-categories(href=url_for('/' + page.categories.data[0].path))= page.categories.data[0].name
@@ -29,12 +29,8 @@
                     if theme.post.meta.wordcount
                         i.post-meta-icon.solitude.fas.fa-file-word(title=_p('post.wordcount'))
                         span.word-count= wordcount(page.content)
-                    span.post-meta-separator
-                    if theme.post.meta.readtime
-                        i.post-meta-icon.solitude.fas.fa-clock(title=_p('post.minread'))
-                        span= min2read(page.content) + ' ' + _p('post.min')
-            if theme.post.meta.locate
-                span.post-meta-position(title=_p('post.ip') + page.locate)
+            if theme.post.meta.loc
+                span.post-meta-position(title=_p('post.loc') + page.loc)
                     i.post-meta-icon.solitude.fas.fa-location-dot
-                    span= page.locate
+                    span= page.loc
 .post-radius-bottom

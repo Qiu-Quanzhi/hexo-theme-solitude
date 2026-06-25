@@ -57,7 +57,7 @@ hexo.extend.filter.register(
       post: {
         default: {
           cover: [],
-          locate: "地球",
+          loc: "地球",
           copyright: {
             enable: true,
             author: {
@@ -71,7 +71,7 @@ hexo.extend.filter.register(
         meta: {
           date: true,
           updated: true,
-          locate: true,
+          loc: true,
           wordcount: true,
         },
         covercolor: {

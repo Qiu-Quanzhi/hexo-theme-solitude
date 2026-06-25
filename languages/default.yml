@@ -31,7 +31,7 @@ page:
 nav:
   site_name_title: 返回博客主页
   backtop: 返回顶部
-  console: 中控台
+  console: 概览
 
 home:
   home: 推荐
@@ -45,12 +45,11 @@ home:
 post:
   reprint: 转载或翻译
   original: 原创
-  cc: 该文章为${cc}文章，注意版权协议
+  type: 该文章为${type}文章，注意版权协议
   posted: 发布于
   updated: 最后更新于
   wordcount: 文章字数
-  minread: 阅读耗时
-  ip: 作者IP归属地为
+  loc: 创作于
   min: 分钟
   copyright:
     reprint: 本文是转载或翻译文章，版权归原作者所有。转载本文请联系原作者。

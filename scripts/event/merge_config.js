@@ -126,7 +126,6 @@ hexo.extend.filter.register(
         },
         group: null,
         randomlink: false,
-        beian: [],
         links: [],
       },
       errorpage: {

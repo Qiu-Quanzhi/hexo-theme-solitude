@@ -94,24 +94,6 @@ mixin copyrightInfo()
   .copyright © #{yearRange} By
     +link('/', config.author, { class: 'footer-bar-link' })
 
-//- 备案信息组件
-mixin beianInfo()
-  .beian-group
-    +conditionalWrapper(theme.footer.beian)
-      - const beian = theme.footer.beian || []
-      each item in beian
-        +link(item.url, '', {
-          class: 'footer-bar-link',
-          title: item.name
-        })
-          +conditionalWrapper(item.icon)
-            if item.icon
-              img.beian-icon(src=url_for(item.icon), alt=item.name)
-          span.beian-name= item.name
-    
-    +link(_p('hexo'), _p('framework_by') + 'Hexo', { class: 'footer-bar-link' })
-    +link(_p('repo'), _p('theme_by') + 'Solitude-Kai', { class: 'footer-bar-link' })
-
 //- 页脚右侧链接组件
 mixin footerRightLinks()
   +conditionalWrapper(theme.footer.links)
@@ -136,7 +118,6 @@ mixin footerBar()
     .footer-bar-links
       .footer-bar-left
         +copyrightInfo()
-        +beianInfo()
       +footerRightLinks()
 
 //- 组装所有页脚组件

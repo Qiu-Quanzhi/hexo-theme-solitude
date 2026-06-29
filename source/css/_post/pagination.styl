@@ -28,17 +28,10 @@
     cursor pointer
     opacity 0
 
-  +maxWidth768()
+  +maxWidth628()
     border-radius 12px
     border var(--style-border-always)
     box-shadow var(--efu-shadow-border)
-
-  &.pagination-post
-    margin 0 2rem 1rem
-    background var(--efu-card-bg)
-
-    +minWidth768()
-      border-radius 12px
 
   .next-post, .prev-post, .next-post.pull-right, .prev-post.pull-left
     background var(--efu-secondbg)
@@ -48,7 +41,7 @@
       backdrop-filter blur(5px)
       transform translateZ(0)
 
-    +maxWidth768()
+    +maxWidth628()
       background var(--efu-card-bg)
 
   .next-post.pull-full, .prev-post.pull-full
@@ -59,7 +52,7 @@
     +minWidth1300()
       display none
 
-    +maxWidth768()
+    +maxWidth628()
       border-bottom var(--style-border-always)
 
   .next-post.pull-right
@@ -73,7 +66,7 @@
       text-align left
       position relative
 
-    +maxWidth768()
+    +maxWidth628()
       width 100%
 
     .label
@@ -90,7 +83,7 @@
         line-height 1
         padding-bottom 0.5rem
 
-      +maxWidth768()
+      +maxWidth628()
         text-align left
 
     a
@@ -99,14 +92,14 @@
       overflow hidden
       height 150px
 
-      +minWidth768()
+      +minWidth628()
         &:hover
           background var(--efu-main)
 
           div
             color: var(--efu-white)
 
-      +maxWidth768()
+      +maxWidth628()
         &:hover
           background var(--efu-none)
 
@@ -115,7 +108,7 @@
       text-align left
 
     a
-      +minWidth768()
+      +minWidth628()
         border-right var(--efu-main-op)
         border-right-width .5px
         border-right-style solid
@@ -133,7 +126,7 @@
         text-align left
 
     a
-      +minWidth768()
+      +minWidth628()
         border-left var(--efu-main-op)
         border-left-width .5px
         border-left-style solid
@@ -153,7 +146,7 @@
     width 100%
     transform translate(0, -50%)
 
-    +minWidth768()
+    +minWidth628()
       padding 1rem 1.5rem 1rem 1.5rem
       position relative
       display flex
@@ -185,7 +178,7 @@
       font-weight 400
       margin-bottom 0
 
-    +maxWidth768()
+    +maxWidth628()
       text-align left
 
   &.show-window

@@ -1,5 +1,5 @@
-.card-widget.card-tags.card-archives.card-webinfo.card-allinfo
+.card-widget.card-archives.card-webinfo.card-allinfo
     if theme.aside.tags.enable
         include ./asideTag
-        hr
-    include ./asideWebInfo
+    if theme.aside.archive.enable
+        include ./asideArchive

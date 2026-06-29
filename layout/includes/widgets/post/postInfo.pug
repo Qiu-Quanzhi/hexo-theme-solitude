@@ -3,9 +3,9 @@
         .meta-firstline
             - var type = page.reprint ? _p('post.reprint') : _p('post.original')
             a.post-meta-original(title=_p('post.type').replace(/\$\{type}/, type))= type
-            if page.categories.data.length > 0
+            each category in page.categories.data
                 span.post-meta-categories
-                    a.post-meta-categories(href=url_for('/' + page.categories.data[0].path))= page.categories.data[0].name
+                    a.post-meta-categories(href=url_for('/' + category.path))= category.name
             .tag_share
                 .post-meta__tag-list
                     each tag in page.tags.data
@@ -18,19 +18,18 @@
         .meta-secondline
             if theme.post.meta.date
                 span.post-meta-date(title=_p('post.posted') + ' ' + full_date(page.date))
-                    i.post-meta-icon.solitude.fas.fa-calendar-days
-                    time(datetime=date_xml(page.date))= date_xml(page.date)
+                    i.post-meta-icon.solitude.fas.fa-calendar
+                    time(datetime=date_xml(page.date))= moment(page.date).format(_p('date_format.long'))
             if theme.post.meta.updated
                 span.post-meta-date(title=_p('post.updated') + ' ' + full_date(page.updated))
-                    i.post-meta-icon.solitude.fas.fa-arrows-rotate
-                    time(datetime=date_xml(page.updated))= date_xml(page.updated)
+                    i.post-meta-icon.solitude.fas.fa-calendar-check
+                    time(datetime=date_xml(page.updated))= moment(page.updated).format(_p('date_format.long'))
             if theme.wordcount
                 span.post-meta-wordcount
                     if theme.post.meta.wordcount
-                        i.post-meta-icon.solitude.fas.fa-file-word(title=_p('post.wordcount'))
-                        span.word-count= wordcount(page.content)
+                        i.post-meta-icon.solitude.fas.fa-paragraph(title=_p('post.wordcount'))
+                        span.word-count= wordcount(page.content).toString().replace("k",__('thousand')) + "字"
             if theme.post.meta.loc
                 span.post-meta-position(title=_p('post.loc') + page.loc)
                     i.post-meta-icon.solitude.fas.fa-location-dot
                     span= page.loc
-.post-radius-bottom

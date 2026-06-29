@@ -15,7 +15,7 @@ mixin postFooterBar()
           when 'iconClass'
             +icon(theme.site.name.custom)
           when 'img'
-            img.solitude.nolazyload(src=url_for(theme.site.name.custom))
+            img.solitude(src=url_for(theme.site.name.custom))
           when 'text'
             span= theme.site.name.custom
       
@@ -27,7 +27,8 @@ mixin postFooterBar()
           theme.post.footer.button.name,
           { class: 'footer-bar-link' }
         )
-//- 页脚交易链接组件
+
+//- 页脚链接组件
 mixin footerDeals()
   if information.left || information.right || information.author
     #footer_deal
@@ -45,7 +46,7 @@ mixin footerDeals()
 
       //- 作者头像
       +conditionalWrapper(information.author)
-        #footer_mini_logo.nolazyload.footer_mini_logo(
+        #footer_mini_logo.footer_mini_logo(
           title=_p('nav.backtop')
           onclick="sco.toTop()"
         )
@@ -78,21 +79,28 @@ mixin footerGroups()
       if theme.footer && theme.footer.randomlink
         .footer-group
           .footer-title-group
-            h3.footer-title= _p('footer.randomlink')
+            h3.footer-title.friend-links-title(
+              onclick='pjax.loadUrl("/links/")'
+              title=_p('footer.moreLink')
+            )= _p('footer.link')
             button.random-friends-btn(
               onclick='randomLinksList()'
-              title=_p('footer.randomlink')
+              title=_p('footer.randomLink')
             )
               +icon('fas fa-arrows-rotate')
           .footer-links#friend-links-in-footer
+
 //- 版权信息组件
 mixin copyrightInfo()
   - const startYear = moment(theme.aside.siteinfo.runtime).year()
   - const currentYear = new Date().getFullYear()
   - const yearRange = startYear === currentYear ? startYear : `${startYear} - ${currentYear}`
   
-  .copyright © #{yearRange} By
-    +link('/', config.author, { class: 'footer-bar-link' })
+  .copyright © #{yearRange}&nbsp;
+    a.footer-bar-link(href=url_for("/"))
+      img.author-avatar(src=url_for(theme.site.icon))
+      = config.author
+
 
 //- 页脚右侧链接组件
 mixin footerRightLinks()

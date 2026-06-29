@@ -5,7 +5,7 @@ hexo.extend.filter.register('before_post_render', () => {
     const logger = hexo.log;
     const theme = hexo.theme.config;
     if (theme.logs.enable && !data.logs) {
-        logger.error('\n 启用即刻短文的情况下，请新建 logs.yaml。');
+        logger.error('\n 启用日志的情况下，请新建 logs.yaml。');
         logger.error('\n If logs is enabled, logs data must be supplied! \n Please create logs.yaml.');
         process.exit(-1);
     }

@@ -6,8 +6,12 @@ include ../../mixins/common.pug
 
 //- 主切换逻辑
 case item
+  when 'toc'
+    include ./asideToc.pug
   when 'about'
     include ./asideInfoCard.pug
+  when 'nav'
+    include ./asideNav.pug
   when 'newestPost'
     include ./asideNewestPost.pug
   when 'allInfo'

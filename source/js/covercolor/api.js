@@ -39,7 +39,7 @@ function setThemeColors(value) {
     if (value) {
         const [r, g, b] = value.match(/\w\w/g).map(x => parseInt(x, 16));
         document.documentElement.style.setProperty('--efu-main', value);
-        document.documentElement.style.setProperty('--efu-main-op', `${value}23`);
+        document.documentElement.style.setProperty('--efu-main-op', `${value}66`);
         document.documentElement.style.setProperty('--efu-main-op-deep', `${value}dd`);
         document.documentElement.style.setProperty('--efu-main-none', `${value}00`);
         adjustBrightness(r, g, b);

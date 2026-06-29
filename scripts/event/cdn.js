@@ -6,7 +6,7 @@
 "use strict";
 
 const { version } = require("../../package.json");
-const path = require("path");
+const join = require("path").join;
 
 hexo.extend.filter.register("before_generate", () => {
   const themeConfig = hexo.theme.config;
@@ -14,7 +14,7 @@ hexo.extend.filter.register("before_generate", () => {
   const name = "hexo-theme-solitude-kai";
 
   const thirdPartySrc = hexo.render.renderSync({
-    path: path.join(hexo.theme_dir, "/plugins.yml"),
+    path: join(hexo.theme_dir, "/plugins.yml"),
     engine: "yaml",
   });
   const internalSrc = {

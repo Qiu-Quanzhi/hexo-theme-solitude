@@ -9,11 +9,14 @@
 if hexo-config('logs.enable')
   @import "logs.styl"
 
-@import "equipment.styl"
+if $equipment
+  @import "equipment.styl"
 
-@import "links.styl"
+if $link
+  @import "links.styl"
 
-@import "_about/about"
+if $about
+  @import "_about/about"
 
 @import "other"
 
@@ -28,13 +31,13 @@ if hexo-config('logs.enable')
   box-shadow none
   min-height calc(100vh - 464px)
 
-  +maxWidth768()
+  +maxWidth628()
     padding 0 1rem
 
   > div:not(.author-content-item)
     animation slide-in .6s .2s backwards
 
-+minWidth768()
++minWidth628()
   > div:nth-child(1) > a::before
     height: 24px
     width: 44px
@@ -47,11 +50,11 @@ if hexo-config('logs.enable')
   > a:nth-child(0) > i
     padding-right: 8px
 
-+minWidth768()
++minWidth628()
   .needEndHide.hide
     bottom -200px !important
     opacity 0
 
-+maxWidth768()
++maxWidth628()
   .needEndHide
     display none!important

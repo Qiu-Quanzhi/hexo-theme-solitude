@@ -1,12 +1,18 @@
 .article-container
   overflow-wrap break-word
-  +maxWidth768()
+  line-height 1.4
+  #post &
+    border var(--style-border)
+    border-radius var(--radius)
+    box-shadow var(--efu-shadow-border)
+    background var(--efu-card-bg)
+  +maxWidth628()
     overflow hidden
 
   .post &
-    padding 1rem 2rem
-    +maxWidth768()
-      padding .5rem .5rem 1rem .5rem
+    padding .5rem 1rem
+    +maxWidth628()
+      padding .5rem
 
   iframe
     border-radius 12px
@@ -170,13 +176,9 @@
                 counter-increment li
 
   &.post-content
-    h1, h2, h3, h4
-      padding-right 1rem
-      position relative
-      display flex
-      flex-wrap wrap
-      align-items center
+    h1, h2, h3, h4, h5, h6
       transition all .2s ease-out 0s
+      text-align center
 
     h1
       font-size 1.5rem

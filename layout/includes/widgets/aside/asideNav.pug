@@ -1,0 +1,16 @@
+if page.prev || page.next
+    .card-widget.card-nav
+        .item-headline
+            i.solitude.fas.fa-compass
+            span= _p('aside.nav')
+        .aside-list
+            if page.prev
+                a.aside-list-item(href=url_for(page.prev.path) title=page.prev.title)
+                    .content
+                        span.title(href=url_for(page.prev.path) title=page.prev.title)= page.prev.title
+                        span.article-nav(href=url_for(page.prev.path))= _p('post.nav.prev')
+            if page.next
+                a.aside-list-item(href=url_for(page.next.path) title=page.next.title)
+                    .content
+                        span.title(href=url_for(page.next.path) title=page.next.title)= page.next.title
+                        span.article-nav(href=url_for(page.next.path))= _p('post.nav.next')

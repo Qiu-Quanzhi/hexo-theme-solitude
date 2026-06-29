@@ -10,13 +10,15 @@ else if(is_post())
 else if(is_page() || is_archive() || is_tag() || is_category())
     - noSticky = aside.page.noSticky ? aside.page.noSticky.split(',') : null
     - Sticky = aside.page.Sticky ? aside.page.Sticky.split(',') : null
+
+if showToc
+    - Sticky=['toc', ...(Sticky||[])]
+
 if noSticky || Sticky
     .aside-content#aside-content
         each item in noSticky || []
             include ./asideSwitch.pug
         .sticky_layout
-            if showToc
-                include ./asideToc.pug
             each item in Sticky || []
                 include ./asideSwitch.pug
 else

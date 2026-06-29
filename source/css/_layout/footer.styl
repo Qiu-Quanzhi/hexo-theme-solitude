@@ -1,11 +1,10 @@
 #footer
   position relative
-  background linear-gradient(180deg, var(--efu-card-bg-none) 0, var(--efu-card-bg) 25%)
   display flex
   flex-direction column
   margin-top .5rem
 
-  +maxWidth768()
+  +maxWidth628()
     margin-top 0
 
   &:before
@@ -21,7 +20,6 @@
       display flex
       flex-direction column
       align-items center
-      margin-top 16px
 
       a.footer-bar-link
         padding 4px 16px
@@ -53,7 +51,7 @@
     padding-top 2rem
     align-items center
 
-    +maxWidth768()
+    +maxWidth628()
       flex-wrap wrap
       flex-direction row
 
@@ -88,7 +86,7 @@
       user-select none
       border-radius 50px
       overflow hidden
-      +maxWidth768()
+      +maxWidth628()
         display none
 
       &:hover
@@ -101,7 +99,7 @@
     max-width 1200px
     justify-content space-evenly
     flex-wrap wrap
-    margin 1rem auto 3rem
+    margin 1rem auto 1rem
     padding 0 1rem
 
     .footer-links
@@ -134,7 +132,7 @@
     .footer-title-group
       display flex
       align-items center
-      margin .5rem 0 .7rem 8px
+      margin .5rem 0 .5rem 8px
 
       a
         margin-left 8px
@@ -158,14 +156,22 @@
       font-size .8rem
       margin-left 8px
 
+      &.friend-links-title
+        transition .3s
+        cursor pointer
+
+        &:hover
+          color var(--efu-theme)
+
     .random-friends-btn
       display flex
       margin-left 8px
+      *:hover
+        color var(--efu-theme)
 
   /#footer-bar
     color var(--efu-fontcolor)
     margin-top 1rem
-    background var(--efu-secondbg)
     display flex
     overflow hidden
     z-index 1
@@ -182,7 +188,7 @@
       align-items center
       line-height 1
       padding 1rem 1.5rem
-      +maxWidth768()
+      +maxWidth628()
         justify-content center
         gap 8px
 
@@ -190,7 +196,7 @@
       display flex
       gap 8px
       flex-direction column
-      +maxWidth768()
+      +maxWidth628()
         align-items center
 
       .copyright
@@ -221,7 +227,7 @@
         min-width 20px
 
       i
-        font-size 14px
+        font-size 18px
       
       img
         height 20px

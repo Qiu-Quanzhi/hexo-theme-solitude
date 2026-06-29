@@ -9,7 +9,7 @@
     padding 34px 0 20px 0
     border var(--style-border-always)
 
-    +maxWidth768()
+    +maxWidth628()
       box-shadow var(--efu-shadow-border)
       padding: 1rem 1.3rem;
       margin .5rem
@@ -35,6 +35,9 @@
           position absolute
           bottom 0
           left 0
+
+          &:hover
+            transform scale(1.1)
 
       .post-copyright__author_name
         text-align center
@@ -67,7 +70,7 @@
         text-align center
         max-width 500px
 
-        +maxWidth768()
+        +maxWidth628()
           -webkit-line-clamp 2
 
         a
@@ -84,6 +87,4 @@
             color var(--efu-white)
             cursor pointer
             border-radius 4px
-
-
-
+ 

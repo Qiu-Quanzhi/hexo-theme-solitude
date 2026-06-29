@@ -1,8 +1,8 @@
 - const {copyright} = theme.post.default
 .post-copyright
     .post-copyright__author_group
-        .post-copyright__author_img
-            img.post-copyright__author_img_front(src=url_for(page.avatar || copyright.author || theme.site.icon))
+        a.post-copyright__author_img(href=url_for(copyright.author.url))
+            img.post-copyright__author_img_front(src=url_for(page.avatar || copyright.author.img || theme.site.icon))
         .post-copyright__author_name= page.author || config.author
         .post-copyright__author_desc= page.desc || config.subtitle
     if copyright.enable || page.copyright
@@ -12,7 +12,7 @@
                     = _p('post.copyright.reprint')
                 else
                     = _p('post.copyright.original')
-                    a(href=url_for(theme.post.default.copyright.licenurl))
+                    a(href=url_for(theme.post.default.copyright.licenseUrl))
                         | #{theme.post.default.copyright.license}
                     = _p('post.copyright.original_end')
                     a(href=url_for("/")) #{config.title}

@@ -23,15 +23,13 @@
     align-items center
     transform translateY(20px)
     transition .3s
-    gap .5rem
-    max-height calc(100dvh - 180px)
-    max-width 1300px
+    max-width 1400px
+    min-width min(1100px, 90vw)
 
-    +maxWidth1400()
+    +maxWidth1300()
       justify-content center
-      max-width calc(100% - 64px)
 
-    +maxWidth768()
+    +maxWidth628()
       display none
 
     +maxHeight800()
@@ -43,8 +41,10 @@
       transform translateY(0)
       opacity 1
       transition-delay .1s
+      max-height 80%
 
   .console-card-group-left
+    margin-right .5rem
     width 40%
     height 100%
 
@@ -54,7 +54,7 @@
   .console-card-group-right
     display flex
     flex-direction column
-    justify-content flex-start
+    justify-content center
     height 100%
     width 60%
     overflow hidden
@@ -68,13 +68,13 @@
     overflow hidden
     border var(--style-border)
     box-shadow var(--efu-shadow-border)
-    padding 32px 36px 36px 36px
+    padding 40px
     gap 24px
     display: flex
     flex-direction: column
 
   .console-card.tags
-    flex 1
+    height calc(100% - 172px)
     +maxHeight800()
       height 100%
 
@@ -246,11 +246,11 @@
       display flex
       flex-direction row
       flex-wrap wrap
+      justify-content flex-start
       gap .5rem
-      height auto
-      max-height 164px
+      height 164px
 
-      li.item
+      li.card-archive-list-item
         flex 1 1 calc(100% / 4 - 1.5rem)
 
       a
@@ -268,15 +268,15 @@
           color var(--efu-white)
           cursor pointer
 
-        .date
+        .card-archive-list-date
           font-size 14px
           opacity .6
 
-        .count-group
+        .card-archive-list-count-group
           display flex
           flex-direction row
 
-          .count
+          .card-archive-list-count
             width auto
             text-align left
             font-size 1.1rem
@@ -284,12 +284,12 @@
             margin-right 2px
             font-weight 700
 
-          .unit
+          .card-archive-list-count-unit
             width auto
             text-align left
             font-size 14px
             font-weight 700
 
   #consoleHideAside
-    +maxWidth768()
+    +maxWidth628()
       display none

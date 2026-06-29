@@ -42,7 +42,7 @@ if site.data.about.likes
               each item in like.list
                a.comic-item(href=item.href target="_blank", rel="noopener noreferrer", title=item.name)
                 .comic-item-cover
-                 img.nolazyload(src=item.cover, alt=item.name)
+                 img(src=item.cover, alt=item.name)
  
       else
         .author-content-item(class=like.type style=`background: url(${like.bg}) no-repeat center/cover`)

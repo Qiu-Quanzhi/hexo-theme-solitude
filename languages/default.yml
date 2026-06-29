@@ -1,10 +1,14 @@
 more: 更多
 random: 随便逛逛
 upload: 发布时间：
-loading: 加载中...
+loading: 正在加载...
 day: " 天"
+date_format:
+  short: 'YY年MM月DD日'
+  long: 'YYYY年MM月DD日'
+thousand: 千
+words: 字
 
-# Language: 简体中文
 theme:
   dark: 已切换至深色模式
   light: 已切换至浅色模式
@@ -23,37 +27,35 @@ time:
 page:
   tag: 标签
   category: 分类
+  archive: 文章
   tags: 全部标签
   categories: 全部分类
-  archives: 文章
-  404: 页面没有找到
+  archives: 全部文章
+  404: 虚空之地
+  gear: 我的装备
 
 nav:
-  site_name_title: 返回博客主页
+  site_name_title: 返回主页
   backtop: 返回顶部
   console: 概览
 
 home:
   home: 推荐
-  sticky: 置顶
-  new: 最新
-  read: 未读
-  recommend: 荐
-  recommendmore: 更多推荐
   archives: 全部文章
+  logs: 前往日志
 
 post:
-  reprint: 转载或翻译
+  reprint: 转载
   original: 原创
   type: 该文章为${type}文章，注意版权协议
   posted: 发布于
-  updated: 最后更新于
+  updated: 修改于
   wordcount: 文章字数
   loc: 创作于
   min: 分钟
   copyright:
-    reprint: 本文是转载或翻译文章，版权归原作者所有。转载本文请联系原作者。
-    original: 本文是原创文章，采用
+    reprint: 本文是转载文章，版权归原作者所有。转载本文请联系原作者。
+    original: 本文采用
     original_end: 协议，完整转载请注明来自
   nav:
     next: 下一篇
@@ -64,19 +66,17 @@ head:
   noscript: 开启JavaScript才能访问本站哦~
 
 aside:
-  postcount: "文章总数 :"
-  runtime: "建站天数 :"
-  updatetime: "最后更新 :"
-  wordcount: "全站字数 :"
-  toc: 文章目录
+  postcount: "文章总数"
+  runtime: "运营时长"
+  updatetime: "上次更新"
+  wordcount: "本站字数"
+  toc: 目录
   tagmore: 查看全部
   avatar: 头像
-  hello: 好久不见，
-  back: 欢迎再次回来，
-
+  nav: 导航
   newpost: 最近发布
   card:
-    posts: "累计文章数:"
+    posts: "文章总数:"
     tags: "标签总数:"
     categories: "分类总数:"
 
@@ -90,13 +90,15 @@ console:
 
 sidebar:
   function: 功能
-  darkmode: 显示模式
+  darkmode: 昼夜切换
   siteinfo: 网站信息
 
 footer:
   description: 来自${title}的文章
   learnmore: 了解更多
-  randomlink: 友链
+  link: 友链
+  randomLink: 刷新随机友链
+  moreLink: 前往更多友链
   theme: 主题
 
 404:
@@ -116,5 +118,5 @@ about:
 
 logs:
   tip0: "- 已展开所有短文 -"
-  tip1: "- 只展示最近 #{count} 条短文 -"
+  tip1: "- 展示最近 #{count} 条短文 -"
   link: "链接"

@@ -1,16 +1,31 @@
 .card-widget.card-info
     .card-content
-        .card-info-avatar.is-center
-            .top-group
-                .sayhi#sayhi(onclick="sco.changeWittyWord()")
-        .avatar
-            img(alt=_p('aside.avatar'), src=theme.aside.my_card.author.img)
-        .description!= theme.aside.my_card.content
-        .bottom-group
-            span.left
-                .name= config.author
-                .desc!= theme.aside.my_card.description
-            .social-icons.is-center
+        .card-info-bg-top
+            .is-center
+                .author-info__top-group
+                    .sayhi#sayhi(onclick="sco.changeWittyWord()")
+        a.card-info-avatar(href=url_for(theme.aside.my_card.author.url) title=_p('aside.avatar'))
+            .avatar-img
+                img(src=theme.aside.my_card.author.img alt=_p('aside.avatar'))
+        .card-info__desc_group
+            .author-info__name= config.author
+            .author-info__desc!= config.subtitle
+
+            .card-info__data.is-center
+                if theme.aside.siteinfo.runtimeenable
+                    span
+                        .headline= _p('aside.runtime')
+                        .length-num#runtimeshow
+                if theme.aside.siteinfo.updatetime
+                    span
+                        .headline= _p('aside.updatetime')
+                        time.auto-time.length-num(datetime=new Date(), style="display:block;")
+                if theme.wordcount && theme.aside.siteinfo.wordcount
+                    span
+                        .headline= _p('aside.wordcount')
+                        .length-num= totalcount(site).toString().replace("k",_p('thousand'))
+
+            .card-info-social-icons.is-center
                 each value, label in theme.aside.my_card.information || {}
                     - var array = value.split('||')
                     a.social-icon(href=url_for(trim(array[0])), title=label)

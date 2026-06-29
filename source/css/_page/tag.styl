@@ -1,5 +1,9 @@
 #tag
-  +maxWidth768()
+  +minWidth1300()
+    padding: 4rem 2rem 1rem 2rem!important
+    overflow hidden
+
+  +maxWidth628()
     padding 0 1rem
 
   #tag-page-tags
@@ -12,14 +16,12 @@
     left 0
     top 0
     max-height 44px
-    overflow: hidden
+    overflow hidden
     background var(--efu-card-bg)
     backdrop-filter saturate(180%) blur(20px)
     transition .1s ease-out
     border-radius 12px
     border var(--style-border-always)
-    +maxWidth768()
-      display none
 
     &:hover
       max-height 1000px

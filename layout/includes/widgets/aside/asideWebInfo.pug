@@ -1,17 +1,7 @@
 .webinfo
     if theme.aside.siteinfo.postcount
         .webinfo-item
-            .item-name= __('aside.postcount')
+            .webinfo-item-title
+                i.item-icon.fas.fa-folder-closed
+                .item-name= __('aside.postcount')
             .item-count= site.posts.length
-    if theme.aside.siteinfo.runtimeenable
-        .webinfo-item
-            .item-name= __('aside.runtime')
-            .item-count#runtimeshow
-    if theme.aside.siteinfo.updatetime
-        .webinfo-item
-            .item-name= __('aside.updatetime')
-            time.item-count(datetime=new Date())
-    if theme.wordcount && theme.aside.siteinfo.wordcount
-        .webinfo-item
-            .item-name= __('aside.wordcount')
-            .item-count= totalcount(site)

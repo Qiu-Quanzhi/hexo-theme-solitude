@@ -228,7 +228,7 @@ const sco = {
   },
   initbbtalk() {
     const bberTalkElement = document.querySelector("#bber-talk");
-    if (bberTalkElement) {
+    if (bberTalkElement && bberTalkElement.childElementCount > 1) {
       new Swiper(".swiper-container", {
         direction: "vertical",
         loop: true,
@@ -424,7 +424,6 @@ const sco = {
     selector.forEach((item) => {
       const timeVal = item.getAttribute("datetime");
       item.textContent = utils.diffDate(timeVal, true);
-      item.style.display = "inline";
     });
   },
 };
@@ -534,7 +533,7 @@ const addHighlight = () => {
 class toc {
   static init() {
     const tocContainer = document.getElementById("card-toc");
-    if (!tocContainer || !tocContainer.querySelector(".toc a")) {
+    if (tocContainer && !tocContainer.querySelector(".toc a")) {
       tocContainer.style.display = "none";
       return;
     }
@@ -670,7 +669,7 @@ window.refreshFn = () => {
   const { is_home, is_page, page, is_post } = PAGE_CONFIG;
   const { runtime, lazyload, randomlink, covercolor } =
     GLOBAL_CONFIG;
-  const timeSelector = ".datetime, .webinfo-item time, .post-meta-date time";
+  const timeSelector = "time.auto-time";
   document.body.setAttribute("data-type", page);
   sco.changeTimeFormat(document.querySelectorAll(timeSelector));
   runtime && sco.addRuntime();

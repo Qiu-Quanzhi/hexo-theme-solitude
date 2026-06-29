@@ -22,6 +22,10 @@ mixin postsList()
 
 //- 首页主内容组件
 mixin homeContent()
+  if theme.logs.home_mini && theme.logs.enable
+      #home_top
+          if theme.logs.home_mini && theme.logs.enable
+              include ./includes/widgets/home/bbTimeList
   main.layout#content-inner
     #home
       +categoryBar()

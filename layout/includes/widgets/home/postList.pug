@@ -4,35 +4,20 @@
 
 include ../../mixins/common.pug
 
-- const { direction, cover } = theme.index_post_list
-
-//- 文章标签组件
-mixin postTips()
-  .recent-post-info-top-tips
-    //- 置顶标签
-    if post.sticky && is_home()
-      span.article-meta.sticky-warp
-        +icon('fas fa-thumbtack', '', { class: 'sticky orange' })
-        span.sticky.orange= _p('home.sticky')
-    
-    //- 分类标签
-    each category in post.categories.data
-      span.original= category.name
-
-    //- 新文章标签
-    if post.prev == null && is_home()
-      span.original= _p('home.new')
-
-    //- 阅读链接
-    - var readLinkOptions = { class: 'unvisited-post' }
-    +link(post.path, _p('home.read'), readLinkOptions)
-
 //- 文章信息组件
 mixin postInfo()
   .recent-post-info-top
-    +postTips()
-    - var titleLinkOptions = { class: 'article-title', title: post.title }
-    +link(post.path, post.title, titleLinkOptions)
+        span.article-meta.sticky-warp
+            a.article-title(href=url_for(post.path), title=post.title)
+                if is_home() && post.sticky
+                    i.solitude.fas.fa-thumbtack.sticky.orange
+                = post.title
+
+        .article-content.article-container
+            - let content = post.excerpt || strip_html(post.content)
+            - let expert = content.substring(0, theme.index_post_list.length).replace(/\d+/g, '').replace(/&#xF/g, '').replace(/&#x/g, '')
+            - content.length > theme.index_post_list.length ? expert += ' ...' : ''
+            span.blog-slider__desc= expert
   
   //- 文章元数据
   +postMeta(post)
@@ -40,32 +25,16 @@ mixin postInfo()
 //- 文章封面组件  
 mixin postCoverWrapper()
   if post.cover
-    .post_cover
-      +postCover(post)
+    +postCover(post, {lazy: false})
 
-//- 列布局渲染
-mixin columnLayout()
-  +postCoverWrapper()
-  .recent-post-info
-    +postInfo()
-
-//- 行布局渲染
-mixin rowLayout(position)
-  case position
-    when 0
-      +postCoverWrapper()
-      .recent-post-info
-        +postInfo()
-    when 1
-      .recent-post-info
-        +postInfo()
-      +postCoverWrapper()
+//- 布局渲染
+mixin layout()
+    +postCoverWrapper()
+    .recent-post-info
+      +postInfo()
 
 //- 主文章项组件
 - var onclickAttr = "pjax.loadUrl('" + url_for(post.path) + "')"
 .recent-post-item(onclick=onclickAttr)
-  if direction === 'column'
-    +columnLayout()
-  else
-    - var position = cover === 'both' ? index % 2 : (cover === 'left' ? 0 : 1)
-    +rowLayout(position)
+    +layout()
+

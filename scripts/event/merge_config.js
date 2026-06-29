@@ -104,9 +104,6 @@ hexo.extend.filter.register(
         "code-font-family": 'ui-monospace,SFMono-Regular,"SF Mono",Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace',
       },
       index_post_list: {
-        direction: "row",
-        cover: "both",
-        content: 2,
         length: 200,
       },
       mermaid: false,
@@ -130,7 +127,7 @@ hexo.extend.filter.register(
       },
       errorpage: {
         img: "/img/404.avif",
-        text: "=awa= 页面走丢啦",
+        text: "页面好像走丢了……",
         recommendList: false,
       },
       logs: {
@@ -144,7 +141,7 @@ hexo.extend.filter.register(
         enable: true,
         field: "site",
         placeholder: "",
-        errorimg: "/img/error_load.avif",
+        errorimg: "/img/404.avif",
       },
       loading: {
         fullpage: false,

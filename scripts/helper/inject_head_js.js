@@ -86,12 +86,6 @@ hexo.extend.helper.register("inject_head_js", function () {
                   ele.removeEventListener(event, fn, option)
               })
             },
-            diffDateFormat: (selector) => {
-                selector.forEach(item => {
-                    const date = new Date(item.getAttribute('datetime') || item.textContent);
-                    item.textContent = (date.getMonth() + 1).toString()+'/'+date.getDate().toString();
-                });
-            },
         }
     `;
   return `<script>(()=>{${createJS()}})()</script>`;

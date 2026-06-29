@@ -9,5 +9,5 @@ if menu
                         - var array = data.split('||')
                         a.back-menu-item(href=url_for(trim(array[0])), title=label)
                             if array[1]
-                                img.nolazyload.back-menu-item-icon(src=trim(array[1]), alt=label)
+                                img.back-menu-item-icon(src=trim(array[1]), alt=label)
                             span.back-menu-item-text= label

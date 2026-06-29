@@ -30,8 +30,8 @@ mixin pageContent()
             include includes/page/about
           when 'logs'
             include includes/page/logs
-          when 'kit'
-            include includes/page/kit
+          when 'gear'
+            include includes/page/gear
           default
             include includes/page/default
 
@@ -40,5 +40,5 @@ block content
     +pageContent()
     
     //- 侧边栏
-    +conditionalWrapper(page.aside)
+    if page.aside
       include includes/widgets/aside/aside

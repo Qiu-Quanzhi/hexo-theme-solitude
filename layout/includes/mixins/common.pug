@@ -50,36 +50,40 @@ mixin card(options)
 
 //- 文章元信息
 mixin postMeta(post, options)
-  - options = options || {}
-  - var showDate = options.showDate !== false
-  - var showTags = options.showTags !== false
-  - var showCategories = options.showCategories !== false
-  .article-meta-wrap
-    if showTags && post.tags && post.tags.length > 0
-      span.article-meta.tags
-        each tag in post.tags.data
-          - var linkOptions = { class: 'article-meta__tags', onclick: 'event.stopPropagation();' }
-          +link(tag.path, '', linkOptions)
-            span.tags-punctuation
-              +icon('fas fa-hashtag')
-              = tag.name
-    
-    if showDate
-      span.post-meta-date
-        time(datetime=moment(post.date))= date(post.date, config.date_format)
+    .article-meta-wrap
+        span.article-meta.post-meta-date
+            time(datetime=date_xml(post.date))
+                i.solitude.fas.fa-calendar
+                = moment(post.date).format(_p('date_format.short'))
+        span.article-meta.post-meta-category
+            - let category_icon = false
+            each category in post.categories.data
+                a.original.post-meta-categories(href=url_for('/' + category.path), onclick="event.stopPropagation();")
+                    if !category_count
+                        i.solitude.fas.fa-folder
+                        - category_icon = true
+                    = category.name
+        span.article-meta.post-meta-wordcount
+            span.word-count
+                i.solitude.fas.fa-paragraph
+                = wordcount(post.content).toString().replace("k",__('thousand')) + _p('words')
+        span.article-meta.tags
+            each tag in post.tags.data
+                a.article-meta__tags(href=url_for(tag.path), onclick="event.stopPropagation();")
+                    span.tags-punctuation
+                        i.solitude.fas.fa-hashtag
+                        =tag.name
 
 //- 文章封面
 mixin postCover(post, options)
   - options = options || {}
   - var lazy = options.lazy !== false
   if post.cover
-    - var linkOptions = { title: post.title }
-    +link(post.path, '', linkOptions)
-      img.post_bg(
-        src=url_for(post.cover)
-        alt=post.title
-        loading=lazy ? 'lazy' : 'eager'
-      )
+    img.post_bg(
+      src=url_for(post.cover)
+      alt=post.title
+      loading=lazy ? 'lazy' : 'eager'
+    )
 
 //- 页面横幅
 mixin pageBanner(title, subtitle, backgroundImage)

@@ -104,7 +104,7 @@ mixin copyrightInfo()
 
 //- 页脚右侧链接组件
 mixin footerRightLinks()
-  +conditionalWrapper(theme.footer.links)
+  if theme.footer.links
     .footer-bar-right
       if theme.footer.links && theme.footer.links.length > 0
         each item in theme.footer.links

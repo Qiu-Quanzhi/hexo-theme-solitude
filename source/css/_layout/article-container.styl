@@ -117,6 +117,7 @@
         color var(--efu-fontcolor)
         transition all .3s ease-out 0s
         background var(--efu-lighttext)
+        font-weight bolder
 
       &:not(.tab)
         position relative
@@ -179,6 +180,25 @@
     h1, h2, h3, h4, h5, h6
       transition all .2s ease-out 0s
       text-align center
+
+      .header-anchor
+        position absolute
+        margin-left .5rem !important
+        color hsla(225deg, 15%, 90%, 0.32) !important
+        opacity 0 !important
+        transition color .25s, opacity 125ms !important
+        border none !important
+        transform translateY(-2.5px) !important
+        background none !important
+
+        &:before
+          content "\00B6"
+
+      &:focus, &:hover, &:target
+        > .header-anchor
+          opacity .8 !important
+          background none !important
+          color #6cf !important
 
     h1
       font-size 1.5rem

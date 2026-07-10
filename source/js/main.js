@@ -719,6 +719,84 @@ window.onkeydown = (e) => {
   }
 };
 
+let _hashScrollTimer = null;
+let _hashScrollObserver = null;
+
+function hashScrollIntoView() {
+  const hash = location.hash;
+  if (!hash) return;
+
+  let element;
+  try {
+    element = document.querySelector(decodeURI(hash));
+  } catch (error) {
+    return;
+  }
+  if (!element) return;
+
+  const header = document.getElementById("page-header");
+
+  // 手动计算精确的居中滚动位置
+  const scrollToCenter = (smooth) => {
+    const headerHeight =
+      header && header.classList.contains("nav-fixed")
+        ? header.offsetHeight
+        : 0;
+    const viewportHeight = window.innerHeight;
+    const rect = element.getBoundingClientRect();
+    const elTop = rect.top + window.pageYOffset;
+    const elHeight = rect.height;
+
+    // 目标：元素中心 = 视口中心 + header 偏移
+    let targetTop = elTop - (viewportHeight / 2) + (elHeight / 2) + headerHeight;
+    const maxScroll =
+      document.documentElement.scrollHeight - viewportHeight;
+    targetTop = Math.max(0, Math.min(Math.round(targetTop), maxScroll));
+
+    window.scrollTo({
+      top: targetTop,
+      behavior: smooth ? "smooth" : "instant",
+    });
+  };
+
+  // 清理上一次的观察器（处理 hashchange 时避免冲突）
+  clearTimeout(_hashScrollTimer);
+  if (_hashScrollObserver) {
+    _hashScrollObserver.disconnect();
+    _hashScrollObserver = null;
+  }
+
+  // 立即平滑滚动
+  scrollToCenter(true);
+
+  // 监控布局变化（懒加载图片等），修正位置
+  let retries = 0;
+  const maxRetries = 8;
+
+  if (window.ResizeObserver) {
+    _hashScrollObserver = new ResizeObserver(() => {
+      if (++retries > maxRetries) {
+        _hashScrollObserver.disconnect();
+        _hashScrollObserver = null;
+        return;
+      }
+      clearTimeout(_hashScrollTimer);
+      _hashScrollTimer = setTimeout(() => scrollToCenter(false), 150);
+    });
+    _hashScrollObserver.observe(element);
+
+    // 3 秒后强制清理
+    _hashScrollTimer = setTimeout(() => {
+      if (_hashScrollObserver) {
+        _hashScrollObserver.disconnect();
+        _hashScrollObserver = null;
+      }
+    }, 3000);
+  }
+}
+window.addEventListener("load", hashScrollIntoView);
+window.addEventListener("hashchange", hashScrollIntoView);
+
 document.addEventListener("copy", () => {
   utils.snackbarShow(GLOBAL_CONFIG.lang.copy.success, false, 3000);
 });

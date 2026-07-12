@@ -1,3 +1,31 @@
+const AssetManager = {
+  _loaded: new Set(),
+
+  init() {
+    document.querySelectorAll('[data-asset]').forEach(el => {
+      if (el.dataset.asset) this._loaded.add(el.dataset.asset)
+    })
+    this.ensure()
+  },
+
+  async ensure() {
+    const el = document.getElementById('page-assets')
+    if (!el) return
+    let assets
+    try { assets = JSON.parse(el.textContent) } catch (e) { return }
+    for (const [key, urls] of Object.entries(assets)) {
+      if (this._loaded.has(key)) continue
+      if (urls.css) await utils.getCSS(urls.css)
+      if (urls.js) {
+        for (const url of (Array.isArray(urls.js) ? urls.js : [urls.js])) {
+          await utils.getScript(url)
+        }
+      }
+      this._loaded.add(key)
+    }
+  }
+}
+
 const sidebarFn = () => {
   const $toggleMenu = document.getElementById("toggle-menu");
   const $mobileSidebarMenus = document.getElementById("sidebar-menus");
@@ -689,13 +717,14 @@ window.refreshFn = () => {
     addHighlight();
     tabs.init();
   }
-  if (covercolor.enable) coverColor && coverColor();
+  if (covercolor.enable && typeof coverColor !== 'undefined') coverColor();
   if (PAGE_CONFIG.toc) toc.init();
   forPostFn();
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-  [
+  AssetManager.init()
+  ;[
     window.refreshFn,
     asideStatus,
     () => (window.onscroll = percent),

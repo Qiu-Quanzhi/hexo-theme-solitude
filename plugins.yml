@@ -34,7 +34,7 @@ swiper_js:
 fontawesome:
   name: "@fortawesome/fontawesome-free"
   file: css/all.min.css
-  version: 7.3.0
+  version: 7.0.1
   other_name: font-awesome
 mermaid_js:
   name: mermaid
@@ -46,7 +46,7 @@ chart_js:
   version: 4.5.1
   other_name: Chart.js
 color_thief:
-  name: colorthief
+  name: color-thief
   file: dist/color-thief.min.js
-  version: 3.4.0
+  version: 2.6.0
   other_name: color-thief

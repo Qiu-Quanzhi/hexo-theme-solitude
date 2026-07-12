@@ -29,7 +29,8 @@ script.
             item.parentNode.replaceChild(newScript, item)
         })
 
-        document.addEventListener('pjax:complete', () => {
+        document.addEventListener('pjax:complete', async () => {
+            await AssetManager.ensure()
             window.refreshFn()
 
             document.querySelectorAll('script[data-pjax]').forEach(item => {

@@ -56,7 +56,7 @@ hexo.extend.filter.register("before_generate", () => {
       const cdnSource = {
         local:
           cond === "internal"
-            ? `${cdnjs_file + verType}`
+            ? `/${cdnjs_file + verType}`
             : `/pluginsSrc/${name}/${file + verType}`,
         jsdelivr: `https://cdn.jsdelivr.net/npm/${name}${verType}/${min_file}`,
         unpkg: `https://unpkg.com/${name}${verType}/${file}`,

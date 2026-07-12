@@ -12,11 +12,11 @@ link(rel="stylesheet", href=url_for(theme.cdn.fontawesome))
 // Feature-specific CSS
 // swiper
 if is_home() && theme.logs.home_mini && theme.logs.enable && site.data.logs.length > 1
-    link(rel="stylesheet", href=url_for(theme.cdn.swiper_css))
+    link(rel="stylesheet", href=url_for(theme.cdn.swiper_css) data-asset="swiper")
 
 // katex
 if theme.katex && theme.katex.enable && (theme.katex.per_page && (is_post() || is_page()) || page.katex)
-    link(rel="stylesheet", href=url_for(theme.cdn.katex))
+    link(rel="stylesheet", href=url_for(theme.cdn.katex) data-asset="katex")
 
 !=fragment_cache('injectHeadJs', function(){return inject_head_js()})
 

@@ -3,16 +3,38 @@
 - let loadMermaid = theme.mermaid && theme.mermaid.enable && (theme.mermaid.per_page && (is_post() || is_page()) || page.mermaid)
 - let loadChart = theme.chart && theme.chart.enable && (theme.chart.per_page && (is_post() || is_page()) || page.chart)
 - let loadKatex = theme.katex && theme.katex.enable && (theme.katex.per_page && (is_post() || is_page()) || page.katex)
+- let loadWaterfall = page.content && page.content.includes('waterfall')
+- let loadSwiper = is_home() && theme.logs.home_mini && theme.logs.enable && site.data.logs.length > 1
+- let loadLazyload = theme.lazyload.enable && (theme.lazyload.field !== 'post' || is_post())
+- let loadCovercolor = theme.post.covercolor.enable && (is_post() || is_page())
+
+-
+  let pageAssets = {}
+  if (loadKatex) pageAssets.katex = { css: theme.cdn.katex, js: theme.cdn.katex_copytex }
+  if (loadMermaid) pageAssets.mermaid = { js: theme.cdn.mermaid_js }
+  if (loadChart) pageAssets.chart = { js: theme.cdn.chart_js }
+  if (loadWaterfall) pageAssets.waterfall = { js: theme.cdn.waterfall }
+  if (loadSwiper) pageAssets.swiper = { css: theme.cdn.swiper_css, js: theme.cdn.swiper_js }
+  if (loadLazyload) pageAssets.lazyload = { js: theme.cdn.lazyload }
+  if (loadCovercolor) {
+    let coverJs = [theme.cdn.color_thief]
+    let mode = theme.post.covercolor.mode
+    if (mode === 'local') coverJs.push(theme.cdn.cover_local)
+    else if (mode === 'api') coverJs.push(theme.cdn.cover_api)
+    else if (mode === 'ave') coverJs.push(theme.cdn.cover_ave)
+    pageAssets.covercolor = { js: coverJs }
+  }
+  if (theme.loading.pace) pageAssets.pace = { js: theme.cdn.pace_js }
 
 mixin katex
   if theme.katex.copytex
-    script(src=url_for(theme.cdn.katex_copytex))
-      script.
-        (() => {
-          document.querySelectorAll('.article-container span.katex-display').forEach(item => {
-            utils.wrap(item, 'div', {class: 'katex-wrap'})
-          })
-        })();
+    script(src=url_for(theme.cdn.katex_copytex) data-asset="katex")
+    script.
+      (() => {
+        document.querySelectorAll('.article-container span.katex-display').forEach(item => {
+          utils.wrap(item, 'div', {class: 'katex-wrap'})
+        })
+      })();
 
 div
   // Critical scripts loaded synchronously
@@ -20,46 +42,46 @@ div
   script(src=url_for(theme.cdn.main))
   
   // Non-critical scripts loaded asynchronously
-  if page.content && page.content.includes('waterfall')
-    script(async src=url_for(theme.cdn.waterfall))
+  if loadWaterfall
+    script(async src=url_for(theme.cdn.waterfall) data-asset="waterfall")
   script(src=url_for(theme.cdn.pjax))
 
   // Feature-specific scripts loaded asynchronously
 
   if loadMermaid
-    script(defer src=url_for(theme.cdn.mermaid_js))
+    script(defer src=url_for(theme.cdn.mermaid_js) data-asset="mermaid")
 
   if loadChart
-    script(defer src=url_for(theme.cdn.chart_js))
+    script(defer src=url_for(theme.cdn.chart_js) data-asset="chart")
 
   if loadKatex
     +katex
 
   // UI enhancement scripts
-  if theme.lazyload.enable && (theme.lazyload.field !== 'post' || is_post())
-    script(src=url_for(theme.cdn.lazyload))
-  if is_home() && theme.logs.home_mini && theme.logs.enable && site.data.logs.length > 1
-    script(src=url_for(theme.cdn.swiper_js))
+  if loadLazyload
+    script(src=url_for(theme.cdn.lazyload) data-asset="lazyload")
+  if loadSwiper
+    script(src=url_for(theme.cdn.swiper_js) data-asset="swiper")
 
   // Cover color processing scripts
-  if theme.post.covercolor.enable && (is_post() || is_page())
+  if loadCovercolor
     case theme.post.covercolor.mode
       when 'local'
-        script(defer src=url_for(theme.cdn.color_thief))
-        script(defer src=url_for(theme.cdn.cover_local))
+        script(defer src=url_for(theme.cdn.color_thief) data-asset="covercolor")
+        script(defer src=url_for(theme.cdn.cover_local) data-asset="covercolor")
       when 'api'
         script.
           const coverColorConfig = {
             api: '!{theme.post.covercolor.api}',
             time: !{theme.post.covercolor.time}
           }
-        script(defer src=url_for(theme.cdn.cover_api))
+        script(defer src=url_for(theme.cdn.cover_api) data-asset="covercolor")
       when 'ave'
         script.
           const coverColorConfig = {
             time: !{theme.post.covercolor.time}
           }
-        script(defer src=url_for(theme.cdn.cover_ave))
+        script(defer src=url_for(theme.cdn.cover_ave) data-asset="covercolor")
 
   if theme.loading.pace
     include ../mixins/pace.pug
@@ -69,6 +91,7 @@ div
       != item
 
   .js-pjax
+    script#page-assets(type="application/json") !{JSON.stringify(pageAssets)}
     if is_home() && theme.logs.enable && theme.logs.home_mini
       script.
         sco.initbbtalk()

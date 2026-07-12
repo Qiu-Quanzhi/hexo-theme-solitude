@@ -689,7 +689,7 @@ window.refreshFn = () => {
     addHighlight();
     tabs.init();
   }
-  if (covercolor.enable) coverColor();
+  if (covercolor.enable) coverColor && coverColor();
   if (PAGE_CONFIG.toc) toc.init();
   forPostFn();
 };

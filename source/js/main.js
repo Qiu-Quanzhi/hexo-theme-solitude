@@ -796,7 +796,3 @@ function hashScrollIntoView() {
 }
 window.addEventListener("load", hashScrollIntoView);
 window.addEventListener("hashchange", hashScrollIntoView);
-
-document.addEventListener("copy", () => {
-  utils.snackbarShow(GLOBAL_CONFIG.lang.copy.success, false, 3000);
-});

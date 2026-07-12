@@ -15,7 +15,7 @@ if (theme.logs.home_mini && theme.logs.enable && site.data.logs.length > 1)
     link(rel="stylesheet", href=url_for(theme.cdn.swiper_css))
 
 // katex
-if theme.katex && theme.katex.enable
+if theme.katex && theme.katex.enable && (theme.katex.per_page && (is_post() || is_page()) || page.katex)
     link(rel="stylesheet", href=url_for(theme.cdn.katex))
 
 !=fragment_cache('injectHeadJs', function(){return inject_head_js()})

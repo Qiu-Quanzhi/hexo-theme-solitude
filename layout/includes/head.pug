@@ -16,13 +16,16 @@
 - if (is_home()) subtitle = config.subtitle ? ' - ' + config.subtitle : ''
 - else subtitle = title ? ' | ' + config.title : config.title
 
+- let fullTitle = title + subtitle
+- if (theme.unified_title) fullTitle += ' · ' + theme.unified_title
+
 //- 基础meta标签
 meta(charset="utf-8")
 meta(http-equiv="X-UA-Compatible", content="IE=edge")
 meta(name="viewport", content="width=device-width, initial-scale=1")
 
 //- 页面标题
-title= title + subtitle
+title= fullTitle
 
 //- 无JavaScript提示
 noscript= _p('head.noscript')

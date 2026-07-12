@@ -20,7 +20,8 @@ div
   script(src=url_for(theme.cdn.main))
   
   // Non-critical scripts loaded asynchronously
-  script(async src=url_for(theme.cdn.waterfall))
+  if page.content && page.content.includes('waterfall')
+    script(async src=url_for(theme.cdn.waterfall))
   script(src=url_for(theme.cdn.pjax))
 
   // Feature-specific scripts loaded asynchronously
@@ -35,13 +36,13 @@ div
     +katex
 
   // UI enhancement scripts
-  if theme.lazyload.enable
+  if theme.lazyload.enable && (theme.lazyload.field !== 'post' || is_post())
     script(src=url_for(theme.cdn.lazyload))
-  if (theme.logs.home_mini && theme.logs.enable && site.data.logs.length > 1)
+  if is_home() && theme.logs.home_mini && theme.logs.enable && site.data.logs.length > 1
     script(src=url_for(theme.cdn.swiper_js))
 
   // Cover color processing scripts
-  if theme.post.covercolor.enable
+  if theme.post.covercolor.enable && (is_post() || is_page())
     case theme.post.covercolor.mode
       when 'local'
         script(defer src=url_for(theme.cdn.color_thief))

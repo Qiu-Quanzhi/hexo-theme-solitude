@@ -11,7 +11,7 @@ link(rel="stylesheet", href=url_for(theme.cdn.fontawesome))
 
 // Feature-specific CSS
 // swiper
-if (theme.logs.home_mini && theme.logs.enable && site.data.logs.length > 1)
+if is_home() && theme.logs.home_mini && theme.logs.enable && site.data.logs.length > 1
     link(rel="stylesheet", href=url_for(theme.cdn.swiper_css))
 
 // katex

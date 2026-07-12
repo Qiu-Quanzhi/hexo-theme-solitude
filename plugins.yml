@@ -6,12 +6,12 @@ katex:
   name: katex
   file: dist/katex.min.css
   other_name: KaTeX
-  version: 0.16.9
+  version: 0.17.0
 katex_copytex:
   name: katex
   file: dist/contrib/copy-tex.min.js
   other_name: KaTeX
-  version: 0.16.9
+  version: 0.17.0
 lazyload:
   name: vanilla-lazyload
   file: dist/lazyload.iife.min.js
@@ -24,29 +24,29 @@ pace_js:
 swiper_css:
   name: swiper
   file: swiper-bundle.min.css
-  version: 11.0.5
+  version: 14.0.5
   other_name: Swiper
 swiper_js:
   name: swiper
   file: swiper-bundle.min.js
-  version: 11.0.5
+  version: 14.0.5
   other_name: Swiper
 fontawesome:
   name: "@fortawesome/fontawesome-free"
   file: css/all.min.css
-  version: 6.7.2
+  version: 7.3.0
   other_name: font-awesome
 mermaid_js:
   name: mermaid
   file: dist/mermaid.js
-  version: 11.4.1
+  version: 11.16.0
 chart_js:
   name: chart.js
   file: dist/chart.umd.js
-  version: 4.4.1
+  version: 4.5.1
   other_name: Chart.js
 color_thief:
   name: colorthief
   file: dist/color-thief.min.js
-  version: 2.6.0
+  version: 3.4.0
   other_name: color-thief

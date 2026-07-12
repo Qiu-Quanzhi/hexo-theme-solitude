@@ -1,5 +1,9 @@
 - page.type = is_post() ? 'post' : page.type
 
+- let loadMermaid = theme.mermaid && theme.mermaid.enable && (theme.mermaid.per_page && (is_post() || is_page()) || page.mermaid)
+- let loadChart = theme.chart && theme.chart.enable && (theme.chart.per_page && (is_post() || is_page()) || page.chart)
+- let loadKatex = theme.katex && theme.katex.enable && (theme.katex.per_page && (is_post() || is_page()) || page.katex)
+
 mixin katex
   if theme.katex.copytex
     script(src=url_for(theme.cdn.katex_copytex))
@@ -21,17 +25,14 @@ div
 
   // Feature-specific scripts loaded asynchronously
 
-  if theme.mermaid
+  if loadMermaid
     script(defer src=url_for(theme.cdn.mermaid_js))
 
-  if theme.chart
+  if loadChart
     script(defer src=url_for(theme.cdn.chart_js))
 
-  if theme.katex && theme.katex.enable
-    if theme.katex.per_page && (is_post() || is_page())
-      +katex
-    else if page.katex
-      +katex
+  if loadKatex
+    +katex
 
   // UI enhancement scripts
   if theme.lazyload.enable
@@ -74,7 +75,7 @@ div
     if page.type === 'logs' && theme.logs.enable
       script.
         sco.changeTimeFormat(document.querySelectorAll('.bber-info-time time'))
-    if theme.mermaid
+    if loadMermaid
       script.
         mermaid.run();
 

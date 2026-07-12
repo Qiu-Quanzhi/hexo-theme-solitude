@@ -106,8 +106,14 @@ hexo.extend.filter.register(
       index_post_list: {
         length: 200,
       },
-      mermaid: false,
-      chart: false,
+      mermaid: {
+        enable: false,
+        per_page: true,
+      },
+      chart: {
+        enable: false,
+        per_page: true,
+      },
       console: {
         enable: false,
         card: {

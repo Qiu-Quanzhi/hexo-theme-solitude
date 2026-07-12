@@ -32,15 +32,8 @@
       ele.addEventListener("animationend", resetStyles);
       ele.style.animation = `to_hide ${time}s`;
     },
-    snackbarShow: (text, showAction = false, duration = 5000) => {
-      Snackbar.show({ text, showAction, duration, pos: "top-center" });
-    },
     copy: async (text) => {
-      const message = await navigator.clipboard
-        .writeText(text)
-        .then(() => GLOBAL_CONFIG.lang.copy.success)
-        .catch(() => GLOBAL_CONFIG.lang.copy.error);
-      utils.snackbarShow(message, false, 2000);
+      await navigator.clipboard.writeText(text);
     },
     getEleTop: (ele) => {
       let actualTop = ele.offsetTop;

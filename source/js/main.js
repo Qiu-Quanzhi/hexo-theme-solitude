@@ -192,7 +192,6 @@ const sco = {
     const newMode = isDarkMode ? "light" : "dark";
     document.documentElement.setAttribute("data-theme", newMode);
     utils.saveToLocal.set("theme", newMode, 0.02);
-    utils.snackbarShow(GLOBAL_CONFIG.lang.theme[newMode], false, 2000);
     handleThemeChange(newMode);
   },
   hideTodayCard: () =>
@@ -450,8 +449,6 @@ const addHighlight = () => {
     ? `<i class="solitude fas fa-angles-down"></i>`
     : "<i></i>";
 
-  const alertInfo = (ele, text) => utils.snackbarShow(text, false, 2000);
-
   const copyFn = (e) => {
     const $buttonParent = e.parentNode;
     $buttonParent.classList.add("copy-true");
@@ -464,7 +461,6 @@ const addHighlight = () => {
     selection.removeAllRanges();
     selection.addRange(range);
     document.execCommand("copy");
-    alertInfo(e.lastChild, GLOBAL_CONFIG.lang.copy.success);
     selection.removeAllRanges();
     $buttonParent.classList.remove("copy-true");
   };

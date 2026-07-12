@@ -6,28 +6,6 @@ include ./mixins/common.pug
 
 - const { information, group } = theme.footer
 
-//- 文章页脚栏组件
-mixin postFooterBar()
-  if theme.post.footer.enable && is_post()
-    #st-footer-bar
-      .footer-logo
-        case theme.site.name.class
-          when 'iconClass'
-            +icon(theme.site.name.custom)
-          when 'img'
-            img.solitude(src=url_for(theme.site.name.custom))
-          when 'text'
-            span= theme.site.name.custom
-      
-      .footer-bar-description= theme.post.footer.desc
-      
-      +conditionalWrapper(theme.post.footer.button.enable)
-        +link(
-          theme.post.footer.button.url,
-          theme.post.footer.button.name,
-          { class: 'footer-bar-link' }
-        )
-
 //- 页脚链接组件
 mixin footerDeals()
   if information.left || information.right || information.author
@@ -129,7 +107,6 @@ mixin footerBar()
       +footerRightLinks()
 
 //- 组装所有页脚组件
-+postFooterBar()
 +footerDeals()
 +footerGroups()
 +footerBar()

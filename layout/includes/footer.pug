@@ -75,7 +75,7 @@ mixin copyrightInfo()
   - const yearRange = startYear === currentYear ? startYear : `${startYear} - ${currentYear}`
   
   .copyright © #{yearRange}&nbsp;
-    a.footer-bar-link(href=url_for("/"))
+    a.footer-bar-link(href=url_for(theme.aside.my_card.author.url), target='_blank')
       img.author-avatar(src=url_for(theme.site.icon))
       = config.author
 

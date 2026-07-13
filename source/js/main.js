@@ -167,6 +167,7 @@ const handleThemeChange = (mode) => {
   const themeChange = window.globalFn?.themeChange || {};
   Object.values(themeChange).forEach((fn) => fn(mode));
 };
+window.handleThemeChange = handleThemeChange;
 
 const sco = {
   lastWittyWord: "",
@@ -215,11 +216,11 @@ const sco = {
     this.lastWittyWord = randomGreeting;
   },
   switchDarkMode() {
+    window.themeAuto = false;
     const isDarkMode =
       document.documentElement.getAttribute("data-theme") === "dark";
     const newMode = isDarkMode ? "light" : "dark";
     document.documentElement.setAttribute("data-theme", newMode);
-    utils.saveToLocal.set("theme", newMode, 0.02);
     handleThemeChange(newMode);
   },
   hideTodayCard: () =>
@@ -723,6 +724,7 @@ window.refreshFn = () => {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
+  utils.addGlobalFn('themeChange', initThemeColor, 'initThemeColor');
   AssetManager.init()
   ;[
     window.refreshFn,

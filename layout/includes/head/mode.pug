@@ -2,37 +2,34 @@ case theme.display_mode.type
     when "auto"
         script.
             initTheme = () => {
-                let isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
-                const cachedMode = utils.saveToLocal.get('theme');
-                if (cachedMode === undefined) {
-                    const nowMode =
-                        isDarkMode ? 'dark' : 'light'
-                    document.documentElement.setAttribute('data-theme', nowMode);
-                } else {
-                    document.documentElement.setAttribute('data-theme', cachedMode);
-                }
-                typeof rm === 'object' && rm.mode(cachedMode === 'dark' && isDarkMode)
+                const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+                const nowMode = isDarkMode ? 'dark' : 'light'
+                document.documentElement.setAttribute('data-theme', nowMode);
+                window.themeAuto = true;
+                typeof rm === 'object' && rm.mode(isDarkMode)
             }
             initTheme()
+
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+                if (window.themeAuto) {
+                    const newMode = e.matches ? 'dark' : 'light';
+                    document.documentElement.setAttribute('data-theme', newMode);
+                    if (typeof window.handleThemeChange === 'function') {
+                        window.handleThemeChange(newMode);
+                    }
+                }
+            });
     when "dark"
         script.
             initTheme = () => {
-                const cachedMode = utils.saveToLocal.get('theme');
-                if (cachedMode === undefined)
-                    document.documentElement.setAttribute('data-theme', 'dark');
-                else
-                    document.documentElement.setAttribute('data-theme', cachedMode);
-                typeof rm === 'object' && rm.mode(cachedMode === undefined || cachedMode === 'dark')
+                document.documentElement.setAttribute('data-theme', 'dark');
+                typeof rm === 'object' && rm.mode(true)
             }
             initTheme()
     when "light"
         script.
             initTheme = () => {
-                const cachedMode = utils.saveToLocal.get('theme');
-                if (cachedMode === undefined)
-                    document.documentElement.setAttribute('data-theme', 'light');
-                else
-                    document.documentElement.setAttribute('data-theme', cachedMode);
-                typeof rm === 'object' && rm.mode(cachedMode === 'dark')
+                document.documentElement.setAttribute('data-theme', 'light');
+                typeof rm === 'object' && rm.mode(false)
             }
             initTheme()

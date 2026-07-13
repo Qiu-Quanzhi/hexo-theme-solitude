@@ -7,18 +7,27 @@ case theme.display_mode.type
                 if (cachedMode === undefined) {
                     const nowMode = isDarkMode ? 'dark' : 'light'
                     document.documentElement.setAttribute('data-theme', nowMode);
+                    window.themeAuto = true;
                 } else {
                     document.documentElement.setAttribute('data-theme', cachedMode);
+                    window.themeAuto = false;
                 }
                 typeof rm === 'object' && rm.mode(cachedMode === 'dark' && isDarkMode)
             }
             initTheme()
 
             window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-                const newMode = e.matches ? 'dark' : 'light';
-                document.documentElement.setAttribute('data-theme', newMode);
-                if (typeof window.handleThemeChange === 'function') {
-                    window.handleThemeChange(newMode);
+                const systemMode = e.matches ? 'dark' : 'light';
+                if (window.themeAuto) {
+                    document.documentElement.setAttribute('data-theme', systemMode);
+                    if (typeof window.handleThemeChange === 'function') {
+                        window.handleThemeChange(systemMode);
+                    }
+                } else {
+                    const cachedMode = utils.saveToLocal.get('theme');
+                    if (cachedMode === systemMode) {
+                        window.themeAuto = true;
+                    }
                 }
             });
     when "dark"

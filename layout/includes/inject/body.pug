@@ -3,7 +3,7 @@
 - let loadMermaid = theme.mermaid && theme.mermaid.enable && (theme.mermaid.per_page && (is_post() || is_page()) || page.mermaid)
 - let loadChart = theme.chart && theme.chart.enable && (theme.chart.per_page && (is_post() || is_page()) || page.chart)
 - let loadKatex = theme.katex && theme.katex.enable && (theme.katex.per_page && (is_post() || is_page()) || page.katex)
-- let loadWaterfall = page.content && page.content.includes('waterfall')
+- let loadWaterfall = (page.content && page.content.includes('waterfall')) || (page.type === 'logs' && theme.logs.enable)
 - let loadSwiper = is_home() && theme.logs.home_mini && theme.logs.enable && site.data.logs.length > 1
 - let loadLazyload = theme.lazyload.enable && (theme.lazyload.field !== 'post' || is_post())
 - let loadCovercolor = theme.post.covercolor.enable && (is_post() || is_page())

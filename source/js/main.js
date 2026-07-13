@@ -231,15 +231,22 @@ const sco = {
     document.getElementById("console")?.classList.toggle("show", true),
   hideConsole: () =>
     document.getElementById("console")?.classList.remove("show"),
-  refreshWaterFall() {
+  async refreshWaterFall() {
+    if (typeof waterfall === 'undefined') {
+      try {
+        const assets = JSON.parse(document.getElementById('page-assets')?.textContent || '{}');
+        const url = assets.waterfall?.js;
+        if (url) await utils.getScript(url);
+      } catch (e) { /* waterfall asset not configured, skip */ }
+    }
+    if (typeof waterfall === 'undefined') return;
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          setTimeout(() => {
-            waterfall(entry.target).then(() => {
-              entry.target.classList.add("show");
-            });
-          }, 300);
+          waterfall(entry.target).then(() => {
+            entry.target.classList.add("show");
+          });
         }
       });
     });

@@ -80,6 +80,17 @@ mixin copyrightInfo()
       = config.author
 
 
+//- 站点标注组件
+mixin badgeInfo()
+  +conditionalWrapper(theme.footer.badge)
+    #footer-badge
+      - const badge = theme.footer.badge || []
+      each item, index in badge
+        a.badge-link(href=url_for(item.url), target='_blank', rel='noopener nofollow', title=item.name)
+          if item.icon
+            img.badge-icon(src=url_for(item.icon), alt=item.name)
+          span= item.name
+
 //- 页脚右侧链接组件
 mixin footerRightLinks()
   if theme.footer.links
@@ -110,3 +121,4 @@ mixin footerBar()
 +footerDeals()
 +footerGroups()
 +footerBar()
++badgeInfo()

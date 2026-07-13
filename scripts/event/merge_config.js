@@ -129,6 +129,7 @@ hexo.extend.filter.register(
         },
         group: null,
         randomlink: false,
+        badge: [],
         links: [],
       },
       errorpage: {

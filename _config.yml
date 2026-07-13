@@ -12,7 +12,7 @@ site:
   name:
     class: text # text / iconClass / img
     custom: Solitude-Kai # 文本 / 图标类名 / 图片路径
-  icon: /img/logo.png # 网站图标
+  icon: /img/logo.avif # 网站图标
   unified_title: # 统一标题，不为空时页面标题显示为 原标题 · 统一标题
 # --------------------------- 结束 ---------------------------
 
@@ -22,7 +22,7 @@ nav:
   # 左侧按钮
   group:
   #  project: # 组名
-  #    Solitude-Kai: https://github.com/Qiu-Quanzhi/hexo-theme-solitude-kai || /img/logo.png # 子项名: 路径 || 图标类名
+  #    Solitude-Kai: https://github.com/Qiu-Quanzhi/hexo-theme-solitude-kai || /img/logo.avif # 子项名: 路径 || 图标类名
 
   # 菜单
   menu:
@@ -70,7 +70,7 @@ aside:
   my_card:
     # 头像
     author:
-      img: /img/logo.png # 图片路径
+      img: /img/logo.avif # 图片路径
       url: /about/ # 点击头像跳转路径
     # 时段状态
     state:

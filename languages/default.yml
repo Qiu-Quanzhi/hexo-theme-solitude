@@ -13,10 +13,6 @@ theme:
   dark: 已切换至深色模式
   light: 已切换至浅色模式
 
-copy:
-  success: 复制成功
-  error: 复制失败
-
 time:
   day: "天前"
   hour: "小时前"

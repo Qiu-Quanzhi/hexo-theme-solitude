@@ -7,7 +7,7 @@ hexo.extend.filter.register(
           class: "text",
           custom: "Solitude-Kai",
         },
-        icon: "/img/logo.png",
+        icon: "/img/logo.avif",
       },
       nav: {
         group: null,
@@ -23,7 +23,7 @@ hexo.extend.filter.register(
         position: 1,
         my_card: {
           author: {
-            img: "/img/logo.png",
+            img: "/img/logo.avif",
             url: "/about/",
           },
           state: {

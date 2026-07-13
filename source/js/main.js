@@ -216,11 +216,11 @@ const sco = {
     this.lastWittyWord = randomGreeting;
   },
   switchDarkMode() {
-    window.themeAuto = false;
     const isDarkMode =
       document.documentElement.getAttribute("data-theme") === "dark";
     const newMode = isDarkMode ? "light" : "dark";
     document.documentElement.setAttribute("data-theme", newMode);
+    utils.saveToLocal.set("theme", newMode, 0.02);
     handleThemeChange(newMode);
   },
   hideTodayCard: () =>

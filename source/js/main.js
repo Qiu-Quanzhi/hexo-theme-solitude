@@ -672,6 +672,7 @@ const scrollFnToDo = () => {
 
   if (toc) {
     const $cardTocLayout = document.getElementById("card-toc");
+    if (!$cardTocLayout) return;
     const $cardToc = $cardTocLayout.querySelector(".toc-content");
     const tocItemClickFn = (e) => {
       const target = e.target.closest(".toc-link");

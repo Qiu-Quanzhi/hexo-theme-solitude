@@ -288,6 +288,11 @@ footer:
     #   url: https://beian.mps.gov.cn/#/query/webSearch?code=44098302441277
 
 
+  # 版权信息
+  copyright:
+    author: # 作者名称
+    url: /about/ # 作者链接
+
   # 页脚信息文字
   links:
     # - name: 友链与鸣谢

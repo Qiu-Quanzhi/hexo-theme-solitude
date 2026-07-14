@@ -131,6 +131,10 @@ hexo.extend.filter.register(
         randomlink: false,
         badge: [],
         links: [],
+        copyright: {
+          author: "",
+          url: "/about/",
+        },
       },
       errorpage: {
         img: "/img/404.avif",

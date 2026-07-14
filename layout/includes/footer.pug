@@ -73,11 +73,14 @@ mixin copyrightInfo()
   - const startYear = moment(theme.aside.siteinfo.runtime).year()
   - const currentYear = new Date().getFullYear()
   - const yearRange = startYear === currentYear ? startYear : `${startYear} - ${currentYear}`
-  
+  - const copyright = theme.footer.copyright || {}
+  - const copyrightAuthor = copyright.author || config.author
+  - const copyrightUrl = copyright.url || theme.aside.my_card.author.url
+
   .copyright © #{yearRange}&nbsp;
-    a.footer-bar-link(href=url_for(theme.aside.my_card.author.url), target='_blank')
+    a.footer-bar-link(href=url_for(copyrightUrl), target='_blank')
       img.author-avatar(src=url_for(theme.site.icon))
-      = config.author
+      = copyrightAuthor
 
 
 //- 站点标注组件

@@ -152,7 +152,7 @@ hexo.extend.filter.register(
       },
       loading: {
         fullpage: false,
-        favicon: "/img/favicon.png",
+        favicon: "/img/favicon.ico",
         pace: true,
       },
       highlight: {

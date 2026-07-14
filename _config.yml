@@ -329,7 +329,7 @@ loading:
   # 全屏加载
   fullpage: false
   # 加载图标，不写默认siteicon
-  favicon: /img/favicon.png
+  favicon: /img/favicon.ico
   # Pace 加载
   pace: true
 # --------------------------- 结束 ---------------------------

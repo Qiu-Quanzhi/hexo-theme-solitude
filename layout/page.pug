@@ -17,6 +17,7 @@ mixin pageContent()
         if page.container
           include includes/page/default
         else
+          h1.h1-hidden= fullTitle
           != page.content
       default
         case page.type

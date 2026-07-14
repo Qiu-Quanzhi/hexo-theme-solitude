@@ -6,7 +6,7 @@
                     .sayhi#sayhi(onclick="sco.changeWittyWord()")
         a.card-info-avatar(href=url_for(theme.aside.my_card.author.url) title=_p('aside.avatar'))
             .avatar-img
-                img(src=theme.aside.my_card.author.img alt=_p('aside.avatar'))
+                img(src=theme.aside.my_card.author.img alt=_p('aside.avatar') loading="lazy")
         .card-info__desc_group
             .author-info__name= config.author
             .author-info__desc!= config.subtitle

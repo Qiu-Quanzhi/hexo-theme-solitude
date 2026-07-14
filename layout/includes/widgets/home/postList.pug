@@ -25,7 +25,7 @@ mixin postInfo()
 //- 文章封面组件  
 mixin postCoverWrapper()
   if post.cover
-    +postCover(post, {lazy: false})
+    +postCover(post, {lazy: index >= 2})
 
 //- 布局渲染
 mixin layout()

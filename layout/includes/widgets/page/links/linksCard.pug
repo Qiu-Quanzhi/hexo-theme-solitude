@@ -8,10 +8,10 @@
                 else
                     span.site-card-tag(style=`background-color: ${item.color};`)= item.tag
             a.img(title=item.name, href=url_for(item.link))
-                img.flink-avatar(src=item.topimg + (data.topimg_suffix || ''), alt=item.name)
+                img.flink-avatar(src=item.topimg + (data.topimg_suffix || ''), alt=item.name, loading="lazy")
             a.info.cf-friends-link(title=item.name, href=url_for(item.link))
                 .site-card-avatar
-                    img.flink-avatar.cf-friends-avatar(src=item.avatar + (data.suffix || ''), alt=item.name)
+                    img.flink-avatar.cf-friends-avatar(src=item.avatar + (data.suffix || ''), alt=item.name, loading="lazy")
                     .img-alt.is-center= item.name
                 .site-card-text
                     span.title.cf-friends-name= item.name

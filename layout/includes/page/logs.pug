@@ -18,9 +18,9 @@ if theme.logs.enable
                                 .bber-content-img
                                     each img in item.image
                                         if typeof img === 'string'
-                                            img(src=img, alt=item.content || "图片暂无描述")
+                                            img(src=img, alt=item.content || "图片暂无描述", loading="lazy")
                                         else
-                                            img(src=img.url, alt=(img.alt || item.content || "图片暂无描述"))
+                                            img(src=img.url, alt=(img.alt || item.content || "图片暂无描述"), loading="lazy")
 
                         if item.video
                             .bber-video

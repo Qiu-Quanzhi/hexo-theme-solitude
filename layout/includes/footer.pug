@@ -28,7 +28,7 @@ mixin footerDeals()
           title=_p('nav.backtop')
           onclick="sco.toTop()"
         )
-          img(src=information.author, alt=_p('nav.backtop'))
+          img(src=information.author, alt=_p('nav.backtop'), loading="lazy")
 
       //- 右侧链接
       each value, label in rightInfo
@@ -105,7 +105,7 @@ mixin footerRightLinks()
               each icon in item.icon
                 +icon(icon)
             else if item.img
-              img(src=url_for(item.img), alt=item.name)
+              img(src=url_for(item.img), alt=item.name, loading="lazy")
             else
               != item.name
 

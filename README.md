@@ -2,7 +2,9 @@
 
 <div align="center"><img width="20%" src="source/img/logo.avif" /></div>
 
-一款优雅的 Hexo 主题，修改自 [Hexo-Theme-Solitude](https://github.com/everfu/hexo-theme-solitude)
+一款优雅的 Hexo 主题，专注于内容体验。
+
+修改自 [Hexo-Theme-Solitude](https://github.com/everfu/hexo-theme-solitude)
 
 ## 应用
 

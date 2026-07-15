@@ -33,8 +33,18 @@ swiper_js:
   other_name: Swiper
 fontawesome:
   name: "@fortawesome/fontawesome-free"
-  file: css/all.min.css
-  version: 7.0.1
+  file: css/fontawesome.min.css
+  version: 7.3.0
+  other_name: font-awesome
+fontawesome_solid:
+  name: "@fortawesome/fontawesome-free"
+  file: css/solid.min.css
+  version: 7.3.0
+  other_name: font-awesome
+fontawesome_brands:
+  name: "@fortawesome/fontawesome-free"
+  file: css/brands.min.css
+  version: 7.3.0
   other_name: font-awesome
 mermaid_js:
   name: mermaid

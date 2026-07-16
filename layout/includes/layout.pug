@@ -36,15 +36,6 @@ html(lang=config.language, data-theme="light")
                 .error#body-wrap
                     block content
 
-        //- 页脚徽章（在 body-wrap 外，确保位于 100vh 以下）
-        if theme.footer && theme.footer.badge
-          #footer-badge
-            each item in theme.footer.badge
-              a.badge-link(href=url_for(item.url), target='_blank', rel='noopener nofollow', title=item.name)
-                if item.icon
-                  img.badge-icon(src=url_for(item.icon), alt=item.name)
-                span= item.name
-
         //- 注入的body内容
         include ./inject/body.pug
 

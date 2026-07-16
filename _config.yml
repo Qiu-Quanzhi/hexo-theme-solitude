@@ -392,7 +392,11 @@ katex:
 extends:
   # 插入到 head
   head:
-  #  - <script src="https://cdn.bootcdn.net/ajax/libs/pace/1.2.4/pace.min.js"></script>
+    # - <script src="https://cdn.bootcdn.net/ajax/libs/pace/1.2.4/pace.min.js"></script>
+    # - <link rel="stylesheet" href="https://cdn.jsdmirror.com/gh/Qiu-Quanzhi/MiSansVF/MiSansVF.css" fetchpriority="high">
+    # - <link rel="stylesheet" href="https://cdn.jsdmirror.cn/npm/@fortawesome/fontawesome-free@7.3.0/css/fontawesome.min.css" fetchpriority="high">
+    # - <link rel="stylesheet" href="https://cdn.jsdmirror.cn/npm/@fortawesome/fontawesome-free@7.3.0/css/solid.min.css" fetchpriority="high">
+    # - <link rel="stylesheet" href="https://cdn.jsdmirror.cn/npm/@fortawesome/fontawesome-free@7.3.0/css/brands.min.css" fetchpriority="high">
 
   # 插入到 body
   body:
